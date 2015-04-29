@@ -6,6 +6,7 @@
   "description": "Most useful bot for hashtagchile.com",
   "dependencies": {
     "hubot": "^2.12.0",
+    "hubot-artsy": "^1.0.1",
     "hubot-caniuse": "^1.0.3",
     "hubot-diagnostics": "0.0.1",
     "hubot-google-images": "^0.1.4",
