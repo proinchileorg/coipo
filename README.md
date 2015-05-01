@@ -1,7 +1,11 @@
 # Mr. Pudú
 
 El señor Pudú es un bot basado en [Hubot](https://hubot.github.com/) para [Hashtag Chile](http://hashtagchile.com) ([canal en Slack](http://hashtagchile.slack.com)).
-Tiene todas las funciones básicas de Hubot, las que se pueden saber mencionándolo así: `@pudu help` o mediante un mensaje directo diciéndole `help`. Normalmente es muy rápido, a menos que esté ocupado en otra cosa.
+Tiene todas las funciones básicas de Hubot, más algunas que se le irán ido agregando para hacerlo más inteligente. Para consultar cuáles son las cosas que trae, puedes hablarle públicamente así: `@pudu help`, si quieres preguntarle en privado, debes ir a *direct messages*, hablarle al bot y simplemente decir: `help`.  Normalmente es muy rápido, a menos que esté ocupado en otra cosa.
+
+## ¿Qué comandos sabe?
+
+Si la paciencia no te da, puedes ir a [esta URL](http://pudu.herokuapp.com/pudu/help), en esa lista se irán actualizando los comandos que sepa.
 
 ## Contribuir
 
