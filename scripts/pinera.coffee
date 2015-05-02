@@ -1,5 +1,5 @@
 # Description:
-#   Shows a random Piñera image when someone says a keyword
+#   Shows a random Piñera image when someone says a keyword. All pictures were taken from tweets of the @YetaReactions account
 #
 # Dependencies:
 #   None
