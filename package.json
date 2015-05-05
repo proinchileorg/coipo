@@ -13,6 +13,7 @@
     "hubot-google-translate": "^0.1.0",
     "hubot-help": "^0.1.1",
     "hubot-heroku-keepalive": "0.0.4",
+    "hubot-insulter": "^1.0.2",
     "hubot-maps": "0.0.2",
     "hubot-pugme": "^0.1.0",
     "hubot-qr": "0.0.2",
