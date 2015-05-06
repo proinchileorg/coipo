@@ -12,8 +12,8 @@ module.exports = (robot) ->
 
   robot.hear /^ke\W/i, (res) ->
     res.send "¿Qué?*"
-  robot.hear /cafe/i, (res) ->
-    res.send "¿«Café», dices?"
+  # robot.hear /cafe/i, (res) ->
+  #   res.send "¿«Café», dices?"
 
   # robot.hear /badger/i, (res) ->
   #   res.send "Badgers? BADGERS? WE DON'T NEED NO STINKIN BADGERS"
