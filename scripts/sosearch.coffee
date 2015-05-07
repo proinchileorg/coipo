@@ -38,7 +38,7 @@ soSearch = (msg, search, tags) ->
   data = ""
   msg.http("http://api.stackexchange.com/2.2/search")
     .query
-      site: stackoverflow
+      site: "stackoverflow"
       intitle: encodeURIComponent(search)
       key: hubot_stackapps_apikey
       tagged: encodeURIComponent(tags.join(':'))
