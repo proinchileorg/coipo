@@ -36,7 +36,7 @@ soSearch = (msg, search, tags) ->
 
 
   data = ""
-  msg.http("http://api.stackexchange.com/2.2/search")
+  msg.http("https://api.stackexchange.com/2.2/search")
     .query
       site: "stackoverflow"
       intitle: encodeURIComponent(search)
