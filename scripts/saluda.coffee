@@ -44,7 +44,7 @@ enterReplies = [
 ]
 
 module.exports = (robot) ->
-  robot.enter (res) ->
+  robot.enter (msg) ->
   # robot.hear /pudu/i, (msg) -> 
     msg.send msg.random enterReplies
     msg.send "bienvenido a #{msg.message.room}"
