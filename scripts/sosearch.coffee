@@ -19,7 +19,7 @@
 zlib = require('zlib');
 
 # API keys are public for Stackapps
-hubot_stackapps_apikey = 'BeOjD228tEOZP6gbYoChsg'
+hubot_stackapps_apikey = 'zprHb6)163sIQewYlxUQgw(('
 
 module.exports = (robot) ->
   robot.respond /sosearch( me)? (.*)/i, (msg) ->
