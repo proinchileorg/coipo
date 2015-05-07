@@ -40,7 +40,6 @@ soSearch = (msg, search, tags) ->
     .query
       site: "stackoverflow"
       intitle: encodeURIComponent(search)
-      key: hubot_stackapps_apikey
       tagged: encodeURIComponent(tags.join(':'))
     .get( (err, req)->
       req.addListener "response", (res)->
