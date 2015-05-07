@@ -16,7 +16,7 @@
 #   drdamour
 
 
-zlib = require('zlib');
+zlib = require('zlib')
 
 # API keys are public for Stackapps
 hubot_stackapps_apikey = 'zprHb6)163sIQewYlxUQgw(('
@@ -33,8 +33,6 @@ module.exports = (robot) ->
 
 soSearch = (msg, search, tags) ->
 
-
-
   data = ""
   msg.http("https://api.stackexchange.com/2.2/search")
     .query
@@ -42,6 +40,8 @@ soSearch = (msg, search, tags) ->
       intitle: encodeURIComponent(search)
       key: hubot_stackapps_apikey
       tagged: encodeURIComponent(tags.join(':'))
+      filter: "!9YdnSQVoS" # add total to response,
+      sort: "relevance"
     .get( (err, req)->
       req.addListener "response", (res)->
         output = res
@@ -61,7 +61,7 @@ soSearch = (msg, search, tags) ->
             return
 
           if parsedData.total > 0
-            qs = for question in parsedData.questions[0..5]
+            qs = for question in parsedData.items[0..5]
               "http://www.stackoverflow.com/questions/#{question.question_id} - #{question.title}"
             if parsedData.total-5 > 0
               qs.push "#{parsedData.total-5} more..."
