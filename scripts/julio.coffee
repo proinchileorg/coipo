@@ -216,7 +216,8 @@ class Juliiiiiiito
       "porlaputa",
       "la cuarta",
       "twitter",
-      "slack"
+      "slack",
+      "##{@msg.message.room}"
     ]
 
   accion_una_persona_a_otra: =>
