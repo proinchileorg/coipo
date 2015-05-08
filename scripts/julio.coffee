@@ -29,31 +29,39 @@ lyrics = ->
   ]
 
 dondebuscar = ->
-  rand ["bajar arez",
+  rand [
+    "bajar arez",
     "bajar taringa",
     "karaoke erotico",
     "acordes guitarra",
     "karaoke",
-    "en casete comprar"]
+    "en casete comprar",
+    "vevo",
+    "groovesharc",
+    "sptify"
+  ]
 
 
 persona_mujer = ->
   rand [
     "paty maldonado",
-        "maria elena sweet",
-        "camila vallejo",
-         "kel kalderon",
-        "rackel argandona",
-        "karen paola",
-        "gladys del rio",
-        "miriam hernandez",
-        "karen paola",
-        "bachelet",
-        "sarita vasquez",
-        "daniela campos",
-        "cecilia la imcomparable",
-        "maria jose quintanilla",
-         "cesilia boloco"
+    "patti maldonado",
+    "maria elena sweet",
+    "camila vallejo",
+    "kel kalderon",
+    "rackel argandona",
+    "karen paola",
+    "gladys del rio",
+    "gladys marin",
+    "miriam hernandez",
+    "karen paola",
+    "bachelet",
+    "bashele",
+    "sarita vasquez",
+    "daniela campos",
+    "cecilia la imcomparable",
+    "maria jose quintanilla",
+    "cesilia boloco"
   ]
 
 persona_hombre = ->
@@ -225,6 +233,7 @@ julito = ->
 module.exports = (robot) ->
   # robot.enter (msg) ->
   robot.hear /(julio|videla|taringa|pregunta)/i, (msg) ->
+    console.log msg
     # msg.send msg.random enterReplies
     # msg.send "Bienvenido a *#{msg.message.room}*"
     msg.send julito()
