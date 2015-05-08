@@ -13,6 +13,7 @@
 #
 # Author:
 #   jorgeepunan
+require('moment')
 
 module.exports = (robot) ->
   robot.hear /(.*)(que hora|la hora.*)/i, (msg) ->
@@ -50,4 +51,9 @@ module.exports = (robot) ->
      if diffHora < 1
       msg.send "Ya deberías estar tomando una merecida cerveza. ¡Que esperas! :beers: :laughing:"
 
+  robot.hear /(.*)(tarde.*)/i, (msg) ->
+    msg.send 'Nunca es tarde para una chelita :smile:'
+
+  robot.hear /(.*)(noche.*)/i, (msg) ->
+    msg.send '¿Noche? Tienes una cerveza helada en la mano ¿cierto?'
 #FIN
