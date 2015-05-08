@@ -19,7 +19,7 @@
 #   jorgeepunan
 
 process.env.API_URL ||= 'http://mindicador.cl/api/'
-depresivo = ['Recuerda que sigues siendo pobre. :poop:','Eres un número más. :monkey: ','La economía seguirá mal para ti. :moneybag:','Algún día saldrás de la clase media. :alien: ','Todos los días suben las cosas, menos tu sueldo. :money_with_wings: ']
+mensajes = ['Recuerda que sigues siendo pobre. :poop:','Eres un número más. :monkey: ','La economía seguirá mal para ti. :moneybag:','Algún día saldrás de la clase media. :alien: ','Todos los días suben las cosas, menos tu sueldo. :money_with_wings: ']
 
 module.exports = (robot) ->
   robot.hear /finvox (\w+)/i, (msg) ->
