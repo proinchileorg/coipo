@@ -19,7 +19,7 @@
 #   jorgeepunan
 
 process.env.API_URL ||= 'http://mindicador.cl/api/'
-mensajes = ['Recuerda que sigues siendo pobre. :poop:','Eres un número más. :monkey: ','La economía seguirá mal para ti. :moneybag:','Algún día saldrás de la clase media. :alien: ','Todos los días suben las cosas, menos tu sueldo. :money_with_wings: ']
+depresivo = ['Recuerda que sigues siendo pobre. :poop:','Eres un número más. :monkey: ','La economía seguirá mal para ti. :moneybag:','Algún día saldrás de la clase media. :alien: ','Todos los días suben las cosas, menos tu sueldo. :money_with_wings: ']
 
 module.exports = (robot) ->
   robot.hear /finvox (\w+)/i, (msg) ->
@@ -44,7 +44,7 @@ module.exports = (robot) ->
         data = data.utm.valor
 
       if data != null and typeof data != 'object'
-        msg.send '#{msg.message.user.name}: ' + indicador.toUpperCase() + ' actual está a CLP$' + data + '.'
+        msg.send 'El ' + indicador.toUpperCase() + ' actual está a CLP$' + data + '.'
         msg.send msg.random mensajes
       else
         msg.send "Error, intenta nuevamente *zopenco*."
