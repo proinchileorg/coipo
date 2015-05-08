@@ -9,7 +9,7 @@
 #
 # Commands:
 #   hubot sosearch [me] <query> - Search for the query
-#   hubot sosearch [me] <query> with tags <tag list sperated by ,> - Search for the query limit to given tags
+#   hubot sosearch [me] <query> -tags <tag list separated by ,> - Search for the query limit to given tags
 #
 # Author:
 #   carsonmcdonald
@@ -23,7 +23,7 @@ hubot_stackapps_apikey = 'zprHb6)163sIQewYlxUQgw(('
 
 module.exports = (robot) ->
   robot.respond /sosearch( me)? (.*)/i, (msg) ->
-    re = RegExp("(.*) with tags (.*)", "i")
+    re = RegExp("(.*) -tags (.*)", "i")
     opts = msg.match[2].match(re)
 
     if opts?
@@ -37,9 +37,9 @@ soSearch = (msg, search, tags) ->
   msg.http("https://api.stackexchange.com/2.2/search")
     .query
       site: "stackoverflow"
-      intitle: encodeURIComponent(search)
+      intitle: search
       key: hubot_stackapps_apikey
-      tagged: encodeURIComponent(tags.join(':'))
+      tagged: tags.join(';')
       filter: "!9YdnSQVoS" # add total to response,
       sort: "relevance"
     .get( (err, req)->
