@@ -44,7 +44,7 @@ module.exports = (robot) ->
         data = data.utm.valor
 
       if data != null and typeof data != 'object'
-        msg.send '#{msg.message.user.name}: ' + indicador.toUpperCase() + ' actual está a CLP$' + data + '.'
+        msg.send 'El ' + indicador.toUpperCase() + ' actual está a CLP$' + data + '.'
         msg.send msg.random mensajes
       else
         msg.send "Error, intenta nuevamente *zopenco*."
