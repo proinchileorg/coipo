@@ -16,7 +16,7 @@
 enterReplies = ['𝑘𝔦𝔲𝔟𝔬𝔰','ĤŐĹĨ','ＯＬＡＫＥＡＳＥ','∀ΓOH∀']
 
 module.exports = (robot) ->
-  #robot.enter (msg) ->
-  robot.hear /hola/i, (msg) -> 
+  robot.enter (msg) ->
+  #robot.hear /hola/i, (msg) -> 
     msg.send msg.random enterReplies
     msg.send "Bienvenido a *#{msg.message.room}*"
