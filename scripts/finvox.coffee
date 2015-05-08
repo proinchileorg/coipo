@@ -8,6 +8,7 @@
 #   None
 #
 # Commands:
+#   finvox help
 #   finvox dolar
 #   finvox uf
 #   finvox euro
@@ -18,6 +19,7 @@
 #   jorgeepunan
 
 process.env.API_URL ||= 'http://mindicador.cl/api/'
+lulz = ['Recuerda que sigues siendo pobre.','Trabaja, esclavo.','La economía sigue mal.','Algún día saldrás de la clase media.']
 
 module.exports = (robot) ->
   robot.hear /finvox (\w+)/i, (msg) ->
@@ -27,6 +29,9 @@ module.exports = (robot) ->
       res.setEncoding('utf-8')
       data = JSON.parse(body)
 
+      if indicador == 'help'
+        msg.send 'Hola soy finvox y mis comandos son:\n\n * `finvox dolar`\n * `finvox euro`\n * `finvox uf`\n * `finvox utm`\n * `finvox ipc`\n'
+        return false
       if indicador == 'uf'
         data = data.uf.valor
       else if indicador == 'dolar'
@@ -39,7 +44,8 @@ module.exports = (robot) ->
         data = data.utm.valor
 
       if data != null and typeof data != 'object'
-        msg.send indicador.toUpperCase() + " actual: $" + data + " pesos."
+        msg.send indicador.toUpperCase() + ' actual: CLP$' + data + '.'
+        msg.send msg.random lulz
       else
         msg.send "Error, intenta nuevamente *zopenco*."
 
