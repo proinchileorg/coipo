@@ -1,5 +1,5 @@
 # Description:
-#   Cuanto falta pa salir a tomar cerveza
+#   Cuanto falta
 #
 # Dependencies:
 #   none
@@ -13,47 +13,108 @@
 #
 # Author:
 #   jorgeepunan
-require('moment')
 
 module.exports = (robot) ->
   robot.hear /(.*)(que hora|la hora.*)/i, (msg) ->
 
-    Date::format = (format) ->
-      o = 
-        'M+': @getMonth() + 1
-        'd+': @getDate()
-        'h+': @getHours()
-        'm+': @getMinutes()
-        's+': @getSeconds()
-        'q+': Math.floor((@getMonth() + 3) / 3)
-        'S': @getMilliseconds()
-      if /(y+)/.test(format)
-        format = format.replace(RegExp.$1, (@getFullYear() + '').substr(4 - (RegExp.$1.length)))
-      for k of o
-        if new RegExp('(' + k + ')').test(format)
-          format = format.replace(RegExp.$1, if RegExp.$1.length == 1 then o[k] else ('00' + o[k]).substr(('' + o[k]).length))
-      format
+    #from DayTimr.js 
+    #https://github.com/juanbrujo/daytimr/blob/master/js/jquery.dayTimr-1.0.js
 
-    msg.send "Son las " + (new Date).format('h:mm')
+    nightStart = '19:00'
+    dawnStart = '1:00'
+    morningStart = '7:00'
+    afternoonStart = '13:00'
+    days = ['domingo','lunes','martes','miércoles','jueves','viernes','sábado']
+    datetoday       = new Date()
+    timenow         = datetoday.getTime()
+    datetoday.setTime(timenow)
+    theday          = days[datetoday.getDay()]
+    thehour         = datetoday.getHours()
+    theminute       = datetoday.getMinutes()
+    thesecond       = datetoday.getSeconds()
+    nightStart      = nightStart.split(':')
+    nightStartH     = nightStart[0]
+    nightStartM     = nightStart[1]
+    dawnStart       = dawnStart.split(':')
+    dawnStartH      = dawnStart[0]
+    dawnStartM      = dawnStart[1]
+    morningStart    = morningStart.split(':')
+    morningStartH   = morningStart[0]
+    morningStartM   = morningStart[1]
+    afternoonStart  = afternoonStart.split(':')
+    afternoonStartH = afternoonStart[0]
+    afternoonStartM = afternoonStart[1]
+    nightEndH       = dawnStartH-1
+    dawnEndH        = morningStartH-1
+    morningEndH     = afternoonStartH-1
+    afternoonEndH   = nightStartH-1
 
-    horaAhora = (new Date).format('h')
-    minsAhora = (new Date).format('mm')
+    if nightStartH == 0
+      afternoonEndH = 23
+    if dawnStartH == 0
+      nightEndH = 23
+    if nightStartM == "00" or dawnStartM == "00" or morningStartM == "00" or afternoonStartM == "00"
+      nightEndM = 59
+      dawnEndM = 59
+      morningEndM = 59
+      afternoonEndM = 59
 
-    diffHora = 19 - horaAhora
-    diffMins = 60 - minsAhora
+    #msg.send "Current Time: "+thehour+':'+theminute+':'+thesecond
+    #msg.send "It's night from "+nightStartH+":"+nightStartM+" to "+nightEndH+":"+nightEndM
+    #msg.send "It's dawn from "+dawnStartH+":"+dawnStartM+" to "+dawnEndH+":"+dawnEndM
+    #msg.send "It's morning from "+morningStartH+":"+morningStartM+" to "+morningEndH+":"+morningEndM
+    #msg.send "It's afternoon from "+afternoonStartH+":"+afternoonStartM+" to "+afternoonEndH+":"+afternoonEndM
 
-    if diffHora > 1
-      msg.send "Quedan " + diffHora + " horas para ir por una cerveza. Junta sed."
-    if diffHora == 1
-      msg.send "Quedan " + diffMins + " minutos para ir por una cerveza. Prepara la garganta. :beers: "
-    # if diffHora == 0 
-    #   msg.send "Quedan " + diffMins + " minutos para ir por una cerveza. Prepara la garganta. :beers: "
-     if diffHora < 1
-      msg.send "Ya deberías estar tomando una merecida cerveza. ¡Que esperas! :beers: :laughing:"
+    if theday == 'sábado'
+        #NIGHT
+        if thehour >= nightStartH and theminute >= nightStartM and thesecond <= 59 and thehour <= nightEndH and theminute <= nightEndM and thesecond >= 0
+            msg.send "Son las " + thehour + ":" + theminute + "y es " + theday + ". ¡Hora de parrandear!"
 
-  robot.hear /(.*)(tarde.*)/i, (msg) ->
-    msg.send 'Nunca es tarde para una chelita :smile:'
+        #DAWN
+        if thehour >= dawnStartH and theminute >= dawnStartM and thesecond <= 59 and thehour <= dawnEndH and theminute <= dawnEndM and thesecond >= 0
+            msg.send "Ya es " + theday + " y de madrugada " + thehour + ":" + theminute + ". Trata en volver a casa sano y salvo."
 
-  robot.hear /(.*)(noche.*)/i, (msg) ->
-    msg.send '¿Noche? Tienes una cerveza helada en la mano ¿cierto?'
+        #MORNING
+        if thehour >= morningStartH and theminute >= morningStartM and thesecond <= 59 and thehour <= morningEndH and theminute <= morningEndM and thesecond >= 0
+            msg.send "Son las " + thehour + ":" + theminute + " del " + theday + ", vuelve a dormir."
+
+        #TARDE
+        if thehour >= afternoonStartH and theminute >= afternoonStartM and thesecond <= 59 and thehour <= afternoonEndH and theminute <= afternoonEndM and thesecond >= 0
+             msg.send "Son las " + thehour + ":" + theminute + " de un " + theday + ", junta sed que ya se viene el carrete."
+
+    else if theday == 'domingo'
+        #NIGHT
+        if thehour >= nightStartH and theminute >= nightStartM and thesecond <= 59 and thehour <= nightEndH and theminute <= nightEndM and thesecond >= 0
+            msg.send "Es " + theday " y son las " + thehour + ":" + theminute + ", a preparar la semana."
+
+        #DAWN
+        if thehour >= dawnStartH and theminute >= dawnStartM and thesecond <= 59 and thehour <= dawnEndH and theminute <= dawnEndM and thesecond >= 0
+            msg.send "Es " + theday + " " + thehour + ":" + theminute + " de madrugada. Vuelve a intentar dormir."
+
+        #MORNING
+        if thehour >= morningStartH and theminute >= morningStartM and thesecond <= 59 and thehour <= morningEndH and theminute <= morningEndM and thesecond >= 0
+            msg.send "Son las " + thehour + ":" + theminute + " del " + theday + ", es mañana aún."
+
+        #TARDE
+        if thehour >= afternoonStartH and theminute >= afternoonStartM and thesecond <= 59 and thehour <= afternoonEndH and theminute <= afternoonEndM and thesecond >= 0
+             msg.send "Son las " + thehour + ":" + theminute + " y es " + theday + ", tómate una siesta."
+
+    else
+        #NIGHT
+        if thehour >= nightStartH and theminute >= nightStartM and thesecond <= 59 and thehour <= nightEndH and theminute <= nightEndM and thesecond >= 0
+            msg.send "Es hora de beber, ya son las " + thehour + ":" + theminute + "de un " + theday
+
+        #DAWN
+        if thehour >= dawnStartH and theminute >= dawnStartM and thesecond <= 59 and thehour <= dawnEndH and theminute <= dawnEndM and thesecond >= 0
+            msg.send "Es madrugada del " + theday + " y son las " + thehour + ":" + theminute + ". Vuelve a intentar dormir."
+
+        #MORNING
+        if thehour >= morningStartH and theminute >= morningStartM and thesecond <= 59 and thehour <= morningEndH and theminute <= morningEndM and thesecond >= 0
+            msg.send "Son las " + thehour + ":" + theminute + " del " + theday + ", es mañana aún."
+
+        #TARDE
+        if thehour >= afternoonStartH and theminute >= afternoonStartM and thesecond <= 59 and thehour <= afternoonEndH and theminute <= afternoonEndM and thesecond >= 0
+             msg.send "Son las " + thehour + ":" + theminute + " y es " + theday + ", queda menos para salir del trabajo."
+
+
 #FIN
