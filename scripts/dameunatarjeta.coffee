@@ -22,7 +22,6 @@ module.exports = (robot) ->
   robot.hear /dame una ([visa|mastercard|discover|american express]+)/i, (msg) ->
 
     quequiere = msg.match[1].toLowerCase()
-    msg.send "quieres una #{quequiere}"
 
     if quequiere == 'visa'
       url = 'http://generatarjetasdecredito.com/generador-tarjetas-visa.php'
