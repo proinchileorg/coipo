@@ -26,7 +26,9 @@
     "hubot-slack": "^3.3.0",
     "hubot-soon": "^1.0.0",
     "hubot-youtube": "^0.1.2",
-    "moment": "^2.10.2"
+    "moment": "^2.10.2",
+    "jquery": "^2.1.4",
+    "jsdom": "^3.1.2"
   },
   "engines": {
     "node": "0.10.x"
