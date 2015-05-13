@@ -10,12 +10,12 @@
 //   None
 //
 // Commands:
-//   `dame un rut
+//   `dame un rut`
 //
 // Author:
 //   jorgeepunan
 
-var jsdom = require("jsdom"); 
+var jsdom = require("jsdom");
 var $ = require("jquery")(jsdom.jsdom().parentWindow);
 
 module.exports = function(robot) {
