@@ -8,7 +8,7 @@
 #   None
 #
 # Commands:
-# dice, dado
+# dice, roll, dado
 #
 # Author:
 #   Narzerus
