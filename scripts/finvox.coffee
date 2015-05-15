@@ -31,9 +31,9 @@ module.exports = (robot) ->
     if indicador == 'help'
       msg.send 'Hola soy finvox y mis comandos son:\n\n * `finvox dolar`\n * `finvox euro`\n * `finvox bitcoin`\n * `finvox uf`\n * `finvox utm`\n * `finvox ipc`\n'
       return false
-    if indicador == 'uf' or indicador == 'dolar' or indicador == 'euro' or indicador == 'ipc' or indicador == 'utm'
+    if indicador == 'uf' or indicador == 'dolar' or indicador == 'euro' or indicador == 'ipc' or indicador == 'utm' or indicador == 'dólar' or indicador == 'usd' or indicador == 'eur'
       url = process.env.API_URL
-    else if indicador == 'bitcoin'
+    else if indicador == 'bitcoin' or indicador == 'btc'
       url = process.env.BIT_API_URL
 
     msg.robot.http(url).get() (err, res, body) ->
@@ -42,15 +42,15 @@ module.exports = (robot) ->
 
       if indicador == 'uf'
         data = data.uf.valor
-      else if indicador == 'dolar'
+      else if indicador == 'dólar' || indicador == 'dolar' || indicador == 'usd'
         data = data.dolar.valor
-      else if indicador == 'euro'
+      else if indicador == 'euro' || indicador == 'eur'
         data = data.euro.valor
       else if indicador == 'ipc'
         data = data.ipc.valor
       else if indicador == 'utm'
         data = data.utm.valor
-      else if indicador == 'bitcoin'
+      else if indicador == 'bitcoin' || indicador == 'btc'
         data = data.CLP.last
 
       if data != null and typeof data != 'object'
