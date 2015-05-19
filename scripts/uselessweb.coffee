@@ -8,7 +8,7 @@
 #   none
 #
 # Commands:
-#   uselessweb
+#   uselessweb - Returns a random useless web URL.
 #
 # Author:
 #   victorsanmartin
