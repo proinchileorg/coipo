@@ -18,7 +18,7 @@ randomNumber = (min, max) ->
 
 module.exports = (robot) ->
   robot.hear /^dice|^roll|^dado/gi, (res) ->
-    res.send 'Tirando el dado...'
+    res.send ':game_die: Tirando el dado...'
     setTimeout (->
-      res.send "Numero #{randomNumber(1, 6)}"
+      res.send "Número #{randomNumber(1, 6)}"
     ), 400
