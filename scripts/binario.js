@@ -1,5 +1,5 @@
 // Description:
-//   string a binario
+//   Transforma un string a binario
 //
 // Dependencies:
 //   None
@@ -8,7 +8,7 @@
 //   None
 //
 // Commands:
-//   binario <texto> (max. 60 caracteres porq @gmq abusa)
+//   binario <texto> (máx. 60 caracteres porque @gmq abusa)
 //
 // Author:
 //   @jorgeepunan
