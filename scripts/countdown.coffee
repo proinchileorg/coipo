@@ -28,7 +28,7 @@ module.exports = (robot) ->
     eventTime = new Date(robot.brain.data.countdown[countdownKey].date)
     gap = eventTime.getTime() - now.getTime()
     gap =  Math.floor(gap / (1000 * 60 * 60 * 24));
-    "Only #{gap} days remaining till #{countdownKey}!"
+    "¡Sólo quedan #{gap} días hasta la #{countdownKey}!"
 
   robot.hear /countdown set (\w+) (.*)/i, (msg) ->
     robot.brain.data.countdown or= {}
@@ -72,8 +72,8 @@ module.exports = (robot) ->
       msg.send "Countdown for #{countdownKey} does not exist!"
 
   robot.hear /countdown set$|countdown help/i, (msg) ->
-    msg.send "countdown set #meetupname# #datestring# e.g. countdown set PuneRubyMeetup 21 Jan 2014"
-    msg.send "countdown [for] #meetupname# e.g. countdown PuneRubyMeetup"
+    msg.send "countdown set #meetupname# #datestring# e.g. countdown set BeerJS 27 May 2015"
+    msg.send "countdown [for] #meetupname# e.g. countdown BeerJS"
     msg.send "countdown list"
-    msg.send "countdown delete #meetupname# e.g. countdown delete HashTagMeetup"
+    msg.send "countdown delete #meetupname# e.g. countdown delete BeerJS"
     msg.send "countdown clear"
