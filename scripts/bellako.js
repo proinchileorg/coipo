@@ -38,7 +38,8 @@ function aflaitar(aString) {
 	aString = aString.replace(/script/gi,"escrip");
 	aString = aString.replace(/css/gi,"estail");
 	aString = aString.replace(/javascript/gi,"java-escrip");
-	
+	aString = aString.replace(/html/gi,"hache-te-melele");
+
 	var last = aString.length;
 	var result = "";
 	var vowels = new Array('A','E','I','O','U');
