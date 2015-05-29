@@ -8,7 +8,7 @@
 //   None
 //
 // Commands:
-//   azar <algo1>,<algo2>,<algoN>,
+//   @pudu al azar <algo1>,<algo2>,<algoN>,
 //
 // Author:
 //   @jorgeepunan
@@ -20,9 +20,9 @@ function rand(items){
 }
 
 module.exports = function(robot) {
-  robot.hear(/azar (.*)/i, function(res) {
+  robot.respond(/al azar (.*)/i, function(res) {
     var items = res.match[1].trim().split(",");
-    msg = "Uno al azar: `" + rand(items) + "` :ok_hand:";
+    msg = "Al azar: `" + rand(items) + "` :dart: :ok_hand:";
     res.send(msg);
   });
 };
