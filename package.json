@@ -15,6 +15,7 @@
     "hubot-heroku-keepalive": "0.0.4",
     "hubot-insulter": "^1.0.2",
     "hubot-maps": "0.0.2",
+    "hubot-numbersapi": "^1.0.1",
     "hubot-pugme": "^0.1.0",
     "hubot-qr": "0.0.2",
     "hubot-rae": "^1.0.4",
@@ -27,8 +28,7 @@
     "jquery": "^2.1.4",
     "jsdom": "^3.1.2",
     "moment": "^2.10.2",
-    "superheroes": "^1.0.0",
-    "hubot-numbersapi": "^1.0.0"
+    "superheroes": "^1.0.0"
   },
   "engines": {
     "node": "0.10.x"
