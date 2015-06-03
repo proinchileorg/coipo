@@ -35,5 +35,10 @@ module.exports = (robot) ->
       return false
 
     msg.robot.http(url).get() (err, res, body) ->
-      dom = $.load(body);
-      msg.send "Nº: #{dom('p#text8').html()}, CCV2:#{dom('p#text9 span#textspan').html()}, Vence: #{dom('p#text10 span#textspan1').html()}"
+      dom = $.load(body)
+      section = dom(dom('section').get(3))
+
+      msg.send "Nº: #{section.find('p.resalta').html()}, CVV2/VCV2: #{dom(section.find('p.centrado em').get(0)).html().split(': ')[1]}, Vence: #{dom(section.find('p.centrado em').get(1)).html().split(': ')[1]}"
+      return
+
+      msg.send "Nº: #{dom(dom('section').get(3)).find('p.resalta').html()}, CCV2:#{dom('p#text9 span#textspan').html()}, Vence: #{dom('p#text10 span#textspan1').html()}"
