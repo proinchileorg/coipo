@@ -39,6 +39,3 @@ module.exports = (robot) ->
       section = dom(dom('section').get(3))
 
       msg.send "Nº: #{section.find('p.resalta').html()}, CVV2/VCV2: #{dom(section.find('p.centrado em').get(0)).html().split(': ')[1]}, Vence: #{dom(section.find('p.centrado em').get(1)).html().split(': ')[1]}"
-      return
-
-      msg.send "Nº: #{dom(dom('section').get(3)).find('p.resalta').html()}, CCV2:#{dom('p#text9 span#textspan').html()}, Vence: #{dom('p#text10 span#textspan1').html()}"
