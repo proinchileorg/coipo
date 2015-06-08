@@ -13,8 +13,6 @@
 # Author:
 #   @jorgeepunan
 
-process.env.API_URL ||= 'http://www.psep.cl/api/Bip.php?&numberBip='
-
 module.exports = (robot) ->
   robot.respond /bip (\w+)/i, (msg) ->
     indicador = msg.match[1]
@@ -23,7 +21,7 @@ module.exports = (robot) ->
       msg.send 'El identificador de tu BIP! son sólo números.'
       msg.send 'No sea leso, no se crea hacker. máZnáátèdííghó óèzíí'
     else
-      url = process.env.API_URL + indicador
+      url = 'http://www.psep.cl/api/Bip.php?&numberBip=' + indicador
 
       msg.robot.http(url).get() (err, res, body) ->
         if err
@@ -38,5 +36,3 @@ module.exports = (robot) ->
               msg.send prop + ' => ' + data[prop]
           else
             msg.send 'Error!'
-
-#FIN
