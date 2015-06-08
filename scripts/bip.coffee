@@ -16,6 +16,7 @@
 module.exports = (robot) ->
   robot.respond /bip (\w+)/i, (msg) ->
     indicador = msg.match[1]
+    msg.send 'La consulta va en la micro... espere harto... :clock5:'
 
     if isNaN(indicador)
       msg.send 'El identificador de tu BIP! son sólo números.'
@@ -23,7 +24,7 @@ module.exports = (robot) ->
     else
       url = 'http://www.psep.cl/api/Bip.php?&numberBip=' + indicador
 
-      msg.robot.http(url).get() (err, res, body) ->
+      msg.http(url).get() (err, res, body) ->
         if err
           msg.send 'Algo pasó, intente nuevamente.'
         if body.indexOf('<') > -1
@@ -36,3 +37,5 @@ module.exports = (robot) ->
               msg.send prop + ' => ' + data[prop]
           else
             msg.send 'Error!'
+
+#FIN
