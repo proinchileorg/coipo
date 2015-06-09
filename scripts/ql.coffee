@@ -14,7 +14,7 @@
 # Author:
 #   jorgeepunan
 
-ascii = "``\n
+ascii = ["```\n
 ━━━━━┓ ＼＼\n
 ┓┓┓┓┓┃\n
 ┓┓┓┓┓┃    |😫ノ ~ chaoooooo\n
@@ -22,15 +22,11 @@ ascii = "``\n
 ┓┓┓┓┓┃  ノ)\n
 ┓┓┓┓┓┃\n
 ┓┓┓┓┓┃\n
-``"
-ascii = "``\n
-        \                           /\n
-         \                         /\n
-          \                       /\n
-           ]                     [    ,'|\n
-           ]         CHAO        [   /  |\n
+```",
+"```\n
+           ]      me aburrí      [    ,'|\n
            ]___               ___[ ,'   |\n
-           ]  ]\             /[  [ |:   |\n
+           ]  ]\    CHAO     /[  [ |:   |\n
            ]  ] \           / [  [ |:   |\n
            ]  ]  ]         [  [  [ |:   |\n
            ]  ]  ]__     __[  [  [ |:   |\n
@@ -38,16 +34,16 @@ ascii = "``\n
            ]  ]  ] ] (#) [ [  [  [ :===='\n
            ]  ]  ]_].nHn.[_[  [  [\n
            ]  ]  ]  HHHHH. [  [  [\n
-           ]  ] /   `HH("N  \ [  [\n
-           ]__]/     HHH  "  \[__[\n
+           ]  ] |   'HH('N  | [  [\n
+           ]__]|     HHH  '  |[__[\n
            ]         NNN         [\n
-           ]         N/"         [\n
+           ]         N/'         [\n
            ]         N H         [\n
-          /          N            \\n
-         /           q,            \\n
-        /                           \\n
-``"
+          |          N            |\n
+         |           q,            |\n
+        |                           |\n
+``"]
 
 module.exports = (robot) ->
   robot.hear /pud[úu] ql|m[áa]tate/gi, (msg) ->
-    msg.send ascii
+    msg.send msg.random ascii
