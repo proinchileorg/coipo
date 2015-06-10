@@ -73,7 +73,7 @@ function FriendlyText(url) {
 
 module.exports = function(robot) {
 
-  robot.hear(/amigable (.*)/i, function(res) {
+  robot.respond(/amigable (.*)/i, function(res) {
     var texto = res.match[1],
         largo = 140,
         cortado = texto.substring(0, largo);
