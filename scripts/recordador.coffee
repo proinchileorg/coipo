@@ -8,10 +8,9 @@
 #   None
 #
 # Commands:
-#   recuerdame en <tiempo> que tengo que <accion>
+#   @pudu recuerdame en <tiempo> que tengo que <accion>
 #
 #   <tiempo> semanas, dias, horas|hrs, segundos|segs
-#
 #   <accion> comer, salir, leer ir al baño, cobrar el IVA...
 #
 # Author:
@@ -95,7 +94,7 @@ module.exports = (robot) ->
 
   reminders = new Reminders robot
 
-  robot.hear /recuerdame en ((?:(?:\d+) (?:semanas?|dias?|horas?|hrs?|minutos?|mins?|segundos?|segs?)[ ,]*(?:and)? +)+)que tengo que (.*)/i, (msg) ->
+  robot.respond /recuerdame en ((?:(?:\d+) (?:semanas?|dias?|horas?|hrs?|minutos?|mins?|segundos?|segs?)[ ,]*(?:and)? +)+)que tengo que (.*)/i, (msg) ->
     time = msg.match[1]
     action = msg.match[2]
     reminder = new Reminder msg.envelope, time, action
