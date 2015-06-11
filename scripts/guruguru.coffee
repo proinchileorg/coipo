@@ -48,7 +48,7 @@ module.exports = (robot) ->
     }
 
     str = []
-    for letter in msg.match[1].split("")
+    for letter in msg.match[1].toLowerCase().split("")
       if letters[letter]?
         str.push letters[letter]
       else
