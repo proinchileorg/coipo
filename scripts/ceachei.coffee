@@ -45,7 +45,7 @@ ceachei = [
 ]
 
 module.exports = (robot) ->
-	robot.hear /ceachei|í/gi, (msg) ->
+	robot.respond /ceachei|í/gi, (msg) ->
 
 		ceacheieleechichichilelelevivachile = (i) ->
 			if ceachei[i]
@@ -57,19 +57,3 @@ module.exports = (robot) ->
 			return
 
 		ceacheieleechichichilelelevivachile 0
-
-# module.exports = function(robot) {
-#   robot.hear(/ceachei|í/i, function(res) {
-
-# 		var ceacheieleechichichilelelevivachile = function(i) {
-# 		  if (ceachei[i]) {
-# 		    res.send(ceachei[i]);
-# 		    setTimeout(function(){
-# 		    	ceacheieleechichichilelelevivachile(i+1);
-# 		    }, 1500);
-# 		  }
-# 		}
-# 		ceacheieleechichichilelelevivachile(0);
-
-#   });
-# };
