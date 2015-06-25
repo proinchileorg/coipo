@@ -44,7 +44,11 @@ ascii = ["```
   |          N            |\n
  |           q,            |\n
 |                           |\n
-```"]
+```",
+"
+:bomb: :pudu: :gun: ~ adiós mundo cruel
+"
+]
 
 module.exports = (robot) ->
   robot.hear /pud[úu] ql|m[áa]tate/gi, (msg) ->
