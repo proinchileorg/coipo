@@ -29,9 +29,9 @@ module.exports = (robot) ->
     indicador = msg.match[1].toLowerCase()
 
     if indicador == 'help'
-      msg.send 'Hola soy finvox y mis comandos son:\n\n * `finvox dolar`\n * `finvox euro`\n * `finvox bitcoin`\n * `finvox uf`\n * `finvox utm`\n * `finvox ipc`\n'
+      msg.send 'Mis comandos son:\n\n * `finvox dolar`\n * `finvox euro`\n * `finvox bitcoin`\n * `finvox uf`\n * `finvox utm`\n * `finvox ipc`\n * `finvox getonbrd`\n'
       return false
-    if indicador == 'uf' or indicador == 'dolar' or indicador == 'euro' or indicador == 'ipc' or indicador == 'utm' or indicador == 'dólar' or indicador == 'usd' or indicador == 'eur'
+    if indicador == 'uf' or indicador == 'dolar' or indicador == 'euro' or indicador == 'ipc' or indicador == 'utm' or indicador == 'dólar' or indicador == 'usd' or indicador == 'eur' or indicador == 'getonbrd'
       url = process.env.API_URL
     else if indicador == 'bitcoin' or indicador == 'btc'
       url = process.env.BIT_API_URL
@@ -44,6 +44,8 @@ module.exports = (robot) ->
         data = data.uf.valor
       else if indicador == 'dólar' || indicador == 'dolar' || indicador == 'usd'
         data = data.dolar.valor
+      else if indicador == 'getonbrd'
+        data = data.dolar.valor * 1130
       else if indicador == 'euro' || indicador == 'eur'
         data = data.euro.valor
       else if indicador == 'ipc'
@@ -54,7 +56,8 @@ module.exports = (robot) ->
         data = data.CLP.last
 
       if data != null and typeof data != 'object'
-        msg.send 'El ' + indicador.toUpperCase() + ' actual está a CLP$' + data + '.'
+        data = data.toString().split '.', 1
+        msg.send 'El ' + indicador.toUpperCase() + ' actual está a CLP$' + data
         msg.send msg.random mensajes
       else
         msg.send "Error, intenta nuevamente *zopenco*."
