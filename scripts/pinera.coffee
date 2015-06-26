@@ -9,7 +9,8 @@
 #
 # Commands:
 #   yeta   - Displays a Piñera picture
-#   piñera - Displays a Piñera picture
+#   Piñera - Displays a Piñera picture
+#   Piñi   - Displays a Piñera picture
 #
 # Author:
 #   hectorpalmatellez
@@ -39,5 +40,5 @@ images = [
 ]
 
 module.exports = (robot) ->
-  robot.hear /piñera|yeta/gi, (msg) ->
+  robot.hear /Pi[Ñ|ñ|n]era|yeta|pi[Ñ|ñ|n]i/gi, (msg) ->
     msg.send msg.random images
