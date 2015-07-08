@@ -8,7 +8,7 @@
 #   None
 #
 # Commands:
-# dice, roll, dado
+# pudu dado
 #
 # Author:
 #   Narzerus
@@ -17,8 +17,8 @@ randomNumber = (min, max) ->
   Math.floor(Math.random() * (max - min + 1)) + min
 
 module.exports = (robot) ->
-  robot.hear /^dice|^roll|^dado/gi, (res) ->
+  robot.respond /dado/gi, (res) ->
     res.send ':game_die: Tirando el dado...'
     setTimeout (->
-      res.send "Número #{randomNumber(1, 6)}"
+      res.send "Número #{randomNumber(1, 6)} :star2:"
     ), 400
