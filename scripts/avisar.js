@@ -39,7 +39,9 @@ module.exports = function avisar(robot) {
     var message = res.match[1];
     var rooms = getRooms(res.match[2], res.message.room);
 
-    robot.send({room: rooms}, message);
+    rooms.forEach(function onEachRoom(room) {
+      robot.send({room: room}, message);
+    });
   }
 
 
