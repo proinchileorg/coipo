@@ -18,10 +18,11 @@
 
 
 module.exports = function avisar(robot) {
+  var ROBOTNAME = robot.name;
   var VALIDHELPINPUTS = ['avisar help', 'avisar -h', 'avisar ?'];
 
   robot.respond(/avisar (help|\-h|\?)/i, help);
-  robot.respond(/avisar ([\w\d\s]+) en (([#|@][\w]+,?\s?)+)/i, notify);
+  robot.respond(/avisar ([\w\d\s]+) en (([#|@][\w]+(,?)(\s*))+)/i, notify);
 
 
   /**
@@ -30,15 +31,14 @@ module.exports = function avisar(robot) {
    * @name avisar#notify
    * @description
    *
-   * Write a message in each channel
+   * Write a message in each room
    *
    * @param  {Object} res Robot's response
    *
    */
   function notify(res) {
-    var message = res.match[1];
+    var message = res.message.user.name + ' dice: ' + res.match[1];
     var rooms = getRooms(res.match[2], res.message.room);
-
     rooms.forEach(function onEachRoom(room) {
       robot.send({room: room}, message);
     });
@@ -61,8 +61,11 @@ module.exports = function avisar(robot) {
   function getRooms(message, exclude) {
     if (exclude) { exclude = exclude.toLowerCase(); }
 
-    return message.match(/(#|@)[\w]+/ig)
-      .filter(function filterRooms(room) {
+    return message.match(/(#|@)?[\w]+/ig)
+      .map(function cleanRoomName(room) {
+        return room.replace('@', '');
+      })
+      .filter(function filterExcludedRooms(room) {
         return exclude && room.toLowerCase() === exclude ? false : room;
       });
   }
@@ -80,15 +83,15 @@ module.exports = function avisar(robot) {
    *
    */
   function help(res) {
-    if (VALIDHELPINPUTS.indexOf(res.message.text) == -1) { return; }
+    var reg = new RegExp('@?('+ROBOTNAME+')(:?)(\\s*)');
+    var text = res.message.text.replace(reg, '');
 
-    var channels = ['#general', 'general', 'Shell'];
-    var sended = robot.send({room: channels}, 'test');
+    if (VALIDHELPINPUTS.indexOf(text) == -1) { return; }
 
     res.send('Esto es bien simple. Solo debes escribirme algo como ' +
-      ' `avisar :mensaje en :rooms`');
-    res.send('  `:mensaje` Lo que quieres avisar');
-    res.send('  `:rooms` La lista de canales/usuarios donde quieres avisar. ' +
+      ' `avisar :mensaje en :rooms`\n' +
+      '`:mensaje` Lo que quieres avisar\n' +
+      '`:rooms` La lista de canales/usuarios donde quieres avisar. ' +
       'Debe ser algo como `#canal1, @user1, #canalN, @userN`');
   }
 };
