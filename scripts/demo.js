@@ -35,8 +35,13 @@ module.exports = function scrum(ROBOT) {
 
 
   function getUsernames(res) {
-    var channel = CLIENT.getChannelByName(res.message.room);
-    var usernames = channel.members.map(function getUserName(userID) {
+    var channel = CLIENT.getChannelGroupOrDMByName(res.message.room);
+    var usernames = [];
+
+    if (channel.getType() === 'DM') { return res.send('does not work in DM'); }
+
+
+    usernames = channel.members.map(function getUserName(userID) {
       var user = CLIENT.getUserByID(userID);
       return user.real_name || user.name;
     });
@@ -64,35 +69,35 @@ module.exports = function scrum(ROBOT) {
 
 
   function changeTopic(res) {
-    var channel = CLIENT.getChannelByName(res.message.room);
+    var channel = _getChannelOrGroup(res.message.room);
     channel.setTopic(res.match[1]);
   }
 
 
   function changePurpose(res) {
-    var channel = CLIENT.getChannelByName(res.message.room);
+    var channel = _getChannelOrGroup(res.message.room);
     channel.setPurpose(res.match[1]);
   }
 
 
   function apiCall(res) {
-    var channel = CLIENT.getChannelByName(res.message.room);
-
+    var input = res.match.input;
     var method = res.match[1];
     var params = {};
 
-    var input = res.match.input;
-
     if (input.indexOf('`') !== -1) {
-      params = JSON.parse(
-          input.slice(input.indexOf('`'))
-          .replace(/`/g, '')
-        ) || {};
+      params = JSON.parse(input.slice(input.indexOf('`')).replace(/`/g, '')) || 
+        {};
     }
 
     CLIENT._apiCall(method, params, function(response) {
       res.send("`" + JSON.stringify(response) + "`");
     });
+  }
+
+
+  function _getChannelOrGroup(roomName) {
+    return CLIENT.getChannelByName(roomName) ||CLIENT.getGroupByName(roomName);
   }
 
 
