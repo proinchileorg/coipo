@@ -22,7 +22,7 @@ var file = 'https://raw.githubusercontent.com/beerjs/santiago/master/beerjs.json
 
 module.exports = function(robot) {
 
-  robot.hear(/beerjs (\w+)/i, function(res) {
+  robot.respond(/beerjs (\w+)/i, function(res) {
 
   	var suffix = res.match[1];
 
@@ -32,13 +32,14 @@ module.exports = function(robot) {
 		  	var obj = JSON.parse(response.body);
 
 	  	 	if (suffix === "fecha" || suffix === "cuando") {
-			  	res.send(obj.fecha);
+			  	res.send(obj.evento + ": " + obj.fecha);
 			 	} 
 			 	else if (suffix === "donde" || suffix === "lugar") {
-			 	 res.send(obj.donde + ": " + obj.direccion);
+			 	 res.send(obj.evento + ": " + obj.donde + " (" + obj.direccion + ")");
+			 	 res.send("@pudu map" + obj.direccion);
 			 	} 
 			 	else if (suffix === "tema") {
-			 	 res.send(obj.tema);
+			 	 res.send(obj.evento + ": " + obj.tema);
 			 	}
 			 	else if (suffix === "help") {
 			 	 res.send("Comando: beerjs [fecha|cuando, donde|lugar, tema]");
