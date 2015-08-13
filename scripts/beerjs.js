@@ -1,5 +1,5 @@
 // Description:
-//  BeerJSSantiago Hubot Script
+//  BeerJS Santiago Hubot Script
 //
 // Dependencies:
 //  needle
@@ -8,10 +8,10 @@
 //   None
 //
 // Commands:
-//   beerjs info|todo
-//   beerjs fecha|cuando
-//   beerjs donde|lugar
-//   beerjs tema
+//   @pudu beerjs info|todo
+//   @pudu beerjs fecha|cuando
+//   @pudu beerjs donde|lugar
+//   @pudu beerjs tema
 //
 // Author:
 //   jorgeepunan ©2015 beerjssantiago
@@ -31,24 +31,24 @@ module.exports = function(robot) {
 
 		  	var obj = JSON.parse(response.body);
 
-	  	 	if (suffix === "fecha" || suffix === "cuando") {
-			  	res.send(obj.evento + ": " + obj.fecha);
+	  	 	if ( suffix === "fecha" || suffix === "cuando" ) {
+			  	res.send("`" + obj.evento + ": " + obj.fecha + "`");
 			 	} 
-			 	else if (suffix === "donde" || suffix === "lugar") {
-			 	 res.send(obj.evento + ": " + obj.donde + " (" + obj.direccion + ")");
-			 	 res.send("map " + obj.direccion);
+			 	else if ( suffix === "donde" || suffix === "lugar" ) {
+			 		res.send("`" + obj.evento + ": " + obj.donde + " (" + obj.direccion + ")`");
+// 				res.send("map " + obj.direccion); // TODO
 			 	} 
-			 	else if (suffix === "tema") {
-			 	 res.send(obj.evento + ": " + obj.tema);
+			 	else if ( suffix === "tema" ) {
+			 		res.send("`" + obj.evento + ": " + obj.tema + "`");
 			 	}
-			 	else if (suffix === "help") {
-			 	 res.send("Comando: beerjs [fecha|cuando, donde|lugar, tema]");
-			 	}
-			 	else if (suffix === "info" || suffix === "todo") {
+			 	else if ( suffix === "info" || suffix === "todo" ) {
 			 		var keys = Object.keys( obj );
 					for( var i = 0,length = keys.length; i < length; i++ ) {
 				  	res.send("`" + obj[ keys[ i ] ] + "`");
 				  }
+				} 
+				else {
+					res.send("¿Ayuda? Comandos: @pudu beerjs [fecha|cuando, donde|lugar, tema]");
 				}
 
 			}
