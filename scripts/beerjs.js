@@ -36,7 +36,7 @@ module.exports = function(robot) {
 			 	} 
 			 	else if (suffix === "donde" || suffix === "lugar") {
 			 	 res.send(obj.evento + ": " + obj.donde + " (" + obj.direccion + ")");
-			 	 res.send("@pudu map" + obj.direccion);
+			 	 res.send("map " + obj.direccion);
 			 	} 
 			 	else if (suffix === "tema") {
 			 	 res.send(obj.evento + ": " + obj.tema);
