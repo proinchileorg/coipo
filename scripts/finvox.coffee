@@ -22,7 +22,7 @@
 process.env.API_URL ||= 'http://mindicador.cl/api'
 process.env.BIT_API_URL ||= 'https://blockchain.info/es/ticker'
 
-mensajes = ['Aunque te esfuerces, seguirás siendo pobre. :poop:','Para el gobierno, eres un número más. :monkey: ','La economía seguirá mal para ti pero no para tu AFP. :moneybag:','Algún día saldrás de la clase media. Partiste a buscar tu LOTO. :alien: ','Todos los días suben las cosas, menos tu sueldo. :money_with_wings: ']
+mensajes = ['Aunque te esfuerces, seguirás siendo pobre. :poop:','Para el gobierno, eres un número más. :monkey: ','La economía seguirá mal para ti pero no para tu AFP. :moneybag:','Algún día saldrás de la clase media. Partiste a jugarte un LOTO. :alien: ','Todos los días suben las cosas, menos tu sueldo. :money_with_wings: ']
 
 module.exports = (robot) ->
   robot.hear /finvox (\w+)/i, (msg) ->
