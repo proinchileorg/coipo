@@ -19,7 +19,8 @@
 # Author:
 #   jorgeepunan
 
-process.env.API_URL ||= 'http://mindicador.cl/api'
+#process.env.API_URL ||= 'http://mindicador.cl/api' # old, slow and shitty
+process.env.API_URL ||= 'http://indicadoresdeldia.cl/webservice/indicadores.json'
 process.env.BIT_API_URL ||= 'https://blockchain.info/es/ticker'
 
 mensajes = ['Aunque te esfuerces, seguirás siendo pobre. :poop:','Para el gobierno, eres un número más. :monkey: ','La economía seguirá mal para ti pero no para tu AFP. :moneybag:','Algún día saldrás de la clase media. Partiste a buscar tu LOTO. :alien: ','Todos los días suben las cosas, menos tu sueldo. :money_with_wings: ']
@@ -40,24 +41,26 @@ module.exports = (robot) ->
       res.setEncoding('utf-8')
       data = JSON.parse(body)
 
+      date = data.date
+
       if indicador == 'uf'
-        data = data.uf.valor
+        data = data.indicador.uf
       else if indicador == 'dolar'
-        data = data.dolar.valor
+        data = data.moneda.dolar
       else if indicador == 'getonbrd'
-        data = data.dolar.valor * 1130
+        data = data.moneda.dolar * 1130
       else if indicador == 'euro'
-        data = data.euro.valor
+        data = data.moneda.euro
       else if indicador == 'ipc'
-        data = data.ipc.valor
+        data = data.indicador.ipc + '%'
       else if indicador == 'utm'
-        data = data.utm.valor
+        data = data.indicador.utm
       else if indicador == 'bitcoin'
         data = data.CLP.last
 
       if data != null and typeof data != 'object'
-        data = data.toString().split '.', 1
-        msg.send 'El ' + indicador.toUpperCase() + ' actual está a CLP$' + data
+        data = data.toString().split ',', 1
+        msg.send indicador.toUpperCase() + ': ' + data + ' (' + date + ')'
         msg.send msg.random mensajes
       else
         msg.send "Error, intenta nuevamente *zopenco*."
