@@ -2,14 +2,14 @@
 #   Returns local time in given city.
 #
 # Dependencies:
-#   None
+#   worldweatheronline.com API
 #
 # Configuration:
 #   HUBOT_WWO_API_KEY
 #   HUBOT_WWO_API_URL
 #
 # Commands:
-#   hora en <ciudad>
+#   @pudu hora en <ciudad>
 #
 # Notes
 #   Request an WWO API KEY in http://www.worldweatheronline.com/
@@ -29,7 +29,7 @@ process.env.HUBOT_WWO_API_KEY = '9ca1f6cb851ce2d8c004a425e5456'
 process.env.HUBOT_WWO_API_URL = 'http://api.worldweatheronline.com/free/v2/tz.ashx'
 
 module.exports = (robot) ->
-  robot.hear /hora en (.*)/i, (msg) ->
+  robot.respond /hora en (.*)/i, (msg) ->
     unless process.env.HUBOT_WWO_API_KEY
       msg.send 'Please, set HUBOT_WWO_API_KEY environment variable'
       return
