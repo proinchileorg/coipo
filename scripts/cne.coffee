@@ -62,5 +62,5 @@ module.exports = (robot) ->
           dist = data.nombre_distribuidor
           addr = "#{street} #{number} #{commune}"
           msg.send "En #{dist} de #{addr} la venden a $#{price} CLP el litro"
-        .catch (err) ->
+        .fail (err) ->
           msg.send "Entraron a robar el servicentro. Error 500"
