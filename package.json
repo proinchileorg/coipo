@@ -11,7 +11,6 @@
     "hubot-caniuse": "^1.0.3",
     "hubot-cpf": "^1.0.4",
     "hubot-diagnostics": "0.0.1",
-    "hubot-google-images": "^0.1.4",
     "hubot-help": "^0.1.1",
     "hubot-heroku-keepalive": "0.0.4",
     "hubot-insulter": "^1.0.2",
