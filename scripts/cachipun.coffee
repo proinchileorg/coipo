@@ -46,4 +46,3 @@ module.exports = (robot) ->
   robot.respond /cachipun (piedra|papel|tijera)/i, (msg) ->
     userChoice = msg.match[1].toLowerCase()
     respuestas(msg, userChoice)
-
