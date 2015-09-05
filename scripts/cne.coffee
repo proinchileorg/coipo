@@ -43,7 +43,7 @@ module.exports = (robot) ->
   robot.respond /cne listar comunas/i, getCommunes
   robot.respond /cne listar distribudores/i, getDistributors
 
-  robot.respond /cne obtener (\w+)( \w+)?( \w+)?/i, (msg) ->
+  robot.respond /cne obtener (\w+)( [a-zA-ZñáéíóúñÁÉÍÓÚÑ]+)?( \w+)?/i, (msg) ->
     fuelType = msg.match[1]
     if fuelType not in cne.fuelTypes
       msg.send "En el servicentro no tenemos #{fuelType} ni tampoco criptonita"
