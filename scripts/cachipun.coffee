@@ -14,13 +14,13 @@
 #   jorgeepunan
 
 tipos =
-  'piedra': 
+  'piedra':
     'papel': 'papel envuelve piedra. Perdiste LOOSER.'
     'tijera': 'piedra rompe tijera. Ganaste :wink:'
-  'papel': 
+  'papel':
     'piedra': 'papel envuelve piedra. Weeeena :wink:'
     'tijera': 'tijera corta papel. Chuuuuuuu'
-  'tijera': 
+  'tijera':
     'papel': 'tijeras cortan papel. Super! :wink:'
     'piedra': 'piedra rompe tijera. Amarmelao!'
 
@@ -46,4 +46,3 @@ module.exports = (robot) ->
   robot.respond /cachipun (piedra|papel|tijera)/i, (msg) ->
     userChoice = msg.match[1].toLowerCase()
     respuestas(msg, userChoice)
-
