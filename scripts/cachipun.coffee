@@ -14,15 +14,15 @@
 #   jorgeepunan
 
 tipos =
-  'piedra': 
-    'papel': 'papel envuelve piedra. Perdiste LOOSER.'
-    'tijera': 'piedra rompe tijera. Ganaste :wink:'
-  'papel': 
-    'piedra': 'papel envuelve piedra. Weeeena :wink:'
-    'tijera': 'tijera corta papel. Chuuuuuuu'
-  'tijera': 
-    'papel': 'tijeras cortan papel. Super! :wink:'
-    'piedra': 'piedra rompe tijera. Amarmelao!'
+  'piedra':
+    'papel': 'Papel envuelve piedra. Perdiste, LOSER.'
+    'tijera': 'Piedra rompe tijera. Ganaste :wink:'
+  'papel':
+    'piedra': 'Papel envuelve piedra. Weeeena :wink:'
+    'tijera': 'Tijera corta papel. Chuuuuuuu'
+  'tijera':
+    'papel': 'Tijeras cortan papel. ¡Súper! :wink:'
+    'piedra': 'Piedra rompe tijera. ¡Amermelao!'
 
 respuestas = (msg, userChoice) ->
   choices = ['piedra','papel','tijera']
@@ -38,7 +38,7 @@ respuestas = (msg, userChoice) ->
 
   resultado = "¡Empate!" if not resultado
 
-  msg.send ":pudu: escoje #{choice}"
+  msg.send ":pudu: escoge #{choice}"
   msg.send resultado
 
 module.exports = (robot) ->
