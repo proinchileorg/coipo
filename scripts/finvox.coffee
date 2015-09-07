@@ -9,7 +9,7 @@
 #
 # Commands:
 #   finvox help
-#   finvox dolar
+#   finvox dolar|usd
 #   finvox bitcoin
 #   finvox uf
 #   finvox euro
@@ -23,7 +23,7 @@
 process.env.API_URL ||= 'http://indicadoresdeldia.cl/webservice/indicadores.json'
 process.env.BIT_API_URL ||= 'https://blockchain.info/es/ticker'
 
-mensajes = ['Aunque te esfuerces, seguirás siendo pobre. :poop:','Los politicas ganan más que tú y más encima nos roban. Y no pueden irse presos. Ánimo! :monkey: ','La economía seguirá mal para ti pero no para tu AFP. :moneybag:','Algún día saldrás de la clase media. Partiste a jugarte un LOTO. :alien: ','Todos los días suben los precios, menos tu sueldo. :money_with_wings: ']
+mensajes = ['Aunque te esfuerces, seguirás siendo pobre. :poop:','Los políticos ganan más que tú y más encima nos roban. Y no pueden irse presos. ¡Ánimo! :monkey: ','La economía seguirá mal para ti, pero no para tu AFP. :moneybag:','Algún día saldrás de la clase media. Partiste a jugarte un LOTO. :alien: ','Todos los días suben los precios, y no tu sueldo. :money_with_wings: ']
 
 numberWithCommas = (x) ->
   x.toString().replace /\B(?=(\d{3})+(?!\d))/g, '.'
@@ -33,11 +33,11 @@ module.exports = (robot) ->
     indicador = msg.match[1].toLowerCase()
 
     if indicador == 'help' || !indicador
-      msg.send 'Mis comandos son:\n\n * `finvox dolar`\n * `finvox euro`\n * `finvox bitcoin`\n * `finvox uf`\n * `finvox utm`\n * `finvox ipc`\n * `finvox getonbrd`\n'
+      msg.send 'Mis comandos son:\n\n * `finvox dolar|usd`\n * `finvox euro|eur`\n * `finvox bitcoin|btc`\n * `finvox uf`\n * `finvox utm`\n * `finvox ipc`\n * `finvox getonbrd`\n'
       return false
-    if indicador == 'uf' or indicador == 'dolar' or indicador == 'euro' or indicador == 'ipc' or indicador == 'utm' or indicador == 'getonbrd'
+    if indicador == 'uf' or indicador == 'dolar' or indicador == 'usd' or indicador == 'euro' or indicador == 'eur' or indicador == 'ipc' or indicador == 'utm' or indicador == 'getonbrd'
       url = process.env.API_URL
-    else if indicador == 'bitcoin'
+    else if indicador == 'bitcoin' or indicador == 'btc'
       url = process.env.BIT_API_URL
 
     msg.robot.http(url).get() (err, res, body) ->
@@ -48,21 +48,23 @@ module.exports = (robot) ->
 
       if indicador == 'uf'
         data = data.indicador.uf
-      else if indicador == 'dolar'
+      else if indicador == 'dolar' || 'usd'
         data = data.moneda.dolar
       else if indicador == 'getonbrd'
         complexGetonbrdCalculus = (parseInt(data.moneda.dolar.split('$')[1]) * 1130)
         data = '$' + numberWithCommas(complexGetonbrdCalculus)
-      else if indicador == 'euro'
+      else if indicador == 'euro' || 'eur'
         data = data.moneda.euro
       else if indicador == 'ipc'
         data = data.indicador.ipc + '%'
       else if indicador == 'utm'
         data = data.indicador.utm
-      else if indicador == 'bitcoin'
+      else if indicador == 'bitcoin' || 'btc'
         date = ''
         flatNumber = data.CLP.last.toString().split('.')[0]
         data = '$' + numberWithCommas(flatNumber)
+      else
+        data = ':kick-tmayr:'
 
       if data != null and typeof data != 'object'
         data = data.toString().split ',', 1
