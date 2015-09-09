@@ -24,7 +24,7 @@ consumer_secret = "Fwj7DmhtjnS_0fGEfKSWvBxqjBY"
 token = "ek4LtD0_QwbKSxs8go1MNgP_o1Kpne_g"
 token_secret = "731n3orAZfXl2iP1AK3TF2gxKPw"
 
-respuestas = ['¡Ya sé!','¡Lo tengo!','Intenta: ','¿Quizás :point_down::skin-tone-3: ?','¿Te tinca?']
+respuestas = [':pudu: ¡Ya sé!',':pudu: ¡Lo tengo!',':pudu: Intenta: ',':pudu: Mira :point_down::skin-tone-3:',':pudu: ¿Te tinca?']
 
 yelp = require("yelp").createClient consumer_key: consumer_key, consumer_secret: consumer_secret, token: token, token_secret: token_secret
 
@@ -34,7 +34,7 @@ yelpMe = (msg, query, callback) ->
 
 module.exports = (robot) ->
   robot.respond /yelp( me)? (.*) (en|cerca|cerca de) (.*)/i, (msg) ->
-    msg.send ':pudu: ~·~ buscando ~·~'
+    msg.send '~·~ buscando ~·~'
     yelpMe msg, { term: msg.match[2], location: msg.match[4] + ', Chile' }, (data) ->
       if data.businesses.length > 0
         business = data.businesses[(Math.random() * data.businesses.length) >> 0]
