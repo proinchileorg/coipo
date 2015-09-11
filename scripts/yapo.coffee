@@ -9,7 +9,7 @@
 #
 # Commands:
 #   (yapo|nopo)
-#   
+#
 #
 # Author:
 #   jorgeepunan
@@ -17,9 +17,9 @@
 respuestas = ['yapo','nopo']
 
 module.exports = (robot) ->
-  robot.hear /(yapo)/gi, (msg) ->
+  robot.respond /(yapo)/gi, (msg) ->
     msg.send respuestas[1]
-  robot.hear /(nopo)/gi, (msg) ->
+  robot.respond /(nopo)/gi, (msg) ->
     msg.send respuestas[0]
-  robot.hear /(sipo)/gi, (msg) ->
+  robot.respond /(sipo)/gi, (msg) ->
     msg.send msg.random respuestas
