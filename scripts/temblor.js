@@ -35,7 +35,7 @@ module.exports = function(robot) {
 
             if( cual == 'chile' || cual == 'Chile' || cual == 'CHILE' ) {
               if( donde.toUpperCase().indexOf('CHILE') > -1 ) {
-                res.send( d.title + ": \n- Lugar: " + d.location + "\n- Magnitud: " + d.magnitude + " (richter)\n- Enlace: " + d.link);
+                res.send( d.title + ": \n- Lugar: " + d.location + "\n- Magnitud: " + d.magnitude + " (richter)\n Fecha/Hora: " + d.date_time + "\n- Enlace: " + d.link);
               } else {
                 res.send( "Por suerte, ningún temblor mayor a 6 grados recientemente en Chile." )
               }
