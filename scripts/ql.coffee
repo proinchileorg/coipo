@@ -38,7 +38,7 @@ ascii = ["``
 "
 :bomb: :pudu: :gun: ~ adiós mundo cruel
 ",
-"```
+"``
 \n
  _____\n
 |     |\n
@@ -47,7 +47,7 @@ ascii = ["``
 |    / |\n
 |
 |________\n
-```"
+``"
 ]
 
 module.exports = (robot) ->
