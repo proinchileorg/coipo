@@ -17,7 +17,7 @@ desayuno 	= ["cereal","sandwich","frutas","desayuno dominó","quesillo + marmela
 almuerzo 	= ["pescado","árabe/thai/india","pastas","sushi","china","sandwich","empanada","ensalada","pizza","chatarra","ceviche","carne/parrilla","lo mismo que ayer"]
 cena 		= ["carne","pastas","árabe/thai/india","pizza","sanguche","lo mismo que ayer","lasagna","china"]
 bebidas		= ['cerveza','agüita de hierba','piscola/roncola/whiscola','absenta','pájaro verde','vino tinto/blanco','lo mismo que ayer nomás']
-cervezas	= ['pale ale inglesa','brown ale inglesa','barley wine','scottish ale','ale belga','trapense belga','de abadía belga','pilsner alemana/checa','dunkel alemana/checa','marzenbier alemana','bock/doppelbock/maibock','weizenbier alemana','porter/stout','su escudo nomás']
+cervezas	= ['pale ale inglesa','brown ale inglesa','barley wine','scottish ale','ale belga','trapense belga','de abadía belga','pilsner alemana/checa','dunkel alemana/checa','marzenbier alemana','bock/doppelbock/maibock','weizenbier alemana','porter/stout','su escudo nomás','IPA','APA (gringa)']
 
 module.exports = (robot) ->
   robot.respond /qu[ée] desayunar/gi, (msg) ->
