@@ -32,7 +32,7 @@ module.exports = function(robot) {
         var data = JSON.parse(body);
         var cuantos = data.number;
         
-        res.send( "En este momento hay " + cuantos + " personas en el espacio " + rand(emojis) );
+        res.send( "En este momento hay *" + cuantos + "* personas en el espacio " + rand(emojis) );
 
         data.people.forEach(function(d) {
 
