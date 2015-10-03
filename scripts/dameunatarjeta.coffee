@@ -19,7 +19,7 @@
 $ = require('cheerio')
 
 module.exports = (robot) ->
-  robot.hear /dame una ([visa|mastercard|discover|american express]+)/i, (msg) ->
+  robot.hear /dame una (visa|mastercard|discover|american express)/i, (msg) ->
 
     quequiere = msg.match[1].toLowerCase()
 
