@@ -26,4 +26,4 @@ module.exports = (robot) ->
       dom = $.load(body)
       section = dom(dom('section').get(1))
 
-      msg.send "Clave: #{section.find('p.resalta').html().replace(/&amp;/g, '&')}"
+      msg.send "Clave: `#{section.find('p.resalta').html().replace(/&amp;/g, '&')}`"
