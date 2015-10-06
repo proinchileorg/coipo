@@ -15,15 +15,15 @@
 # Author:
 #   victorsanmartin
 
-$ = require('cheerio')
+generatePassword = require('password-generator')
 
 module.exports = (robot) ->
-  robot.hear /dame una (clave|password|contraseña)/i, (msg) ->
+  robot.hear /dame una (clave|password|contraseña)( [0-9]{1,2})?/i, (msg) ->
 
-    url = 'http://www.datafakegenerator.com/genepas.php'
+    length = 10
+    if msg.match[2]
+      length = parseInt(msg.match[2], 10)
 
-    msg.robot.http(url).get() (err, res, body) ->
-      dom = $.load(body)
-      section = dom(dom('section').get(1))
+    password = generatePassword(length, false)
 
-      msg.send "Clave: `#{section.find('p.resalta').html().replace(/&amp;/g, '&')}`"
+    msg.send ":passport_control: Clave `#{password}`"
