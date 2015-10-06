@@ -31,7 +31,8 @@
     "needle": "^0.10.0",
     "request": "^2.62.0",
     "superheroes": "^1.0.0",
-    "yelp": "^0.2.0"
+    "yelp": "^0.2.0",
+    "password-generator": "^2.0.1"
   },
   "engines": {
     "node": "0.10.x"
