@@ -43,7 +43,7 @@ module.exports = function(robot) {
         if(cual == 'CHILE') {
           mensaje = (chile.length > 0)?chile.join("\n\n"):"Por suerte, ningún temblor mayor a " + magnitudMinima + " grados recientemente en Chile.";
         } else {
-          mensaje = (mundo.length > 0)?chile.join("\n\n"):"Por suerte, ningún temblor mayor a " + magnitudMinima + " grados fuera de Chile.";
+          mensaje = (mundo.length > 0)?mundo.join("\n\n"):"Por suerte, ningún temblor mayor a " + magnitudMinima + " grados fuera de Chile.";
         }
         res.send(mensaje);
       } else {
