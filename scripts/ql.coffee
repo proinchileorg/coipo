@@ -18,7 +18,7 @@ ascii = ["``
 \n
 ━━━━━┓ ＼＼\n
 ┓┓┓┓┓┃\n
-┓┓┓┓┓┃    |😫ノ ~ chaoooooo\n
+┓┓┓┓┓┃    |:pudu:ノ ~ chaoooooo\n
 ┓┓┓┓┓┃ 　 /\n
 ┓┓┓┓┓┃  ノ)\n
 ┓┓┓┓┓┃\n
@@ -47,9 +47,21 @@ ascii = ["``
 |    / |\n
 |
 |________\n
-``"
+<<<<<<< HEAD
+``",
+"```\n
+   ____________\n
+  |            |\n
+  |  PÚDRANSE  |\n
+  |____________|\n
+ ∧＿_∧  ||\n
+(　´o`) ||\n
+/ 　　づ”.\n
+=======
+>>>>>>> parent of 47de0a4... nuevo ascii
+```"
 ]
 
 module.exports = (robot) ->
-  robot.hear /pud[úu] ql|m[áa]tate/gi, (msg) ->
+  robot.respond /ql|rql|ctm|m[áa]tate/gi, (msg) ->
     msg.send msg.random ascii
