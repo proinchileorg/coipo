@@ -21,4 +21,4 @@ module.exports = (robot) ->
     secreto = msg.match[1]
     # if msg.message.room == 'Shell' #test local
     #robot.messageRoom '#pudu-devs', msg.random introduccion
-    robot.messageRoom '#pudu-devs', "Nuevo secreto: " + secreto
+    robot.messageRoom '#random  ', "Me contaron este secreto: " + secreto
