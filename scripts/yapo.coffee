@@ -14,7 +14,7 @@
 # Author:
 #   jorgeepunan
 
-respuestas = ['yapo','nopo']
+respuestas = ['yapo','nopo','kepo']
 
 module.exports = (robot) ->
   robot.respond /(yapo)/gi, (msg) ->
@@ -22,4 +22,4 @@ module.exports = (robot) ->
   robot.respond /(nopo)/gi, (msg) ->
     msg.send respuestas[0]
   robot.respond /(sipo)/gi, (msg) ->
-    msg.send msg.random respuestas
+    msg.send respuestas[2]
