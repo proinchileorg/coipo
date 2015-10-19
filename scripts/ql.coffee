@@ -36,7 +36,9 @@ ascii = ["``
 \n
 ```",
 "
-:bomb: :pudu: :gun: ~ adiós mundo cruel
+:bomb: :bomb: :bomb:\n
+:bomb: :pudu: :bomb: :fire: ~ adiós mundo cruel\n
+:bomb: :bomb: :bomb:\n
 ",
 "``
 \n
