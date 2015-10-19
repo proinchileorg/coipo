@@ -14,5 +14,7 @@
   "hubot-rae",
   "hubot-cpf",
   "hubot-numbersapi",
-  "hubot-putear"
+  "hubot-putear",
+  "hubot-cne",
+  "hubot-info-rut"
 ]
