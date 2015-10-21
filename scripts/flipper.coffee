@@ -8,7 +8,7 @@
 #   None
 #
 # Commands:
-#   hubot flipper
+#   hubot flip
 #
 # Author:
 #   @hectorpalmatellez
