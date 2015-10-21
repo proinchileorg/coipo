@@ -9,14 +9,14 @@
 #   None
 #
 # Commands:
-#   Full search: @pudu <imdb|movie> <movie or serie>
-#   Specific search: @pudu <imdb|movie> <year|rate|plot|genre|director|actors|url> <movie or serie>
+#   pudu <imdb|movie> <movie or serie>
+#   pudu <imdb|movie> <year|rate|plot|genre|director|actors|url> <movie or serie>
 #
 # To do:
 #   Filter search by year or type (movie or serie) for more accuracy
 #
 # Author:
-#   Ravenous
+#   Ravenous <hello@ravenous.io>
 
 module.exports = (robot) ->
   robot.respond /(imdb|movie)\s(year|rate|plot|genre|director|actors|url)?\s?(.*)/i, (msg) ->
@@ -59,7 +59,7 @@ module.exports = (robot) ->
             msg.send "Son puros extras! :unamused"
         else if label is 'url' and movie.imdbID?
           if movie.imdbID isnt 'N/A'
-            msg.send "http://www.imdb.com/title/#{movie.imdbID}"
+            msg.send "www.imdb.com/title/#{movie.imdbID}"
           else
             msg.send "Google es tu amigo! :ok_hand:"
         else if label is 'full' and movie.Title?
@@ -70,7 +70,7 @@ module.exports = (robot) ->
           full += ">Genre: `#{movie.Genre}`\n" if movie.Genre? and movie.Genre isnt "N/A"
           full += ">Director: #{movie.Director}\n" if movie.Director? and movie.Director isnt "N/A"
           full += ">Actors: #{movie.Actors}\n" if movie.Actors? and movie.Actors isnt "N/A"
-          full += ">URL: http://www.imdb.com/title/#{movie.imdbID}" if movie.imdbID? and movie.imdbID isnt "N/A"
+          full += ">URL: www.imdb.com/title/#{movie.imdbID}" if movie.imdbID? and movie.imdbID isnt "N/A"
           msg.send full
         else
           msg.send "¿Seguro qué ese es el nombre?\n¡Tienes que elegir una película o serie!"
