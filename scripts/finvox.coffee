@@ -48,18 +48,18 @@ module.exports = (robot) ->
 
       if indicador == 'uf'
         data = data.indicador.uf
-      else if indicador == 'dolar' || 'usd'
+      else if indicador == 'dolar' or indicador == 'usd'
         data = data.moneda.dolar
       else if indicador == 'getonbrd'
-        complexGetonbrdCalculus = (parseInt(data.moneda.dolar.split('$')[1]) * 1130)
+        complexGetonbrdCalculus = (parseInt(data.moneda.dolar.split('$')[1]) * 1231)
         data = '$' + numberWithCommas(complexGetonbrdCalculus)
-      else if indicador == 'euro' || 'eur'
+      else if indicador == 'euro' or indicador == 'eur'
         data = data.moneda.euro
       else if indicador == 'ipc'
         data = data.indicador.ipc + '%'
       else if indicador == 'utm'
         data = data.indicador.utm
-      else if indicador == 'bitcoin' || 'btc'
+      else if indicador == 'bitcoin' or indicador == 'btc'
         date = ''
         flatNumber = data.CLP.last.toString().split('.')[0]
         data = '$' + numberWithCommas(flatNumber)

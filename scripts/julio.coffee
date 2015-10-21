@@ -257,7 +257,7 @@ class Juliiiiiiito
 
 module.exports = (robot) ->
   # robot.enter (msg) ->
-  robot.hear /(videla|taringa)/i, (msg) ->
+  robot.respond /(videla|taringa)/i, (msg) ->
     # console.log msg
     # msg.send msg.random enterReplies
     # msg.send "Bienvenido a *#{msg.message.room}*"
@@ -265,7 +265,7 @@ module.exports = (robot) ->
     msg.send respuesta.yapo()
 
   # tranquilein john wayne
-  robot.hear /pregunta/i, (msg) ->
+  robot.respond /pregunta/i, (msg) ->
     if Math.random() * 10 > 7
       respuesta = new Juliiiiiiito(msg)
       msg.send respuesta.hacer_pregunta()
