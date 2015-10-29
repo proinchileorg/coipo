@@ -4,6 +4,9 @@
   "private": true,
   "author": "Pudu",
   "description": "Most useful bot for hashtagchile.com",
+  "scripts": {
+    "start": "PORT=$OPENSHIFT_NODEJS_PORT BIND_ADDRESS=$OPENSHIFT_NODEJS_IP HEROKU_URL=$OPENSHIFT_APP_DNS REDIS_URL=redis://:$REDIS_PASSWORD@$OPENSHIFT_REDIS_HOST:$OPENSHIFT_REDIS_PORT bin/hubot -a slack"
+  },
   "dependencies": {
     "cheerio": "^0.19.0",
     "hubot": "^2.16.0",
