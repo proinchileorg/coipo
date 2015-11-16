@@ -8,7 +8,7 @@
 #   None
 #
 # Commands:
-#   alegría|alégrame|felicidad|yay - Te alegra el día
+#   alegría|alégrame|felicidad|yay|feliz - Te alegra el día
 #
 # Author:
 #   gmq
@@ -46,5 +46,5 @@ images = [
 ]
 
 module.exports = (robot) ->
-  robot.respond /alegr[íi]a|al[ée]grame|felicidad|yay/gi, (msg) ->
+  robot.respond /alegr[íi]a|al[ée]grame|felicidad|feliz|yay/gi, (msg) ->
     msg.send msg.random images
