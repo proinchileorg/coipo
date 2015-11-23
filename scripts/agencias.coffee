@@ -8,14 +8,14 @@
 #   None
 #
 # Commands:
-#   #agencia|#agencias|agencia|agencias
+#   #agencia|#agencias
 #
 # Author:
 #   jorgeepunan
 
 images = [
   'http://i.imgur.com/IW6O268.gif'
-  # 'http://i.imgur.com/IFxL6W6.png'
+  'http://i.imgur.com/h874JeX.gifv'
   'http://i.imgur.com/xcHlIXi.gif'
   'http://i.imgur.com/UXTJJGU.gif'
   'http://i.imgur.com/PimcI7P.gif'
@@ -29,4 +29,5 @@ images = [
 
 module.exports = (robot) ->
   robot.hear /#agencia|#agencias (.*)/gi, (msg) ->
+    msg.send 'agencias... :point_down::skin-tone-4:'
     msg.send msg.random images
