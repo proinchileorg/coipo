@@ -21,7 +21,6 @@ images = [
   'http://i.imgur.com/PimcI7P.gif'
   'http://i.imgur.com/bmnELrT.gif'
   'http://i.imgur.com/f6iwaCk.gif'
-  'http://i.imgur.com/nmxIAVb.gif'
   'http://i.imgur.com/qiTwF5H.gif'
   'http://i.imgur.com/2nJL8yz.gif'
   'http://i.imgur.com/wJ7xZZI.gif'
@@ -29,5 +28,5 @@ images = [
 ]
 
 module.exports = (robot) ->
-  robot.hear /#agencia|#agencias|agencia|agencias (.*)/gi, (msg) ->
+  robot.hear /#agencia|#agencias (.*)/gi, (msg) ->
     msg.send msg.random images
