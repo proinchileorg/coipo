@@ -18,5 +18,6 @@
   "hubot-cne",
   "hubot-info-rut",
   "hubot-hesidohackeado",
-  "hubot-wikipedia"
+  "hubot-wikipedia",
+  "hubot-google-images"
 ]
