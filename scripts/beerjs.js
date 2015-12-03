@@ -31,7 +31,7 @@ module.exports = function(robot) {
 
 		  	var obj = JSON.parse(response.body);
 
-	  	 	if ( suffix === "fecha" || suffix === "cuando" ) {
+	  	 	if ( suffix === "fecha" || suffix === "cuando") {
 			  	res.send("`" + obj.evento + ": " + obj.fecha + "`");
 			 	} 
 			 	else if ( suffix === "donde" || suffix === "lugar" ) {
@@ -42,11 +42,12 @@ module.exports = function(robot) {
 			 		res.send("`" + obj.evento + ": " + obj.tema + "`");
 			 	}
 			 	else if ( suffix === "info" || suffix === "todo" ) {
-			 		var keys = Object.keys( obj );
-					for( var i = 0,length = keys.length; i < length; i++ ) {
-				  	res.send("`" + obj[ keys[ i ] ] + "`");
-				  }
-				} 
+			 		for(var i in obj){
+			 			if(obj[i] !== '') {
+			 				res.send(i + ": " + obj[i]);
+			 			}
+			 		}
+				}
 				else {
 					res.send("¿Ayuda? Comandos: @pudu beerjs [fecha|cuando, donde|lugar, tema]");
 				}
