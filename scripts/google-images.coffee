@@ -1,6 +1,10 @@
 # Description:
 #   A way to interact with the Google Images API.
 #
+# Environment Variables:
+# HUBOT_GOOGLE_CSE_ID: 014379777150971567230:elhg6nyzdr8
+# HUBOT_GOOGLE_CSE_KEY: api-project-67793454694
+#
 # Commands:
 #   hubot image me <query> - The Original. Queries Google Images for <query> and returns a random top result.
 #   hubot animate me <query> - The same thing as `image me`, except adds a few parameters to try to return an animated GIF instead.
