@@ -8,7 +8,7 @@
 //   None
 //
 // Commands:
-//   pudu foto nasa
+//   pudu foto del d[ií]a
 //
 // Author:
 //   jorgeepunan
