@@ -15,13 +15,15 @@
 */
 
 module.exports = function(robot) {
-  return robot.hear(/retard|retardao/gi, function(msg) {
-    console.log(HUBOT_SLACK_TOKEN)
+  return robot.hear(/pruebapruebaprueba/gi, function(msg) {
     msg.http("https://slack.com/api/reactions.add")
     .query({
-      token: process.env.SLACK_API_TOKEN,
+      token: process.env.HUBOT_SLACK_TOKEN,
       name: retard,
       channel: msg.message.rawMessage.channel
+    })
+    .get()(function(err, resp, body) {
+      robot.emit('error', err, resp, msg, body);
     });
   });
 };
