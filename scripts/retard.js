@@ -21,6 +21,9 @@ module.exports = function(robot) {
       name: 'retard',
       channel: msg.message.rawMessage.channel,
       timestamp: msg.message.id
+    })
+    .get(function(err, resp, body) {
+      robot.emit('error', err, resp, msg, body);
     });
   });
 };
