@@ -15,7 +15,8 @@
 
 module.exports = function(robot) {
   return robot.hear(/retard|retardao|:retard:|:retardao:/gi, function(msg) {
-    var reaction = msg.message.text.replace(/:/g, '');
+    var reaction = msg.message.text.replace(/:|\s+/g, '');
+    console.log('reaction:', reaction);
 
     msg.http("https://slack.com/api/reactions.add")
     .query({
