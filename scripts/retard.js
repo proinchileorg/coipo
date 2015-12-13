@@ -19,7 +19,7 @@ module.exports = function(robot) {
     msg.http("https://slack.com/api/reactions.add")
     .query({
       token: process.env.HUBOT_SLACK_TOKEN,
-      name: retard,
+      name: 'retard',
       channel: msg.message.rawMessage.channel
     })
     .get()(function(err, resp, body) {
