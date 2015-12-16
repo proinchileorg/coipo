@@ -52,7 +52,7 @@ module.exports = (robot) ->
         data = data.moneda.dolar
       else if indicador == 'getonbrd'
         complexGetonbrdCalculus = (parseInt(data.moneda.dolar.split('$')[1]) * 1231)
-        data = '$' + numberWithCommas(complexGetonbrdCalculus)
+        data = '1₲ = $' + numberWithCommas(complexGetonbrdCalculus)
       else if indicador == 'euro' or indicador == 'eur'
         data = data.moneda.euro
       else if indicador == 'ipc'

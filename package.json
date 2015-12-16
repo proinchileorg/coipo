@@ -14,6 +14,7 @@
     "hubot-cne": "0.0.2",
     "hubot-cpf": "^1.0.4",
     "hubot-diagnostics": "0.0.1",
+    "hubot-google-images": "0.2.5",
     "hubot-help": "^0.1.1",
     "hubot-heroku-keepalive": "1.0.0",
     "hubot-hesidohackeado": "0.0.3",

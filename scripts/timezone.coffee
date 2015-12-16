@@ -59,6 +59,9 @@ module.exports = (robot) ->
       morningEndM = 59
       afternoonEndM = 59
 
+    if theminute < 10
+        theminute = '0' + theminute
+
     #msg.send "Current Time: "+thehour+':'+theminute+':'+thesecond
     #msg.send "It's night from "+nightStartH+":"+nightStartM+" to "+nightEndH+":"+nightEndM
     #msg.send "It's dawn from "+dawnStartH+":"+dawnStartM+" to "+dawnEndH+":"+dawnEndM
