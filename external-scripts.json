@@ -19,5 +19,6 @@
   "hubot-info-rut",
   "hubot-hesidohackeado",
   "hubot-wikipedia",
-  "hubot-google-images"
+  "hubot-google-images",
+  "hubot-diceware"
 ]
