@@ -9,6 +9,17 @@ Si la paciencia no te da, puedes ir a [esta URL](http://pudu.herokuapp.com/pudu/
 
 ## Contribuir
 
-El repositorio queda abierto para todos los miembros de [Hashtag Chile en GitHub](https://github.com/hashtagchile), si quieres agregar alguna función, haz un _pull request_, coméntalo en Slack y lo revisamos para agregarlo. Para agregar algo, mira esto: [Hubot Documentation > Scripting](https://hubot.github.com/docs/scripting/). Vuélvanse locos.
+El repositorio queda abierto para todos los miembros de [Hashtag Chile en GitHub](https://github.com/hashtagchile), si quieres agregar alguna función, . 
+
+### Pasos:
+
+- Forkea y clonea este repo en tu local.
+- `$ cd path/to/pudu-bot`.
+- `$ npm install` (probablemente se amejor usar `sudo`.
+- Haz tu código JS/CoffeeScript y déjalo en `pudu-bot/scripts`. Para más info sobre *Hubot* consulta [Hubot Documentation > Scripting](https://hubot.github.com/docs/scripting/). No olvides documentar tu código.
+- Para test, `$ node bin/hubot` y activarás a pudu y podrás invocarlo junto con [sus comandos](http://pudu.herokuapp.com/pudu/help) ó los que hayas escrito.
+- Para enviarlo a Heroku, haz un _pull request_, coméntalo en Slack canal *pudu-devs* y será revisado, testeado, linteado y si pasa los rigurosos tests será activado.
+
+---
 
 ![puducito](http://petitecurie.com/wp-content/uploads/2013/05/pudu1.jpg)
