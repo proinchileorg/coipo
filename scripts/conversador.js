@@ -26,7 +26,7 @@ function rand(items){
 
 module.exports = function(robot) {
   robot.respond(/hola/i, function(res) {
-    msg = rand(saludo) + "@#{msg.message.user.name}";
+    msg = rand(saludo);
     res.send( msg );
   });
   robot.respond(/c[oá]mo est[aá]s/i, function(res) {
