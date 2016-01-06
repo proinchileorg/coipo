@@ -41,6 +41,22 @@ module.exports = (robot) ->
         .sort((line1, line2) -> if line1[0] < line2[0] then 1 else if line1[0] > line2[0] then -1 else 0)
         .map((line) -> line.join " ")
       msg = "Karma de todos:\n#{list.join '\n'}"
+    else if targetToken.toLowerCase().split(' ')[0] == 'reset'
+      thisUser = response.message.user
+      if thisUser.name.toLowerCase() != "hectorpalmatellez"
+        response.send "Tienes que ser :stalin: para realizar esta función"
+        return
+      resetCommand = targetToken.toLowerCase().split(' ')[1]
+      return if not resetCommand
+      if resetCommand in ["todos", "all"]
+        users = robot.brain.users()
+        list = Object.keys(users)
+          .map((k) -> users[k].karma = 0)
+        msg = "#Chile ha quedado libre de toda bendición y pecado."
+      else
+        targetUser = userForToken resetCommand, response
+        targetUser.karma = 0
+        msg = "#{targetUser.name} ha quedado libre de toda bendición o pecado."
     else
       targetUser = userForToken targetToken, response
       return if not targetUser
