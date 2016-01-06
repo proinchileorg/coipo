@@ -95,6 +95,7 @@ module.exports = (robot) ->
       oldDate = robot.brain.karmaLimits[user.id][victim.id]
       timePast = Math.round((new Date().getTime() - oldDate.getTime())) / 60000
       if timePast > 59
+        robot.brain.karmaLimits[user.id][victim.id] = new Date()
         return true
       else
         return Math.floor(60 - timePast)
