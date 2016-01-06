@@ -25,5 +25,6 @@ module.exports = (robot) ->
       length = parseInt(msg.match[2], 10)
 
     password = generatePassword(length, false)
+    resp = ":passport_control: Clave `#{password}`"
 
-    msg.send ":passport_control: Clave `#{password}`"
+    robot.send {room: msg.message.user.name}, resp
