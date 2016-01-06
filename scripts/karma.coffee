@@ -22,6 +22,10 @@ module.exports = (robot) ->
     return if not targetUser
     return response.send "Oe no po, el karma es pa otros no pa ti!" if thisUser is targetUser
     op = response.match[2]
+    limit = canUpvote(thisUser, targetUser)
+    if Number.isFinite(limit)
+      response.send "¡No abuses! Intenta en " + limit + " minutos"
+      return
     targetUser.karma += if op is "++" then 1 else -1
     response.send "#{targetUser.name} ahora tiene #{targetUser.karma} puntos de karma."
 
@@ -62,3 +66,17 @@ module.exports = (robot) ->
   userForMentionName = (mentionName) ->
     for id, user of robot.brain.users()
       return user if mentionName is user.mention_name
+
+  canUpvote = (user, victim) ->
+    robot.brain.karmaLimits ?= {}
+    robot.brain.karmaLimits[user.id] ?= {}
+    if not robot.brain.karmaLimits[user.id][victim.id]
+      robot.brain.karmaLimits[user.id][victim.id] = new Date()
+      return true
+    else
+      oldDate = robot.brain.karmaLimits[user.id][victim.id]
+      timePast = Math.round((new Date().getTime() - oldDate.getTime())) / 60000
+      if timePast > 59
+        return true
+      else
+        return Math.floor(60 - timePast)
