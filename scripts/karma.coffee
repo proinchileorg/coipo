@@ -53,7 +53,7 @@ module.exports = (robot) ->
         users = robot.brain.users()
         list = Object.keys(users)
           .map((k) -> users[k].karma = 0)
-        msg = "#Chile ha quedado libre de toda bendición y pecado."
+        msg = "#Chile ha quedado libre de toda bendición o pecado."
       else
         targetUser = userForToken resetCommand, response
         targetUser.karma = 0
