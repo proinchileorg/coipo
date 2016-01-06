@@ -13,7 +13,7 @@
     "hubot-diagnostics": "0.0.1",
     "hubot-diceware": "^1.1.2",
     "hubot-google-images": "0.2.5",
-    "hubot-help": "^0.1.2",
+    "hubot-help-private": "^0.1.3",
     "hubot-heroku-keepalive": "^1.0.1",
     "hubot-hesidohackeado": "0.0.3",
     "hubot-info-rut": "0.0.2",
