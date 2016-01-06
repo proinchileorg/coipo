@@ -27,6 +27,7 @@ module.exports = (robot) ->
       response.send "¡No abuses! Intenta en " + limit + " minutos"
       return
     targetUser.karma += if op is "++" then 1 else -1
+    robot.brain.save()
     response.send "#{targetUser.name} ahora tiene #{targetUser.karma} puntos de karma."
 
   robot.hear /^karma(?:\s+@?(.*))?$/, (response) ->
@@ -61,6 +62,7 @@ module.exports = (robot) ->
       targetUser = userForToken targetToken, response
       return if not targetUser
       msg = "#{targetUser.name} tiene #{targetUser.karma} puntos de karma."
+    robot.brain.save()
     response.send msg
 
   userForToken = (token, response) ->
@@ -90,12 +92,14 @@ module.exports = (robot) ->
     robot.brain.karmaLimits[user.id] ?= {}
     if not robot.brain.karmaLimits[user.id][victim.id]
       robot.brain.karmaLimits[user.id][victim.id] = new Date()
+      robot.brain.save()
       return true
     else
       oldDate = robot.brain.karmaLimits[user.id][victim.id]
       timePast = Math.round((new Date().getTime() - oldDate.getTime())) / 60000
       if timePast > 59
         robot.brain.karmaLimits[user.id][victim.id] = new Date()
+        robot.brain.save()
         return true
       else
         return Math.floor(60 - timePast)
