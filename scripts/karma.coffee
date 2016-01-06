@@ -31,10 +31,12 @@ module.exports = (robot) ->
 
   robot.hear /^karma(?:\s+@?(.*))?$/, (response) ->
     targetToken = response.match[1]?.trim()
-    if not targetToken? or targetToken.toLowerCase() is "todos" or "all"
+    return if not targetToken
+    if targetToken.toLowerCase() in ["todos", "all"]
       users = robot.brain.users()
       list = Object.keys(users)
         .sort()
+        .filter((k) -> users[k].karma)
         .map((k) -> [users[k].karma or 0, users[k].name])
         .sort((line1, line2) -> if line1[0] < line2[0] then 1 else if line1[0] > line2[0] then -1 else 0)
         .map((line) -> line.join " ")
