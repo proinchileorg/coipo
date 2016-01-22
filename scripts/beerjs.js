@@ -36,7 +36,8 @@ module.exports = function(robot) {
 			 	} 
 			 	else if ( suffix === "donde" || suffix === "lugar" ) {
 			 		res.send("`" + obj.evento + ": " + obj.donde + " (" + obj.direccion + ")`");
-// 				res.send("map " + obj.direccion); // TODO
+	 				res.send("http://maps.google.com/maps/api/staticmap?markers=" + obj.direccion + "&size=600x600&maptype=hybrid&sensor=false&zoom=16&format=png");
+
 			 	} 
 			 	else if ( suffix === "tema" ) {
 			 		res.send("`" + obj.evento + ": " + obj.tema + "`");
