@@ -15,9 +15,9 @@
 #   jorgeepunan
 
 ascii = ["``
-(҂._.)    
-<,╤╦╤─ ҉ - - - - :pudu: 
-/--\'
+(҂._.)\n
+<,╤╦╤─ ҉ - - - - :pudu:\n
+/--\'\n
 ``",
 "``
 \n
@@ -29,7 +29,7 @@ ascii = ["``
 ┓┓┓┓┓┃\n
 ┓┓┓┓┓┃\n
 ``",
-"``
+"```
 \n
     ______\n
   //       |\n
@@ -39,7 +39,7 @@ ascii = ["``
  ||        |\n
  ||/ / // |/\n
 \n
-``",
+```",
 "
 :bomb: :bomb: :bomb:\n
 :bomb: :pudu: :bomb: :fire: ~ adiós mundo cruel\n
