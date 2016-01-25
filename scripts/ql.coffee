@@ -14,13 +14,12 @@
 # Author:
 #   jorgeepunan
 
-ascii = ["``
+ascii = ["\n
 (҂._.)\n
 <,╤╦╤─ ҉ - - - - :pudu:\n
 /--\'\n
-``",
-"``
-\n
+",
+"\n
 ━━━━━┓ ＼＼\n
 ┓┓┓┓┓┃\n
 ┓┓┓┓┓┃    |:pudu:ノ ~ chaoooooo\n
@@ -28,9 +27,8 @@ ascii = ["``
 ┓┓┓┓┓┃  ノ)\n
 ┓┓┓┓┓┃\n
 ┓┓┓┓┓┃\n
-``",
-"```
-\n
+",
+"\n
     ______\n
   //       |\n
  ||  ✝     |\n
@@ -39,14 +37,13 @@ ascii = ["``
  ||        |\n
  ||/ / // |/\n
 \n
-```",
+",
 "
 :bomb: :bomb: :bomb:\n
 :bomb: :pudu: :bomb: :fire: ~ adiós mundo cruel\n
 :bomb: :bomb: :bomb:\n
 ",
-"``
-\n
+"\n
  _____\n
 |     |\n
 |     :pudu:\n
@@ -55,8 +52,8 @@ ascii = ["``
 |
 |________\n
 
-``",
-"```\n
+",
+"\n
    ____________\n
   |            |\n
   |  PÚDRANSE  |\n
@@ -64,7 +61,7 @@ ascii = ["``
  ∧＿_∧  ||\n
 (　´o`) ||\n
 / 　　づ”.\n
-```"
+"
 ]
 
 module.exports = (robot) ->
