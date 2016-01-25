@@ -29,6 +29,7 @@
     "hubot-shipit": "^0.2.0",
     "hubot-slack": "^3.4.2",
     "hubot-soon": "^1.0.0",
+    "hubot-vimeo": "^1.0.0",
     "hubot-wikipedia": "^0.0.3",
     "jquery": "^2.1.4",
     "jsdom": "^7.2.1",
