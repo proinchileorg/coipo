@@ -15,10 +15,13 @@
 #   jorgeepunan
 
 #introduccion = ["Nuevo secreto: ","Me acaban de contar que ","UH! Alguien me dijo que "]
+forbidden = 'channel'
 
 module.exports = (robot) ->
   robot.hear /mi secreto (.*)/i, (msg) -> #test local
     secreto = msg.match[1]
-    # if msg.message.room == 'Shell' #test local
-    #robot.messageRoom '#pudu-devs', msg.random introduccion
-    robot.messageRoom '#random', "Me contaron este secreto: " + secreto
+
+    if secreto.indexOf(forbidden) >= 0
+      robot.messageRoom '#random', 'un tonto trató de hacer `channel` :facepalm:'
+    else
+      robot.messageRoom '#random', "Me contaron este secreto: " + secreto
