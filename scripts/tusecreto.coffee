@@ -15,13 +15,17 @@
 #   jorgeepunan
 
 #introduccion = ["Nuevo secreto: ","Me acaban de contar que ","UH! Alguien me dijo que "]
-forbidden = 'channel'
+forbidden = [
+  '@channel'
+  '@group',
+  '@here',
+]
 
 module.exports = (robot) ->
-  robot.hear /mi secreto (.*)/i, (msg) -> #test local
+  robot.respond /mi secreto (.*)/i, (msg) -> #test local
     secreto = msg.match[1]
-
-    if secreto.indexOf(forbidden) >= 0
-      robot.messageRoom '#random', 'un tonto trató de hacer `channel` :facepalm:'
+    notAllowed = secreto.split(' ').filter (string) -> forbidden.indexOf(string) >= 0
+    if notAllowed.length > 0
+      robot.messageRoom '#random', "un tonto (#{msg.message.user.name}) trató de hacer "+ notAllowed.join(' ').replace(/@/g, '')+ " :facepalm:"
     else
-      robot.messageRoom '#random', "Me contaron este secreto: " + secreto
+      robot.messageRoom '#random', "Me contaron este secreto: #{secreto}"
