@@ -14,6 +14,9 @@
 #   jorgeepunan
 
 citas = [
+  '> Lo bien hecho es mejor que lo bien dicho. *-Benjamin Franklin*'
+  '> Un buen diseño es un buen negocio. *-Thomas Watson, Jr*'
+  '> La actitud es una pequeña cosa que hace una gran diferencia. *-Winston Churchill*'
   '> Yo no soy un producto de mis circunstancias. Soy un producto de mis decisiones. *-Stephen Covey*'
   '> Cada niño es un artista. El problema es cómo seguir siendo artista una vez que se crece. *-Pablo Picasso*'
   '> Nunca se puede cruzar el océano hasta que tenga el coraje de perder de vista la costa. *-Cristóbal Colón*'
