@@ -1,5 +1,5 @@
 # Description:
-#   Greets when someone enters a room
+#   Saluda cuando hay genre nueva en #general
 #
 # Dependencies:
 #   None
@@ -21,4 +21,5 @@ module.exports = (robot) ->
     # if msg.message.room == 'Shell' #test local
     if msg.message.room == 'general'
       msg.send msg.random enterReplies
-      msg.send "Bienvenido a *#{msg.message.room}* :clap: "
+      msg.send "*@#{msg.message.user.name}* bienvenido a *#{msg.message.room}* :clap:"
+      msg.send "Soy @pudu amo y cuidador de este grupo. Sírvase presentarte en #introductions y unirte a las discusiones de alguno de los canales de tu interés."

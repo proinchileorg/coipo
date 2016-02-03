@@ -14,18 +14,21 @@
 # Author:
 #   jorgeepunan
 
-ascii = ["``
-\n
+ascii = ["\n
+(҂._.)\n
+<,╤╦╤─ ҉ - - - - :pudu:\n
+/--\'\n
+",
+"\n
 ━━━━━┓ ＼＼\n
 ┓┓┓┓┓┃\n
-┓┓┓┓┓┃    |😫ノ ~ chaoooooo\n
+┓┓┓┓┓┃    |:pudu:ノ ~ chaoooooo\n
 ┓┓┓┓┓┃ 　 /\n
 ┓┓┓┓┓┃  ノ)\n
 ┓┓┓┓┓┃\n
 ┓┓┓┓┓┃\n
-``",
-"```
-\n
+",
+"\n
     ______\n
   //       |\n
  ||  ✝     |\n
@@ -34,12 +37,13 @@ ascii = ["``
  ||        |\n
  ||/ / // |/\n
 \n
-```",
-"
-:bomb: :pudu: :gun: ~ adiós mundo cruel
 ",
-"``
-\n
+"
+:bomb: :bomb: :bomb:\n
+:bomb: :pudu: :bomb: :fire: ~ adiós mundo cruel\n
+:bomb: :bomb: :bomb:\n
+",
+"\n
  _____\n
 |     |\n
 |     :pudu:\n
@@ -47,9 +51,19 @@ ascii = ["``
 |    / |\n
 |
 |________\n
-``"
+
+",
+"\n
+   ____________\n
+  |            |\n
+  |  PÚDRANSE  |\n
+  |____________|\n
+ ∧＿_∧  ||\n
+(　´o`) ||\n
+/ 　　づ”.\n
+"
 ]
 
 module.exports = (robot) ->
-  robot.hear /pud[úu] ql|m[áa]tate/gi, (msg) ->
+  robot.respond /ql|rql|ctm|m[áa]tate/gi, (msg) ->
     msg.send msg.random ascii
