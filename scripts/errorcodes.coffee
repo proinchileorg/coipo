@@ -13,7 +13,7 @@ codes = [100, 101, 200, 201, 202, 204, 206, 207, 300, 301, 302, 303, 304, 305,
            451, 500, 502, 503, 506, 507, 508, 509, 599]
 
 module.exports = (robot) ->
-  robot.hear /\b(\d{3})(\b|ing|e?d)/, (res) ->
+  robot.hear /error (\d{3})(\b|ing|e?d)/, (res) ->
     code = parseInt res.match[1]
     if code in codes
       res.send "https://http.cat/#{code}"
