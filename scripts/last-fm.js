@@ -60,12 +60,12 @@ module.exports = function lastFm(robot) {
                     var respond;
                     var json = JSON.parse(body);
                     if(type === 'similar' && json.similarartists.artist.length > 0) {
-                        respond = 'Si te gusta' + search + ' te podrian interesar: \n';
+                        respond = 'Si te gusta ' + search + ' te podrian interesar: \n';
                         json.similarartists.artist.forEach(function(elem){
                             return respond += elem.name + '\n';
                         }); 
                     } else if(type === 'tag' && json.topartists.artist.length > 0) {
-                        respond = 'Si te gusta la musica' + search + ' te podrian interesar: \n';
+                        respond = 'Si te gusta la musica ' + search + ' te podrian interesar: \n';
                         json.topartists.artist.forEach(function(elem){
                             return respond += elem.name + '\n';
                         });                        
