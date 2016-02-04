@@ -12,9 +12,9 @@
 //   None
 //
 // Commands:
-//   @pudu last.fm similar <artist>
-//   @pudu last.fm tag <type>
-//   @pudu last.fm top
+//   @pudu lastfm similar <artist>
+//   @pudu lastfm tag <type>
+//   @pudu lastfm top
 //
 // Author:
 //   @javier
@@ -46,7 +46,7 @@ module.exports = function lastFm(robot) {
         }
     }
     // hubot respond func
-    robot.respond(/last.fm (.*)/i, function(msg){
+    robot.respond(/lastfm (.*)/i, function(msg){
         // parse msg
         var str = msg.match[1].split(' ');
         var type = str.shift();
@@ -86,7 +86,7 @@ module.exports = function lastFm(robot) {
             }
         } else {
             // help
-            msg.send('OH SNAP! @pudu last.fm similar <artista> | tag <tipo de musica> | top');
+            msg.send('OH SNAP! @pudu lastfm similar <artista> | tag <tipo de musica> | top');
         }
     });
 };
