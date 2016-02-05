@@ -32,10 +32,19 @@ module.exports = function(robot) {
         resultados.push( title + ' | ' + link );
       });
 
-      var limiteResultados = (resultados.length > 6) ? 5 : resultados.length;
-      for (var i=0; i < limiteResultados; i++) {
-        var conteo = i + 1;
-        msg.send(conteo + ': ' + resultados[i]);
+      if(resultados.length > 0) {
+        var limiteResultados = (resultados.length > 4) ? 3 : resultados.length;
+        var plural = resultados.length > 1 ? ['n','s'] : ['',''];
+        msg.send('Se ha'+plural[0]+' encontrado '+ resultados.length + ' resultado'+plural[1]);
+        for (var i=0; i < limiteResultados; i++) {
+          var conteo = i + 1;
+          msg.send(conteo + ': ' + resultados[i]);
+        }
+        if(resultados.length > limiteResultados) {
+          msg.send('Otros resultados en: '+ url);
+        }
+      } else {
+        msg.send('No se han encontrado resultados sobre '+ busqueda);
       }
 
     });
