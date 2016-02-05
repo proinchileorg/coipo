@@ -15,7 +15,7 @@ var cheerio = require('cheerio');
 module.exports = function(robot) {
   robot.hear(/torrent (.*)/i, function(msg) {
 
-    msg.send('Enviando a Torrent Project y esperando respuesta...');
+    msg.send('Esperando respuesta de Torrent Project... :clock930:');
     
     var busqueda = msg.match[1];
     var url = 'https://torrentproject.se/?t=' + busqueda;
@@ -29,12 +29,12 @@ module.exports = function(robot) {
         var title = $(this).find('a').text();
         var link = $(this).find('a').attr('href');
 
-        resultados.push( title + ' <' + link + '|Link>' );
+        resultados.push( title + ' | ' + link );
       });
 
       for (var i=0; i < 6; i++) {
-        i = parseInt(i + 1);
-        msg.send(i + ': ' + resultados[i]);
+        var conteo = i + 1;
+        msg.send(conteo + ': ' + resultados[i]);
       }
 
     });
