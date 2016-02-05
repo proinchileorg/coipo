@@ -13,10 +13,10 @@
 var cheerio = require('cheerio');
 
 module.exports = function(robot) {
-  robot.hear(/torrent (.*)/i, function(msg) {
+  robot.respond(/torrent (.*)/i, function(msg) {
 
     msg.send('Esperando respuesta de Torrent Project... :clock930:');
-    
+
     var busqueda = msg.match[1];
     var url = 'https://torrentproject.se/?t=' + busqueda;
 
@@ -32,7 +32,8 @@ module.exports = function(robot) {
         resultados.push( title + ' | ' + link );
       });
 
-      for (var i=0; i < 6; i++) {
+      var limiteResultados = (resultados.length > 6) ? 5 : resultados.length;
+      for (var i=0; i < limiteResultados; i++) {
         var conteo = i + 1;
         msg.send(conteo + ': ' + resultados[i]);
       }
