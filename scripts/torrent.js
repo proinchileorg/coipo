@@ -14,13 +14,13 @@ var cheerio = require('cheerio');
 
 module.exports = function(robot) {
   robot.hear(/torrent (.*)/i, function(msg) {
-    var busqueda = msg.match[1];
 
+    msg.send('Enviando a Torrent Project y esperando respuesta...');
+    
+    var busqueda = msg.match[1];
     var url = 'https://torrentproject.se/?t=' + busqueda;
 
     msg.robot.http(url).get()(function(err, res, body) {
-
-      msg.send('Enviando a Torrent Project y esperando respuesta...');
 
       var $ = cheerio.load(body);
       var resultados = [];
