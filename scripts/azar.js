@@ -15,14 +15,12 @@
 
 
 
-function rand(items){
-  return items[~~(Math.random() * items.length)];
-}
+var random = require('./helpers/random');
 
 module.exports = function(robot) {
   robot.respond(/al azar (.*)/i, function(res) {
     var items = res.match[1].trim().split(",");
-    msg = "Al azar: `" + rand(items) + "` :dart: :ok_hand:";
+    msg = "Al azar: `" + random.item(items) + "` :dart: :ok_hand:";
     res.send(msg);
   });
 };

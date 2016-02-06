@@ -15,7 +15,7 @@
 //
 // Author:
 //   jorgeepunan ©2015 beerjssantiago
-//	 https://github.com/beerjs/santiago/	
+//	 https://github.com/beerjs/santiago/
 
 var needle = require('needle');
 var file = 'https://raw.githubusercontent.com/beerjs/santiago/master/beerjs.json';
@@ -31,31 +31,33 @@ module.exports = function(robot) {
 
 		  	var obj = JSON.parse(response.body);
 
-	  	 	if ( suffix === "fecha" || suffix === "cuando" ) {
-			  	res.send("`" + obj.evento + ": " + obj.fecha + "`");
-			 	} 
+	  	 	if ( suffix === "fecha" || suffix === "cuando") {
+			  	res.send(">*" + obj.evento + ":* " + obj.fecha);
+			 	}
 			 	else if ( suffix === "donde" || suffix === "lugar" ) {
-			 		res.send("`" + obj.evento + ": " + obj.donde + " (" + obj.direccion + ")`");
-// 				res.send("map " + obj.direccion); // TODO
-			 	} 
+			 		res.send(">*" + obj.evento + ":* " + obj.donde + " (" + obj.direccion + ")");
+	 				res.send("http://maps.google.com/maps/api/staticmap?markers=" + encodeURIComponent(obj.direccion) + "&size=600x600&maptype=roadmap&sensor=false&zoom=16&format=png"); // TODO
+
+			 	}
 			 	else if ( suffix === "tema" ) {
-			 		res.send("`" + obj.evento + ": " + obj.tema + "`");
+			 		res.send(">*" + obj.evento + ":* " + obj.tema);
 			 	}
 			 	else if ( suffix === "info" || suffix === "todo" ) {
-			 		var keys = Object.keys( obj );
-					for( var i = 0,length = keys.length; i < length; i++ ) {
-				  	res.send("`" + obj[ keys[ i ] ] + "`");
-				  }
-				} 
+			 		for(var i in obj){
+			 			if(obj[i] !== '') {
+			 				res.send(">*" + i + ":* " + obj[i]);
+			 			}
+			 		}
+				}
 				else {
 					res.send("¿Ayuda? Comandos: @pudu beerjs [fecha|cuando, donde|lugar, tema]");
 				}
 
 			}
-		  	
+
 		});
-  	
-    
+
+
   });
 
 };
