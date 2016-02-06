@@ -1,9 +1,7 @@
 // Description:
 //   Ask to the last.fm API about and artist similar, top chart and top artist by tag
 //   TODO
-//   Use the node=>url method for parse the last.fm url
-//   Add method to ask about and artist and request/concat bio and popular songs    
-//   pass the msg.match[1] to RegExp     
+//   Add method to ask about and artist and request/concat bio and popular songs
 //
 // Dependencies:
 //   hubot-slack
@@ -12,8 +10,8 @@
 //   None
 //
 // Commands:
-//   @pudu lastfm similar <artist>
-//   @pudu lastfm tag <type>
+//   @pudu lastfm similar <artista => Alvaro Veliz>
+//   @pudu lastfm como <categoria => pachanga>
 //   @pudu lastfm top
 //
 // Author:
@@ -23,16 +21,19 @@ module.exports = function lastFm(robot) {
     var url = require('url');
     // last.fm API methods
     var lastMethods = {
-        topfive: 'chart.getTopTracks',
+        top: 'chart.getTopTracks',
         como: 'tag.getTopArtists',
         similar: 'artist.getSimilar',
         artistBio: 'artist.getInfo',
-        artistTracks: 'artist.getTopTracks'        
+        artistTracks: 'artist.getTopTracks'
     } 
     // hubot respond func
-    robot.respond('/(lastfm) (similar|como|topfive) (.*)/i', function(msg){
+    robot.respond(/(lastfm)\s(similar|como|top)\s?(.*)/i, function (msg) {
         var type = msg.match[2];
-        var search = msg.match[3].split(' ').join('+');
+        var search = msg.match[3];
+        // if similar || como they need a valid search
+        if (['similar', 'como'].indexOf(type) >= 0 && search.length <= 0)
+            return msg.send('Te falto el grupo o el estilo')
         // formating url request
         var lastUrl = url.format({
             protocol: 'http',
@@ -41,41 +42,33 @@ module.exports = function lastFm(robot) {
                 limit: '5',
                 format: 'json',
                 api_key: '2e2012c7f4762d0c257820da8eb59300',
-                method: lastMethods[type],
-                tag: 'the xx',
-                artist: 'the xx'
-                 
+                method: lastMethods[type]
             }
-        })
-        
-        //if()
-        
-        msg.send(msg.match[0], msg.match[1], msg.match[2], type, search, lastUrl);
-        
-                    msg.http(url).get()(function(err, res, body){
-                    var respond;
-                    var json = JSON.parse(body);
-                    if(type === 'similar' && json.similarartists.artist.length > 0) {
-                        respond = 'Si te gusta ' + search + ' te podrian interesar: \n';
-                        json.similarartists.artist.forEach(function(elem){
-                            return respond += elem.name + '\n';
-                        }); 
-                    } else if(type === 'tag' && json.topartists.artist.length > 0) {
-                        respond = 'Si te gusta la musica ' + search + ' te podrian interesar: \n';
-                        json.topartists.artist.forEach(function(elem){
-                            return respond += elem.name + '\n';
-                        });                        
-                    } else if(type === 'top' && json.tracks.track.length > 0) {
-                        respond = 'Lo más escuchado esta semana en last.fm es: \n';
-                        json.tracks.track.forEach(function(elem){
-                            return respond += elem.name + ' de ' + elem.artist.name + '\n';
-                        });                        
-                    } else {
-                        respond = 'OH SNAP! se fue todo a la mierda'
-                    }
-                    msg.send(respond);
-                });       
-        
+        }).concat(type === 'similar' ? '&artist=' : '&tag=').concat(search);
+        msg.send(lastUrl);
+        // request to last.fm
+        msg.http(lastUrl).get()(function (err, res, body) {
+            var respond;
+            var json = JSON.parse(body);
+            if (type === 'similar' && json.similarartists.artist.length > 0) {
+                respond = 'Si te gusta *' + search + '* te podrian interesar: \n';
+                json.similarartists.artist.forEach(function (elem) {
+                    return respond += elem.name + '\n';
+                });
+            } else if (type === 'como' && json.topartists.artist.length > 0) {
+                respond = 'Si te gusta la musica *' + search + '* te podrian interesar: \n';
+                json.topartists.artist.forEach(function (elem) {
+                    return respond += elem.name + '\n';
+                });
+            } else if (type === 'top' && json.tracks.track.length > 0) {
+                respond = 'Lo más escuchado esta semana en last.fm es: \n';
+                json.tracks.track.forEach(function (elem) {
+                    return respond += '*' + elem.name + '* de ' + elem.artist.name + '\n';
+                });
+            } else {
+                respond = 'Seguro que se llama *' + search + '* lo que buscas?';
+            }
+            return msg.send(respond);
+        });
     });
-    
 };
