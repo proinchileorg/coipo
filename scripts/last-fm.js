@@ -45,7 +45,6 @@ module.exports = function lastFm(robot) {
                 method: lastMethods[type]
             }
         }).concat(type === 'similar' ? '&artist=' : '&tag=').concat(search);
-        msg.send(lastUrl);
         // request to last.fm
         msg.http(lastUrl).get()(function (err, res, body) {
             var respond;
