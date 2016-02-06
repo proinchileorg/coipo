@@ -22,7 +22,7 @@ module.exports = function avisar(robot) {
   var VALIDHELPINPUTS = ['avisar help', 'avisar -h', 'avisar ?'];
 
   robot.respond(/avisar (help|\-h|\?)/i, help);
-  robot.respond(/avisar ([\w\d\s]+) en (([#|@][\w]+(,?)(\s*))+)/i, notify);
+  robot.respond(/avisar ([\w\d\s\:]+) en (([#|@][\w-]+(,?)(\s*))+)/i, notify);
 
 
   /**
@@ -39,6 +39,7 @@ module.exports = function avisar(robot) {
   function notify(res) {
     var message = res.message.user.name + ' dice: ' + res.match[1];
     var rooms = getRooms(res.match[2], res.message.room);
+    console.log(rooms);
     rooms.forEach(function onEachRoom(room) {
       robot.send({room: room}, message);
     });
@@ -61,7 +62,7 @@ module.exports = function avisar(robot) {
   function getRooms(message, exclude) {
     if (exclude) { exclude = exclude.toLowerCase(); }
 
-    return message.match(/(#|@)?[\w]+/ig)
+    return message.match(/(#|@)?[\w-]+/ig)
       .map(function cleanRoomName(room) {
         return room.replace('@', '');
       })
@@ -95,7 +96,3 @@ module.exports = function avisar(robot) {
       'Debe ser algo como `#canal1, @user1, #canalN, @userN`');
   }
 };
-
-
-
-
