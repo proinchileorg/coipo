@@ -28,7 +28,7 @@ module.exports = (robot) ->
       return
     targetUser.karma += if op is "++" then 1 else -1
     robot.brain.save()
-    response.send "#{targetUser.name} ahora tiene #{targetUser.karma} puntos de karma."
+    response.send "#{getCleanName(targetUser.name)} ahora tiene #{targetUser.karma} puntos de karma."
 
   robot.hear /^karma(?:\s+@?(.*))?$/, (response) ->
     targetToken = response.match[1]?.trim()
@@ -57,11 +57,11 @@ module.exports = (robot) ->
       else
         targetUser = userForToken resetCommand, response
         targetUser.karma = 0
-        msg = "#{targetUser.name} ha quedado libre de toda bendición o pecado."
+        msg = "#{getCleanName(targetUser.name)} ha quedado libre de toda bendición o pecado."
     else
       targetUser = userForToken targetToken, response
       return if not targetUser
-      msg = "#{targetUser.name} tiene #{targetUser.karma} puntos de karma."
+      msg = "#{getCleanName(targetUser.name)} tiene #{targetUser.karma} puntos de karma."
     robot.brain.save()
     response.send msg
 
@@ -103,3 +103,6 @@ module.exports = (robot) ->
         return true
       else
         return Math.floor(60 - timePast)
+
+  getCleanName = (name) ->
+    return name[0] + '.' + name.substr(1)
