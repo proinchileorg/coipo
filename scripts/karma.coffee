@@ -38,7 +38,7 @@ module.exports = (robot) ->
       list = Object.keys(users)
         .sort()
         .filter((k) -> users[k].karma)
-        .map((k) -> [users[k].karma or 0, users[k].name])
+        .map((k) -> [users[k].karma or 0, getCleanName(users[k].name)])
         .sort((line1, line2) -> if line1[0] < line2[0] then 1 else if line1[0] > line2[0] then -1 else 0)
         .map((line) -> line.join " ")
       msg = "Karma de todos:\n#{list.join '\n'}"
@@ -71,7 +71,7 @@ module.exports = (robot) ->
       user = users[0]
       user.karma ?= 0
     else if users.length > 1
-      response.send "Se más específico, Hay #{users.length} personas que se parecen a: #{(u.name for u in users).join ", "}."
+      response.send "Se más específico, Hay #{users.length} personas que se parecen a: #{(getCleanName(u.name) for u in users).join ", "}."
     else
       response.send "Chaucha, no encuentro al usuario '#{token}'."
     user
