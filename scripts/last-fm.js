@@ -45,11 +45,12 @@ module.exports = function lastFm(robot) {
                 method: lastMethods[type]
             }
         }).concat(type === 'similar' ? '&artist=' : '&tag=').concat(search);
+        msg.send(lastUrl);
         // request to last.fm
         msg.http(lastUrl).get()(function (err, res, body) {
             var respond;
             var json = JSON.parse(body);
-            if (type === 'similar' && json.similarartists.artist.length > 0) {
+            if (type === 'similar' && json.error !== 6) {
                 respond = 'Si te gusta *' + search + '* te podrian interesar: \n';
                 json.similarartists.artist.forEach(function (elem) {
                     return respond += elem.name + '\n';
