@@ -14,6 +14,8 @@
 
 module.exports = (robot) ->
 
+  hubotWebSite = "http://#{robot.name}.herokuapp.com/#{robot.name}"
+
   robot.hear /@?(\S*)(\b(?:\+\+|--))/, (response) ->
     thisUser = response.message.user
     targetToken = response.match[1].trim()
@@ -34,14 +36,7 @@ module.exports = (robot) ->
     targetToken = response.match[1]?.trim()
     return if not targetToken
     if targetToken.toLowerCase() in ["todos", "all"]
-      users = robot.brain.users()
-      list = Object.keys(users)
-        .sort()
-        .filter((k) -> users[k].karma)
-        .map((k) -> [users[k].karma or 0, getCleanName(users[k].name)])
-        .sort((line1, line2) -> if line1[0] < line2[0] then 1 else if line1[0] > line2[0] then -1 else 0)
-        .map((line) -> line.join " ")
-      msg = "Karma de todos:\n#{list.join '\n'}"
+      msg = "Karma de todos: #{hubotWebSite}/karma/todos"
     else if targetToken.toLowerCase().split(' ')[0] == 'reset'
       thisUser = response.message.user
       if thisUser.name.toLowerCase() != "hectorpalmatellez"
@@ -64,6 +59,21 @@ module.exports = (robot) ->
       msg = "#{getCleanName(targetUser.name)} tiene #{targetUser.karma} puntos de karma."
     robot.brain.save()
     response.send msg
+
+  robot.router.get "/#{robot.name}/karma/todos", (req, res) ->
+    users = robot.brain.users()
+    list = Object.keys(users)
+      .sort()
+      .filter((k) -> users[k].karma)
+      .map((k) -> [users[k].karma or 0, "<strong>#{users[k].name}</strong>"])
+      .sort((line1, line2) -> if line1[0] < line2[0] then 1 else if line1[0] > line2[0] then -1 else 0)
+      .map((line) -> line.join " ")
+    msg = "Karma de todos:\n
+          <ul>
+          <li>#{list.join '</li><li>'}</li>
+          </ul>"
+    res.setHeader 'content-type', 'text/html'
+    res.end msg
 
   userForToken = (token, response) ->
     users = usersForToken token
