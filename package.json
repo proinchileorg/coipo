@@ -20,7 +20,7 @@
     "hubot-insulter": "^1.0.2",
     "hubot-maps": "0.0.2",
     "hubot-numbersapi": "^1.0.1",
-    "hubot-putear": "^1.4.0",
+    "hubot-putear": "^1.4.1",
     "hubot-qr": "0.0.2",
     "hubot-rae": "^1.0.4",
     "hubot-redis-brain": "0.0.3",
@@ -33,15 +33,15 @@
     "hubot-wikipedia": "^0.0.3",
     "hubot-youtube": "^1.0.1",
     "jquery": "^2.2.0",
-    "jsdom": "^7.2.1",
+    "jsdom": "^8.0.2",
     "moment": "^2.11.2",
     "moment-business-days": "0.0.10",
-    "needle": "^0.11.0",
+    "needle": "^1.0.0",
     "password-generator": "^2.0.2",
     "request": "^2.69.0",
     "rutjs": "^0.1.1",
     "superheroes": "^1.0.0",
-    "yelp": "^0.2.0"
+    "yelp": "^1.0.1"
   },
   "engines": {
     "node": "4.2.x"
