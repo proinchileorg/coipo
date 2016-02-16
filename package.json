@@ -34,6 +34,7 @@
     "hubot-youtube": "^1.0.1",
     "jquery": "^2.2.0",
     "jsdom": "^8.0.2",
+    "mathjs": "^2.7.0",
     "moment": "^2.11.2",
     "moment-business-days": "0.0.10",
     "needle": "^1.0.0",
