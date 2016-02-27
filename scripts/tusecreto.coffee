@@ -26,6 +26,6 @@ module.exports = (robot) ->
     secreto = msg.match[1]
     notAllowed = secreto.split(' ').filter (string) -> forbidden.indexOf(string) >= 0
     if notAllowed.length > 0
-      robot.messageRoom '#random', "un tonto (#{msg.message.user.name}) trató de hacer "+ notAllowed.join(' ').replace(/@/g, '')+ " :facepalm:"
+      robot.messageRoom '#random', "El tonto de #{msg.message.user.name} trató de hacer "+ notAllowed.join(' ').replace(/@/g, '')+ " :facepalm:"
     else
-      robot.messageRoom '#random', "Me contaron este secreto: #{secreto}"
+      robot.messageRoom '#random', ":zipper_mouth_face: #{secreto}"
