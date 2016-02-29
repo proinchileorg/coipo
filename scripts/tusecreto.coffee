@@ -28,4 +28,4 @@ module.exports = (robot) ->
     if notAllowed.length > 0
       robot.messageRoom '#random', "El tonto de #{msg.message.user.name} trató de hacer "+ notAllowed.join(' ').replace(/@/g, '')+ " :facepalm:"
     else
-      robot.messageRoom '#random', ":zipper_mouth_face: #{secreto}"
+      robot.messageRoom '#random', ":zipper_mouth_face: *Me contaron* #{secreto}"
