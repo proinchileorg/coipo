@@ -1,5 +1,5 @@
 # Description:
-#   pudu commits suicide if offended
+#   hubot commits suicide if offended
 #
 # Dependencies:
 #   None
@@ -8,21 +8,21 @@
 #   None
 #
 # Commands:
-#   pudu ql
-#   pudu matate
+#   hubot ql
+#   hubot matate
 #
 # Author:
 #   jorgeepunan
 
 ascii = ["\n
 (҂._.)\n
-<,╤╦╤─ ҉ - - - - :pudu:\n
+<,╤╦╤─ ҉ - - - - :huemul:\n
 /--\'\n
 ",
 "\n
 ━━━━━┓ ＼＼\n
 ┓┓┓┓┓┃\n
-┓┓┓┓┓┃    |:pudu:ノ ~ chaoooooo\n
+┓┓┓┓┓┃    |:huemul:ノ ~ chaoooooo\n
 ┓┓┓┓┓┃ 　 /\n
 ┓┓┓┓┓┃  ノ)\n
 ┓┓┓┓┓┃\n
@@ -30,13 +30,13 @@ ascii = ["\n
 ",
 "
 :bomb: :bomb: :bomb:\n
-:bomb: :pudu: :bomb: :fire: ~ adiós mundo cruel\n
+:bomb: :huemul: :bomb: :fire: ~ adiós mundo cruel\n
 :bomb: :bomb: :bomb:\n
 ",
 "\n
  _____\n
 |         |\n
-|        :pudu:\n
+|        :huemul:\n
 |        /|\n
 |        / |\n
 |
