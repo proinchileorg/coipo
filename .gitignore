@@ -3,3 +3,4 @@ node_modules
 .hubot_history
 *.log
 node-v4.1.0-darwin-x64
+.env
