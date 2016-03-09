@@ -1,9 +1,9 @@
 {
-  "name": "Pudu",
-  "version": "1.1.0",
+  "name": "Huemul",
+  "version": "2.0.0",
   "private": true,
-  "author": "Pudu",
-  "description": "Most useful bot for hashtagchile.com",
+  "author": "Huemul",
+  "description": "Animal salvaje nivel 20",
   "dependencies": {
     "cheerio": "^0.20.0",
     "hubot": "^2.18.0",
