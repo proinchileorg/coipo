@@ -40,7 +40,7 @@ module.exports = (robot) ->
     else if targetToken.toLowerCase().split(' ')[0] == 'reset'
       thisUser = response.message.user
       if thisUser.name.toLowerCase() != "hector"
-        response.send "Tienes que ser :stalin: para realizar esta función"
+        response.send "Tienes que ser :hector: para realizar esta función"
         return
       resetCommand = targetToken.toLowerCase().split(' ')[1]
       return if not resetCommand
