@@ -20,5 +20,6 @@
   "hubot-google-images",
   "hubot-diceware",
   "hubot-vimeo",
-  "hubot-youtube"
+  "hubot-youtube",
+  "hubot-memegeneration"
 ]
