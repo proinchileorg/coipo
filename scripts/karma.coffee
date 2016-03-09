@@ -39,7 +39,7 @@ module.exports = (robot) ->
       msg = "Karma de todos: #{hubotWebSite}/karma/todos"
     else if targetToken.toLowerCase().split(' ')[0] == 'reset'
       thisUser = response.message.user
-      if thisUser.name.toLowerCase() != "hectorpalmatellez"
+      if thisUser.name.toLowerCase() != "hector"
         response.send "Tienes que ser :stalin: para realizar esta función"
         return
       resetCommand = targetToken.toLowerCase().split(' ')[1]
@@ -48,7 +48,7 @@ module.exports = (robot) ->
         users = robot.brain.users()
         list = Object.keys(users)
           .map((k) -> users[k].karma = 0)
-        msg = "#Chile ha quedado libre de toda bendición o pecado."
+        msg = "Todo el mundo ha quedado libre de toda bendición o pecado."
       else
         targetUser = userForToken resetCommand, response
         targetUser.karma = 0
