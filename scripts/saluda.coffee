@@ -18,5 +18,5 @@ module.exports = (robot) ->
   # robot.hear /hola/i, (msg) -> #test local
     # if msg.message.room == 'Shell' #test local
     if msg.message.room == 'general'
-      msg.send "+Hola *@#{msg.message.user.name}*! Bienvenido a *#{msg.message.room}* :clap:"
-      msg.send "Soy @huemul y te voy la bienvenida a *DevsChile*. Esperamos puedas compartir y aportar en cualquiera de los canales creados para temas variados intereses."
+      msg.send "Hola *@#{msg.message.user.name}*! Bienvenido a *#{msg.message.room}* :clap:"
+      msg.send "Soy @huemul :robot: y te voy la bienvenida a *DevsChile*. Esperamos puedas compartir y aportar en cualquiera de los canales creados para temas de variados intereses."
