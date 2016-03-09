@@ -8,7 +8,7 @@
 //   None
 //
 // Commands:
-//   pudu invierte [string]
+//   hubot invierte [string]
 //
 // Author:
 //   jorgeepunan
@@ -22,11 +22,11 @@ function flipString(aString){
     result[last - i] = r !== undefined ? r : c;
   }
   if (result !== '') {
-    return result.join('');  
+    return result.join('');
   } else {
-    return ':pudu: :gun:';
+    return ':huemul: :gun:';
   }
-  
+
 }
 
 var flipTable = {
@@ -92,7 +92,7 @@ var flipTable = {
 module.exports = function(robot) {
   robot.respond(/invierte (.*)/i, function(res) {
     var frase = res.match[1];
-    
+
     msg = flipString(frase);
     res.send(msg);
   });

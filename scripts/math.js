@@ -8,13 +8,13 @@
 //   None
 //
 // Commands:
-//   pudu calcula <expresion>
-//   pudu convierte <expresion> to/in <unidad> (TODO: convertir la expresion a español)
+//   hubot calcula <expresion>
+//   hubot convierte <expresion> to/in <unidad> (TODO: convertir la expresion a español)
 //
 //   + info: http://mathjs.org/examples/expressions.js.html
 //
 // Author:
-//   :pudu:
+//   :huemul:
 
 var mathjs = require("mathjs");
 
