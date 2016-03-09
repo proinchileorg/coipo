@@ -37,5 +37,5 @@ images = [
 ]
 
 module.exports = (robot) ->
-  robot.hear /tristeza|triste|aburrido|aburrimiento|fomingo|realidad/gi, (msg) ->
+  robot.hear /tristeza|triste|aburrido|aburrimiento|fomingo/gi, (msg) ->
     msg.send msg.random images
