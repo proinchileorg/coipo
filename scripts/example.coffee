@@ -12,10 +12,10 @@ module.exports = (robot) ->
 
   robot.hear /^ke\W/i, (res) ->
     res.send "¿Qué?*"
-  robot.hear /^pudo animate/i, (res) ->
-    res.send "lrn2pudu"
-  # robot.hear /cafe/i, (res) ->
-  #   res.send "¿«Café», dices?"
+
+  robot.hear /^@?pudu /ig, (res) ->
+    res.send "confunda pero no ofenda :unamused:"
+
 
   # robot.hear /badger/i, (res) ->
   #   res.send "Badgers? BADGERS? WE DON'T NEED NO STINKIN BADGERS"
