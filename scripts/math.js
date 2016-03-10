@@ -1,5 +1,5 @@
 // Description:
-//   Pudu mateo hace el calculo por ti
+//   Hubot hace cálculos por ti
 //
 // Dependencies:
 //   mathjs
