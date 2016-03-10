@@ -1,5 +1,5 @@
 # Description:
-#   pudú sugiere algo para comer
+#   hubot sugiere algo para comer
 #
 # Dependencies:
 #   None
@@ -8,7 +8,7 @@
 #   None
 #
 # Commands:
-#   @pudu qu[ée] desayunar|almorzar|cenar
+#   @hubot qu[ée] desayunar|almorzar|cenar
 #
 # Author:
 #   jorgeepunan
@@ -21,19 +21,19 @@ cervezas	= ['pale ale inglesa','brown ale inglesa','barley wine','scottish ale',
 
 module.exports = (robot) ->
   robot.respond /qu[ée] desayunar/gi, (msg) ->
-    msg.send ":pudu: Te sugiero: " + msg.random desayuno
+    msg.send "Te sugiero: " + msg.random desayuno
 
   robot.respond /qu[ée] almorzar/gi, (msg) ->
-    msg.send ":pudu: Te sugiero: " + msg.random almuerzo
+    msg.send "Te sugiero: " + msg.random almuerzo
 
   robot.respond /qu[ée] cenar/gi, (msg) ->
-    msg.send ":pudu: Para el *anvre*: " + msg.random cena
+    msg.send "Para el *anvre*: " + msg.random cena
 
   robot.respond /qu[ée] tomar/gi, (msg) ->
-    msg.send ":pudu: Si tienes sed: " + msg.random bebidas
+    msg.send "Si tienes sed: " + msg.random bebidas
 
   robot.respond /qu[ée] cerveza tomar/gi, (msg) ->
-    msg.send ":pudu: Si tienes sed: " + msg.random cervezas
+    msg.send "Si tienes sed: " + msg.random cervezas
 
   robot.respond /qu[ée] comer/gi, (msg) ->
-    msg.send ":pudu: Depende de la comida para: *desayunar*, *almorzar* ó *cenar*. Pregúntame de nuevo."
+    msg.send "Depende de la comida para: *desayunar*, *almorzar* ó *cenar*. Pregúntame de nuevo."
