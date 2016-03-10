@@ -1,6 +1,6 @@
 #
 # Description:
-#   Feeds pudu when it deserves it or when he's starving.
+#   Feeds hubot when it deserves it or when he's starving.
 #
 # Dependencies:
 #   None
@@ -9,7 +9,7 @@
 #   None
 #
 # Commands:
-#   pudu <toma|come|alimentate|traga|engulle> <food|emoji>
+#   hubot <toma|come|alimentate|traga|engulle> <food|emoji>
 #
 # Author:
 #   Ravenous <hello@ravenous.io>
