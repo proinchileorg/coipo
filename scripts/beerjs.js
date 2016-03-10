@@ -8,10 +8,10 @@
 //   None
 //
 // Commands:
-//   @pudu beerjs info|todo
-//   @pudu beerjs fecha|cuando
-//   @pudu beerjs donde|lugar
-//   @pudu beerjs tema
+//   @hubot beerjs info|todo
+//   @hubot beerjs fecha|cuando
+//   @hubot beerjs donde|lugar
+//   @hubot beerjs tema
 //
 // Author:
 //   jorgeepunan ©2015 beerjssantiago
@@ -50,7 +50,7 @@ module.exports = function(robot) {
 			 		}
 				}
 				else {
-					res.send("¿Ayuda? Comandos: @pudu beerjs [fecha|cuando, donde|lugar, tema]");
+					res.send("¿Ayuda? Comandos: @hubot beerjs [fecha|cuando, donde|lugar, tema]");
 				}
 
 			}
