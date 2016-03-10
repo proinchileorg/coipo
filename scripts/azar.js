@@ -8,7 +8,7 @@
 //   None
 //
 // Commands:
-//   @pudu al azar <algo1>,<algo2>,<algoN>,
+//   @hubot al azar <algo1>,<algo2>,<algoN>,
 //
 // Author:
 //   @jorgeepunan
@@ -20,7 +20,7 @@ var random = require('./helpers/random');
 module.exports = function(robot) {
   robot.respond(/al azar (.*)/i, function(res) {
     var items = res.match[1].trim().split(",");
-    msg = "Al azar: `" + random.item(items) + "` :dart: :ok_hand:";
+    msg = ":dart: Al azar: `" + random.item(items) + "` :ok_hand:";
     res.send(msg);
   });
 };
