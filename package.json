@@ -31,7 +31,7 @@
     "hubot-slack": "^3.4.2",
     "hubot-soon": "^1.0.0",
     "hubot-vimeo": "^1.0.1",
-    "hubot-wikipedia": "^0.0.4",
+    "hubot-wikipedia-lang": "^0.1.2",
     "hubot-youtube": "^1.0.1",
     "jquery": "^2.2.1",
     "jsdom": "^8.1.0",
