@@ -1,5 +1,5 @@
 # Description:
-#   Cachipún con :huemul:
+#   Juega cachipún (piedra|papel|tijera) contra tu hubot
 #
 # Dependencies:
 #   None
@@ -42,7 +42,6 @@ respuestas = (msg, userChoice) ->
   msg.send resultado
 
 module.exports = (robot) ->
-  # robot.respond /cachipun/i, (msg) ->
   robot.respond /cachipun (piedra|papel|tijera)/i, (msg) ->
     userChoice = msg.match[1].toLowerCase()
     respuestas(msg, userChoice)
