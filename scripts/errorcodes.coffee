@@ -1,11 +1,11 @@
 # Description:
 #   Retorna un error-code-cat si un error es mencionado
 #
-# Dependencies:
+# Notes:
 #   https://http.cat/ (API)
 #
 # Author:
-#   jorgeepunan
+#   @jorgeepunan
 
 codes = [100, 101, 200, 201, 202, 204, 206, 207, 300, 301, 302, 303, 304, 305,
            307, 400, 401, 402, 403, 404, 405, 406, 408, 409, 410, 411, 412, 413,

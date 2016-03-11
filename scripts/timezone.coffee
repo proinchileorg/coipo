@@ -2,22 +2,22 @@
 #   Cuanto falta
 #
 # Dependencies:
-#   none
+#   None
 #
 # Configuration:
 #   None
 #
 # Commands:
-#   `que hora`
-#   `la hora`
+#   hubot que hora
+#   hubot la hora
 #
 # Author:
-#   jorgeepunan
+#   @jorgeepunan
 
 module.exports = (robot) ->
   robot.respond /(.*)(qu[eé] hora|la hora.*)/i, (msg) ->
 
-    #from DayTimr.js 
+    #from DayTimr.js
     #https://github.com/juanbrujo/daytimr/blob/master/js/jquery.dayTimr-1.0.js
 
     nightStart = '19:00'

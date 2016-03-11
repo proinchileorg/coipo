@@ -12,8 +12,8 @@
 #   hubot sosearch [me] <query> -tags <tag list separated by ,> - Search for the query limit to given tags
 #
 # Author:
-#   carsonmcdonald
-#   drdamour
+#   @carsonmcdonald
+#   @drdamour
 
 
 zlib = require('zlib')

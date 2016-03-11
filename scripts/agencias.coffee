@@ -8,10 +8,10 @@
 #   None
 #
 # Commands:
-#   #agencia|#agencias
+#   None
 #
 # Author:
-#   jorgeepunan
+#   @jorgeepunan
 
 images = [
   'http://i.imgur.com/IW6O268.gif'

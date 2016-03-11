@@ -8,7 +8,7 @@
 //   None
 //
 // Commands:
-//   hear 'NaN'
+//   None
 //
 // Author:
 //   @jorgeepunan

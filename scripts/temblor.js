@@ -8,10 +8,10 @@
 //   None
 //
 // Commands:
-//   pudu temblores [Chile|Mundo]
+//   hubot temblores <Chile|Mundo>
 //
 // Author:
-//   jorgeepunan
+//   @jorgeepunan
 
 var request = require('request');
 var url = 'http://earthquake-report.com/feeds/recent-eq?json';

@@ -8,10 +8,10 @@
 #   None
 #
 # Commands:
-# pudu dado
+#   hubot dado
 #
 # Author:
-#   Narzerus
+#   @narzerus
 
 randomNumber = (min, max) ->
   Math.floor(Math.random() * (max - min + 1)) + min

@@ -11,6 +11,7 @@
 //   hubot calcula <expresion>
 //   hubot convierte <expresion> to/in <unidad> (TODO: convertir la expresion a español)
 //
+// Notes
 //   + info: http://mathjs.org/examples/expressions.js.html
 //
 // Author:

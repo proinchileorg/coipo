@@ -8,7 +8,10 @@
 //   None
 //
 // Commands:
-//   @pudu amigable <texto> (max. 140 caracteres porq @gmq es un hacker)
+//   hubot amigable <texto>
+//
+// Notes:
+//   max. 140 caracteres porq @gmq es un hacker
 //
 // Author:
 //   @jorgeepunan

@@ -8,10 +8,10 @@
 //   None
 //
 // Commands:
-//   hubot invierte [string]
+//   hubot invierte <string>
 //
 // Author:
-//   jorgeepunan
+//   @jorgeepunan
 
 function flipString(aString){
   var last = aString.length - 1;

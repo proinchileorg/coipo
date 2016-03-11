@@ -7,12 +7,12 @@
 # Configuration:
 #   None
 #
-# Commands:
+# Notes:
 #   yeta   - Displays a Piñera picture
 #   piñera - Displays a Piñera picture
 #
 # Author:
-#   hectorpalmatellez
+#   @hectorpalmatellez
 
 images = [
   "https://pbs.twimg.com/media/CDUmITXWIAAAg2J.jpg",

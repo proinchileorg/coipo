@@ -9,15 +9,14 @@
 #   Yelp tokens: http://www.yelp.com/developers/getting_started/api_access
 #
 # Commands:
-#   pudu yelp <tipo_de_comida> en/cerca/cerca de <comuna/zona>)?
+#   hubot yelp <tipo_de_comida> en/cerca/cerca de <comuna/zona>)?
 #
-# Examples:
-#   pudu yelp vegetariano en providencia
-#   pudu yelp pizza cerca de el golf
+# Notes:
+#   hubot yelp vegetariano en providencia
+#   hubot yelp pizza cerca de el golf
 #
 # Author:
 #   @jorgeepunan
-#
 
 consumer_key = "II7ox9sqSUe1qo6QzXphxQ"
 consumer_secret = "Fwj7DmhtjnS_0fGEfKSWvBxqjBY"

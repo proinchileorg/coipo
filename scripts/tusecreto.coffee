@@ -9,10 +9,10 @@
 #   None
 #
 # Commands:
-#   None, it works by itself
+#   hubot mi secreto <secreto>
 #
 # Author:
-#   jorgeepunan
+#   @jorgeepunan
 
 module.exports = (robot) ->
   robot.respond /mi secreto (.*)/i, (msg) -> #test local

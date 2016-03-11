@@ -8,12 +8,14 @@
 //   None
 //
 // Commands:
-//   @pudu 420
+//   hubot 420
 //
 // Author:
-//   Camilo Castro - clsource © 2016
+//   @clsource
 //
-// Based on https://github.com/thedod/global420
+// Notes:
+//   Camilo Castro - clsource © 2016
+//   Based on https://github.com/thedod/global420
 
 var global420 = require('./helpers/global420');
 global420 = global420.global420;

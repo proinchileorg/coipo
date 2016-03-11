@@ -8,10 +8,10 @@
 #   None
 #
 # Commands:
-#   None, it works by itself
+#   None
 #
 # Author:
-#   jorgeepunan
+#   @jorgeepunan
 
 module.exports = (robot) ->
   robot.enter (msg) ->

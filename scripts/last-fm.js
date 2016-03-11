@@ -10,9 +10,9 @@
 //   None
 //
 // Commands:
-//   @pudu lastfm similar <artista => Alvaro Veliz>
-//   @pudu lastfm como <categoria => pachanga>
-//   @pudu lastfm top
+//   hubot lastfm similar <artista => Alvaro Veliz>
+//   hubot lastfm como <categoria => pachanga>
+//   hubot lastfm top
 //
 // Author:
 //   @javier
@@ -26,7 +26,7 @@ module.exports = function lastFm(robot) {
         similar: 'artist.getSimilar',
         artistBio: 'artist.getInfo',
         artistTracks: 'artist.getTopTracks'
-    } 
+    }
     // hubot respond func
     robot.respond(/(lastfm)\s(similar|como|top)\s?(.*)/i, function (msg) {
         var type = msg.match[2];

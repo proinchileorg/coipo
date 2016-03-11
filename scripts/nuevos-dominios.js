@@ -8,15 +8,15 @@
 //   None
 //
 // Commands:
-//   lista dominios
+//   hubot lista dominios
 //
 // Author:
-//   jorgeepunan
+//   @jorgeepunan
 
 var cheerio = require('cheerio');
 
 module.exports = function(robot) {
-  robot.hear(/lista dominios/i, function(msg) {
+  robot.respond(/lista dominios/i, function(msg) {
 
     var url = 'http://www.nic.cl/registry/Ultimos.do?t=1h';
 

@@ -2,13 +2,16 @@
 #   muestra saldo tarjeta BIP! ázì nòmá
 #
 # Dependencies:
-#   API prestada de alguien más q no lo sabe (aún)
+#   None
 #
 # Configuration:
 #   None
 #
 # Commands:
-#   @hubot bip <numero>
+#   hubot bip <numero>
+#
+# Notes:
+#   API prestada de alguien más q no lo sabe (aún)
 #
 # Author:
 #   @jorgeepunan

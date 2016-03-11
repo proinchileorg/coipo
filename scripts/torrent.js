@@ -8,7 +8,7 @@
 //   hubot torrent <query>
 //
 // Author:
-//  jorgeepunan
+//   @jorgeepunan
 
 var cheerio = require('cheerio');
 

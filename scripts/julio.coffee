@@ -8,10 +8,12 @@
 #   None
 #
 # Commands:
-#   juliiiito
+#   hubot videla
+#   hubot taringa
+#   hubot pregunta
 #
 # Author:
-#   eljojo
+#   @eljojo
 
 rand = (array) -> array[Math.floor(Math.random()*array.length)]
 

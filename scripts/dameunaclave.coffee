@@ -8,17 +8,17 @@
 #   None
 #
 # Commands:
-#   `hubot dame una clave`
-#   `hubot dame una password`
-#   `hubot dame una contraseña`
+#   hubot dame una clave
+#   hubot dame una password
+#   hubot dame una contraseña
 #
 # Author:
-#   victorsanmartin
+#   @victorsanmartin
 
 generatePassword = require('password-generator')
 
 module.exports = (robot) ->
-  robot.hear /dame una (clave|password|contraseña)( [0-9]{1,2})?/i, (msg) ->
+  robot.respond /dame una (clave|password|contraseña)( [0-9]{1,2})?/i, (msg) ->
 
     length = 10
     if msg.match[2]

@@ -12,7 +12,7 @@
 //   hubot quién es@<username> - Displays user's description
 //
 // Author:
-//   gmq
+//   @gmq
 
 
 module.exports = function(robot) {

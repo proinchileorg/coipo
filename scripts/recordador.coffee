@@ -8,13 +8,14 @@
 #   None
 #
 # Commands:
-#   @pudu recuerdame en <tiempo> que tengo que <accion>
+#   hubot recuerdame en <tiempo> que tengo que <accion>
 #
+# Notes:
 #   <tiempo> semanas, dias, horas|hrs, segundos|segs
 #   <accion> comer, salir, leer ir al baño, cobrar el IVA...
 #
 # Author:
-#   whitman
+#   @whitman
 
 class Reminders
   constructor: (@robot) ->

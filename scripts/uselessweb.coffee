@@ -8,10 +8,10 @@
 #   none
 #
 # Commands:
-#   uselessweb - Returns a random useless web URL.
+#   hubot uselessweb - Returns a random useless web URL.
 #
 # Author:
-#   victorsanmartin
+#   @victorsanmartin
 
 module.exports = (robot) ->
   robot.respond /uselessweb/i, (msg) ->

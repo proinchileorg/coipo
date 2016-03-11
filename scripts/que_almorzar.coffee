@@ -8,10 +8,10 @@
 #   None
 #
 # Commands:
-#   @hubot qu[ée] desayunar|almorzar|cenar
+#   hubot qu[ée] desayunar|almorzar|cenar|tomar|comer
 #
 # Author:
-#   jorgeepunan
+#   @jorgeepunan
 
 desayuno 	= ["cereal","sandwich","frutas","desayuno dominó","quesillo + marmelada","huevos","lo mismo que ayer"]
 almuerzo 	= ["pescado","árabe/thai/india","pastas","sushi","china","sandwich","empanada","ensalada","pizza","chatarra","ceviche","carne/parrilla","lo mismo que ayer"]
