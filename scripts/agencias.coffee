@@ -15,17 +15,11 @@
 
 images = [
   'http://i.imgur.com/IW6O268.gif'
-  'http://i.imgur.com/h874JeX.gifv'
-  'http://i.imgur.com/xcHlIXi.gif'
-  'http://i.imgur.com/UXTJJGU.gif'
+  'http://data.whicdn.com/images/66984539/large.gif'
+  'http://stream1.gifsoup.com/view6/4649173/disaster-movie-chipmunk-rabies-o.gif'
+  'https://media.giphy.com/media/x13saNuWqUPPW/giphy.gif'
   'http://i.imgur.com/PimcI7P.gif'
-  'http://i.imgur.com/bmnELrT.gif'
   'http://i.imgur.com/f6iwaCk.gif'
-  'http://i.imgur.com/qiTwF5H.gif'
-  'http://i.imgur.com/2nJL8yz.gif'
-  'http://i.imgur.com/wJ7xZZI.gif'
-  'http://i.imgur.com/Z1w5IKP.gif'
-  'http://i.imgur.com/3S9ksPo.gif'
   'http://i.imgur.com/b1YkaV3.gif'
 ]
 
