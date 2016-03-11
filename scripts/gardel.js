@@ -8,7 +8,7 @@
 //   None
 //
 // Commands:
-//   @pudu gardel
+//   hubot gardel
 //
 // Author:
 //   hectorpalmatellez
