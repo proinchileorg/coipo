@@ -9,8 +9,8 @@
 #   None
 #
 # Commands:
-#   pudu <imdb|movie> <movie or serie>
-#   pudu <imdb|movie> <year|rate|plot|genre|director|actors|url> <movie or serie>
+#   hubot <imdb|movie> <movie or serie>
+#   hubot <imdb|movie> <year|rate|plot|genre|director|actors|url> <movie or serie>
 #
 # To do:
 #   Filter search by year or type (movie or serie) for more accuracy
@@ -33,15 +33,15 @@ module.exports = (robot) ->
           msg.send ">*#{movie.Title} (#{movie.Year})*"
         else if label is 'rate' and movie.imdbRating?
           if movie.imdbRating isnt 'N/A'
-            msg.send ">IMDb Rating: `#{movie.imdbRating}/10`" 
+            msg.send ">IMDb Rating: `#{movie.imdbRating}/10`"
             msg.send ">Rotten Tomatoes: `#{movie.tomatoMeter}%`" if movie.tomatoMeter? and movie.tomatoMeter isnt "N/A"
           else
-            msg.send "Nadie la ha calificado aún :disappointed:"    
+            msg.send "Nadie la ha calificado aún :disappointed:"
         else if label is 'plot' and movie.Plot?
           if movie.Plot isnt 'N/A'
             msg.send ">_#{movie.Plot}_"
           else
-            msg.send "No tiene argumento! Ain't nobody got time for that! :gun:" 
+            msg.send "No tiene argumento! Ain't nobody got time for that! :gun:"
         else if label is 'genre' and movie.Genre?
           if movie.Genre isnt 'N/A'
             msg.send ">#{movie.Genre}"
@@ -63,7 +63,7 @@ module.exports = (robot) ->
           else
             msg.send "Google es tu amigo! :ok_hand:"
         else if label is 'full' and movie.Title?
-          full = ">*#{movie.Title} (#{movie.Year})*\n" 
+          full = ">*#{movie.Title} (#{movie.Year})*\n"
           full += ">IMDb Rating: `#{movie.imdbRating}/10`\n" if movie.imdbRating? and movie.imdbRating isnt "N/A"
           full += ">Rotten Tomatoes: `#{movie.tomatoMeter}%`\n" if movie.tomatoMeter? and movie.tomatoMeter isnt "N/A"
           full += ">_#{movie.Plot}_\n" if movie.Plot? and movie.Plot isnt "N/A"
