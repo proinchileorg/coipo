@@ -2,7 +2,7 @@
 
 Este un bot basado en [Hubot](https://hubot.github.com/) para [DevsChile](http://www.devschile.cl) ([canal en Slack](http://devschile.slack.com)).
 
-Posee todas las funciones básicas de Hubot y varios aportes de esforzados desarrolladores y amantes del *Open Source*. 
+Posee todas las funciones básicas de Hubot y varios aportes de esforzados desarrolladores y amantes del *Open Source*.
 
 ## ¿Qué comandos sabe?
 
@@ -18,7 +18,7 @@ El repositorio queda abierto para todos los miembros de [DevsChile en GitHub](ht
 - `$ cd path/to/huemul-bot`
 - `$ npm install` (probablemente sea mejor usar `sudo`).
 - Haz tu código JS (o CoffeeScript) y déjalo en `huemul-bot/scripts`. Para más info sobre *Hubot* consulta [Hubot Documentation > Scripting](https://hubot.github.com/docs/scripting/). **No olvides documentar tu código**.
-- Para probar tus cambios localmente: `$ bin/hubot` y activarás a pudu y podrás invocarlo junto con sus comandos y los que hayas escrito.
+- Para probar tus cambios localmente: `$ bin/hubot` y activarás a huemul y podrás invocarlo junto con sus comandos y los que hayas escrito.
 - Para enviarlo a Heroku, haz un _pull request_, coméntalo en Slack canal *#meta* y será revisado, testeado, linteado y si pasa los rigurosos tests será activado.
 
 ---

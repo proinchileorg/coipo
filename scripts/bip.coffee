@@ -8,7 +8,7 @@
 #   None
 #
 # Commands:
-#   @pudu bip <numero>
+#   @hubot bip <numero>
 #
 # Author:
 #   @jorgeepunan

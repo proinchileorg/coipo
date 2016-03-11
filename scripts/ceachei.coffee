@@ -8,7 +8,7 @@
 #   None
 #
 # Commands:
-#   @pudu ceachei
+#   @hubot ceachei
 #
 # Author:
 #   @jorgeepunan

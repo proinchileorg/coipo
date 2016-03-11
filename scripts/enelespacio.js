@@ -8,7 +8,7 @@
 //   None
 //
 // Commands:
-//   pudu en el espacio
+//   hubot en el espacio
 //
 // Author:
 //   jorgeepunan
@@ -28,10 +28,10 @@ module.exports = function(robot) {
     request(url, function (error, response, body) {
 
       if (!error && response.statusCode == 200) {
-        
+
         var data = JSON.parse(body);
         var cuantos = data.number;
-        
+
         res.send( "En este momento hay *" + cuantos + "* personas en el espacio " + rand(emojis) );
 
         data.people.forEach(function(d) {
@@ -42,7 +42,7 @@ module.exports = function(robot) {
           res.send( " · " + quien + " (" + donde + ")" );
 
         });
-        
+
 
       } else {
         res.send(":facepalm: Error: ", error);
