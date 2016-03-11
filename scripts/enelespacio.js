@@ -11,7 +11,7 @@
 //   hubot en el espacio
 //
 // Author:
-//   jorgeepunan
+//   @jorgeepunan
 
 var request = require('request');
 var url = 'http://api.open-notify.org/astros.json';

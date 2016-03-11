@@ -8,16 +8,16 @@
 #   None
 #
 # Commands:
-#   hubot `ZN1616` fue rematado?
-#   hubot `ZN1616` ha sido rematado?
+#   hubot <patente> fue rematado?
+#   hubot <patente> ha sido rematado?
 #
 # Author:
-#   victorsanmartin
+#   @victorsanmartin
 
 $ = require('cheerio')
 
 module.exports = (robot) ->
-  robot.hear /([A-Za-z]{2,4}[0-9]{2,4}) (fue|ha sido) rematado\?/i, (msg) ->
+  robot.respond /([A-Za-z]{2,4}[0-9]{2,4}) (fue|ha sido) rematado\?/i, (msg) ->
 
     patente = msg.match[1].toLowerCase()
     url = 'http://especial.t13.cl/consulta-patente/index.php?patent=' + patente

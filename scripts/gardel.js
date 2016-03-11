@@ -11,7 +11,7 @@
 //   hubot gardel
 //
 // Author:
-//   hectorpalmatellez
+//   @hectorpalmatellez
 
 var moment = require('moment-business-days');
 

@@ -8,10 +8,13 @@
 //   None
 //
 // Commands:
-//   hubot |chao|c[oó]mo est[aá]s)
+//   hubot hola
+//   hubot c[oá]mo est[aá]s
+//   hubot porque|porqué|por que|por qué|porq <razon>
+//   hubot cha[ou]
 //
 // Author:
-//   jorgeepunan
+//   @jorgeepunan
 
 
 var saludo = ['hola','que tal','hey'];

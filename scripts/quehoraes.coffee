@@ -9,7 +9,7 @@
 #   HUBOT_WWO_API_URL
 #
 # Commands:
-#   @pudu hora en <ciudad>
+#   hubot hora en <ciudad>
 #
 # Notes
 #   Request an WWO API KEY in http://www.worldweatheronline.com/
@@ -22,8 +22,7 @@
 #     latitude and longitude (in decimal)
 #
 # Author:
-#   gtoroap
-#
+#   @gtoroap
 
 process.env.HUBOT_WWO_API_KEY = '9ca1f6cb851ce2d8c004a425e5456'
 process.env.HUBOT_WWO_API_URL = 'http://api.worldweatheronline.com/free/v2/tz.ashx'

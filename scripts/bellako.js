@@ -8,7 +8,7 @@
 //   None
 //
 // Commands:
-//   @hubot bellako <frase>
+//   hubot bellako <frase>
 //
 // Author:
 //   @jorgeepunan
@@ -47,7 +47,7 @@ function aflaitar(aString) {
 		result += flChar(aString.charAt(i));
 	}
 	if (result.length > 10) {
-		result += ' m\xE1Zn\xE1\xE1t\xE8d\xED\xEDgh\xF3 \xF3\xE8z\xED\xED'; 
+		result += ' m\xE1Zn\xE1\xE1t\xE8d\xED\xEDgh\xF3 \xF3\xE8z\xED\xED';
 	}
 	return result;
 }

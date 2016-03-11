@@ -2,15 +2,17 @@
 #   A simple karma tracking script for hubot.
 #
 # Commands:
+#   karma <name> - shows karma for the named user
+#
+# Notes
 #   <name>++ - adds karma to a user
 #   <name>-- - removes karma from a user
-#   karma <name> - shows karma for the named user
-#   karma todos|all - shows all users' karama
-#   karma - shows all users' karama
-#
-# Adaptado para pudu por @clsource Camilo Castro
-#  Basado en
+#   Adaptado por @clsource Camilo Castro
+#   Basado en
 #   https://www.npmjs.com/package/hubot-karma
+#
+# Author
+#   @clsource
 
 module.exports = (robot) ->
 

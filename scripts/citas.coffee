@@ -8,10 +8,10 @@
 #   None
 #
 # Commands:
-#   una cita
+#   hubot una cita
 #
 # Author:
-#   jorgeepunan
+#   @jorgeepunan
 
 citas = [
   '> Lo bien hecho es mejor que lo bien dicho. *-Benjamin Franklin*'

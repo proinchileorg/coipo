@@ -8,11 +8,10 @@
 #   None
 #
 # Commands:
-#   (yapo|nopo)
-#
+#   hubot yapo|nopo|sipo
 #
 # Author:
-#   jorgeepunan
+#   @jorgeepunan
 
 respuestas = ['yapo','nopo','kepo']
 

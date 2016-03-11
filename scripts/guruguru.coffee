@@ -9,10 +9,10 @@
 #   none
 #
 # Commands:
-#   hubot <guru> texto - Traduce le texto al idioma guru guru
+#   hubot guru <texto> - Traduce le texto al idioma guru guru
 #
 # Author:
-#   victorsanmartin
+#   @victorsanmartin
 
 module.exports = (robot) ->
   robot.respond /guru (.*)/i, (msg) ->

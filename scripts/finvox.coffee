@@ -8,16 +8,16 @@
 #   None
 #
 # Commands:
-#   finvox help
-#   finvox dolar|usd
-#   finvox bitcoin
-#   finvox uf
-#   finvox euro
-#   finvox ipc
-#   finvox utm
+#   hubot finvox help
+#   hubot finvox dolar|usd
+#   hubot finvox bitcoin
+#   hubot finvox uf
+#   hubot finvox euro
+#   hubot finvox ipc
+#   hubot finvox utm
 #
 # Author:
-#   jorgeepunan
+#   @jorgeepunan
 
 #process.env.API_URL ||= 'http://mindicador.cl/api' # old, slow and shitty
 process.env.API_URL ||= 'http://indicadoresdeldia.cl/webservice/indicadores.json'
@@ -29,7 +29,7 @@ numberWithCommas = (x) ->
   x.toString().replace /\B(?=(\d{3})+(?!\d))/g, '.'
 
 module.exports = (robot) ->
-  robot.hear /finvox (\w+)/i, (msg) ->
+  robot.respond /finvox (\w+)/i, (msg) ->
     indicador = msg.match[1].toLowerCase()
 
     if indicador == 'help' || !indicador

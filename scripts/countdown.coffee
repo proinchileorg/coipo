@@ -8,17 +8,17 @@
 #   None
 #
 # Commands:
-#   countdown set #meetupname# #datestring# e.g. countdown set punerbmeetup 21 Jan 2014
-#   countdown [for] #meetupname# e.g. countdown punerbmeetup
-#   countdown list
-#   countdown delete #meetupname# e.g. countdown delete seattlerbmeetup
-#   countdown clear
+#   hubot countdown set #meetupname# #datestring# e.g. countdown set punerbmeetup 21 Jan 2014
+#   hubot countdown [for] #meetupname# e.g. countdown punerbmeetup
+#   hubot countdown list
+#   hubot countdown delete #meetupname# e.g. countdown delete seattlerbmeetup
+#   hubot countdown clear
 #
 # Notes:
 #   None
 #
 # Author:
-#   anildigital
+#   @anildigital
 
 module.exports = (robot) ->
 
@@ -30,7 +30,7 @@ module.exports = (robot) ->
     gap =  Math.floor(gap / (1000 * 60 * 60 * 24));
     "¡Sólo quedan #{gap} días hasta la #{countdownKey}!"
 
-  robot.hear /countdown set (\w+) (.*)/i, (msg) ->
+  robot.respond /countdown set (\w+) (.*)/i, (msg) ->
     robot.brain.data.countdown or= {}
 
     dateString = msg.match[2];
@@ -48,22 +48,22 @@ module.exports = (robot) ->
         console.log(error.message)
         msg.send "Invalid date passed!"
 
-  robot.hear /countdown list/i, (msg) ->
+  robot.respond /countdown list/i, (msg) ->
     countdowns = robot.brain.data.countdown;
     for countdownKey of countdowns
       msg.send countdownKey + " -> " + new Date(countdowns[countdownKey].date).toDateString() +
         " -> " + getCountdownMsg(countdownKey) if countdowns.hasOwnProperty(countdownKey)
 
-  robot.hear /(countdown)( for)? (.*)/, (msg) ->
+  robot.respond /(countdown)( for)? (.*)/, (msg) ->
     countdownKey = msg.match[3]
     countdowns = robot.brain.data.countdown;
     msg.send getCountdownMsg(countdownKey)  if countdowns.hasOwnProperty(countdownKey)
 
-  robot.hear /countdown clear/i, (msg) ->
+  robot.respond /countdown clear/i, (msg) ->
     robot.brain.data.countdown = {}
     msg.send "Countdowns cleared"
 
-  robot.hear /countdown delete (.*)/i, (msg) ->
+  robot.respond /countdown delete (.*)/i, (msg) ->
     countdownKey = msg.match[1]
     if robot.brain.data.countdown.hasOwnProperty(countdownKey)
       delete robot.brain.data.countdown[countdownKey]
@@ -71,7 +71,7 @@ module.exports = (robot) ->
     else
       msg.send "Countdown for #{countdownKey} does not exist!"
 
-  robot.hear /countdown set$|countdown help/i, (msg) ->
+  robot.respond /countdown set$|countdown help/i, (msg) ->
     msg.send "countdown set #meetupname# #datestring# e.g. countdown set BeerJS 27 May 2015"
     msg.send "countdown [for] #meetupname# e.g. countdown BeerJS"
     msg.send "countdown list"

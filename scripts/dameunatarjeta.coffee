@@ -8,18 +8,18 @@
 #   None
 #
 # Commands:
-#   `dame una visa`
-#   `dame una mastercard`
-#   `dame una american express`
-#   `dame una discover`
+#   hubot dame una visa
+#   hubot dame una mastercard
+#   hubot dame una american express
+#   hubot dame una discover
 #
 # Author:
-#   victorsanmartin
+#   @victorsanmartin
 
 $ = require('cheerio')
 
 module.exports = (robot) ->
-  robot.hear /dame una (visa|mastercard|discover|american express)/i, (msg) ->
+  robot.respond /dame una (visa|mastercard|discover|american express)/i, (msg) ->
 
     quequiere = msg.match[1].toLowerCase()
 

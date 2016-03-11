@@ -8,14 +8,17 @@
 //   None
 //
 // Commands:
-//   @hubot beerjs info|todo
-//   @hubot beerjs fecha|cuando
-//   @hubot beerjs donde|lugar
-//   @hubot beerjs tema
+//   hubot beerjs info|todo
+//   hubot beerjs fecha|cuando
+//   hubot beerjs donde|lugar
+//   hubot beerjs tema
+//
+// Notes:
+//   ©2015 beerjssantiago
+//   https://github.com/beerjs/santiago/
 //
 // Author:
-//   jorgeepunan ©2015 beerjssantiago
-//	 https://github.com/beerjs/santiago/
+//   @jorgeepunan
 
 var needle = require('needle');
 var file = 'https://raw.githubusercontent.com/beerjs/santiago/master/beerjs.json';
@@ -43,11 +46,13 @@ module.exports = function(robot) {
 			 		res.send(">*" + obj.evento + ":* " + obj.tema);
 			 	}
 			 	else if ( suffix === "info" || suffix === "todo" ) {
+          message = ""
 			 		for(var i in obj){
 			 			if(obj[i] !== '') {
-			 				res.send(">*" + i + ":* " + obj[i]);
-			 			}
-			 		}
+              message += ">*" + i + ":* " + obj[i] + "\n";
+            }
+          }
+			 		res.send(message);
 				}
 				else {
 					res.send("¿Ayuda? Comandos: @hubot beerjs [fecha|cuando, donde|lugar, tema]");

@@ -8,10 +8,10 @@
 //   None
 //
 // Commands:
-//   `dame un rut`
+//   hubot dame un rut
 //
 // Author:
-//   jorgeepunan
+//   @jorgeepunan
 
 // var jsdom = require("jsdom");
 // var $ = require("jquery")(jsdom.jsdom().parentWindow);
@@ -29,7 +29,7 @@ module.exports = function(robot) {
       return rut.getNiceRut()
   }
 
-  robot.hear(/dame un rut/i, function(res) {
+  robot.respond(/dame un rut/i, function(res) {
     res.send( "Un RUT: " + generar() );
   });
 

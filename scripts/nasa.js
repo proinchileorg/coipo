@@ -8,10 +8,10 @@
 //   None
 //
 // Commands:
-//   pudu foto del d[ií]a
+//   hubot foto del d[ií]a
 //
 // Author:
-//   jorgeepunan
+//   @jorgeepunan
 
 var request = require('request');
 var url = 'https://api.nasa.gov/planetary/apod';
@@ -25,10 +25,10 @@ function currentDate(){
 
   if( dd < 10 ){
       dd = '0' + dd;
-  } 
+  }
   if( mm < 10 ){
       mm = '0' + mm;
-  } 
+  }
   var today = yyyy + '-' + mm + '-' + dd;
   return today
 }
@@ -41,12 +41,12 @@ module.exports = function(robot) {
     request(fullURL, function (error, response, body) {
 
       if (!error && response.statusCode == 200) {
-        
+
         var data = JSON.parse(body);
-        
+
         res.send( data.title + ' [' + currentDate() + ']' );
         res.send( data.url );
-        
+
       } else {
         res.send(":facepalm: Error: ", error);
       }

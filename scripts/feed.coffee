@@ -12,7 +12,7 @@
 #   hubot <toma|come|alimentate|traga|engulle> <food|emoji>
 #
 # Author:
-#   Ravenous <hello@ravenous.io>
+#   @ravenous <hello@ravenous.io>
 
 hungry = ['Ahhh! Un manjarsh!','Gracias! Me moría de hambre','Ñam ñam ñam~ :yum:', 'Por fin alguien se digna a alimentarme! :clap:']
 satisfied = ['No puedo más, mi barriga va a explotar!','No gracias, ya estoy llenito! :relaxed:','¿Me estás haciendo engordar? :anguished:']
@@ -31,4 +31,4 @@ module.exports = (robot) ->
         robot.brain.set 'totalFood', foodHad+1
     else
       res.send res.random taste
-      
+

@@ -9,11 +9,11 @@
 # 	None
 #
 # Commands:
-# 	pudu lmgtfy <@usuario opcional> <consulta>
-# 	pudu google <@usuario opcional> <consulta>
+# 	hubot lmgtfy <@usuario opcional> <consulta>
+# 	hubot google <@usuario opcional> <consulta>
 #
 # Author:
-# 	Ravenous
+# 	@ravenous
 
 rude = ["¿Era muy difícil? :gun:","¿En serio no sabías eso? :unamused:","Bienvenido a la Internet :clap:"]
 

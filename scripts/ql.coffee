@@ -9,10 +9,12 @@
 #
 # Commands:
 #   hubot ql
+#   hubot rql
+#   hubot ctm
 #   hubot matate
 #
 # Author:
-#   jorgeepunan
+#   @jorgeepunan
 
 ascii = ["\n
 (҂._.)\n
@@ -44,7 +46,7 @@ ascii = ["\n
 # |        / |\n
 # |
 # |________\n
-# 
+#
 # ",
 # "\n
 #    ________________\n

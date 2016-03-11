@@ -9,14 +9,16 @@
 #   None
 #
 # Commands:
-#   hubot <imdb|movie> <movie or serie>
-#   hubot <imdb|movie> <year|rate|plot|genre|director|actors|url> <movie or serie>
+#   hubot imdb <movie or serie>
+#   hubot movie <movie or serie>
+#   hubot imdb <year|rate|plot|genre|director|actors|url> <movie or serie>
+#   hubot movie <year|rate|plot|genre|director|actors|url> <movie or serie>
 #
-# To do:
+# Notes:
 #   Filter search by year or type (movie or serie) for more accuracy
 #
 # Author:
-#   Ravenous <hello@ravenous.io>
+#   @ravenous <hello@ravenous.io>
 
 module.exports = (robot) ->
   robot.respond /(imdb|movie)\s(year|rate|plot|genre|director|actors|url)?\s?(.*)/i, (msg) ->

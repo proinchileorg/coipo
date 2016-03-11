@@ -7,11 +7,11 @@
 // Configuration:
 //   None
 //
-// Commands:
-//   `pruebapruebaprueba`
+// Notes:
+//   hear retard
 //
 // Author:
-//   LasagnaAndroid
+//   @lasagnaAndroid
 
 module.exports = function(robot) {
   return robot.hear(/retard|retardao|:retard:|:retardao:/gi, function(msg) {

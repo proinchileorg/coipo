@@ -8,18 +8,18 @@
 #   None
 #
 # Commands:
-#   Ayuda: pudu votador help
-#   Crear votación: `pudu inicio votador item1, item2, item3, ...`
-#   Votar: `pudu voto (por) N` ~ donde N es el índice de la opción
-#   Mostrar Opciones: `pudu opciones votador`
-#   Mostrar conteo de votos actual: `pudu conteo votador`
-#   Finalizar votación: `pudu fin votador`
+#   hubot votador help
+#   hubot inicio votador item1, item2, item3, ...
+#   hubot voto (por) N ~ donde N es el índice de la opción
+#   hubot opciones votador
+#   hubot conteo votador
+#   hubot fin votador
 #
 # Notes:
 #   Base: https://github.com/joshingly/hubot-voting/blob/master/src/scripts/voting.coffee
 #
 # Author:
-#   antonishen
+#   @antonishen
 
 module.exports = (robot) ->
   robot.voting = {}

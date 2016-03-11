@@ -8,12 +8,12 @@
 //   None
 //
 // Commands:
-//   superheroe
+//   hubot superheroe
 //
 // Author:
-//   jorgeepunan
+//   @jorgeepunan
 
-var superheroes = require("superheroes"); 
+var superheroes = require("superheroes");
 
 module.exports = function(robot) {
 

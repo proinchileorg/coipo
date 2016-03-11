@@ -7,11 +7,11 @@
 # Configuration:
 #   None
 #
-# Commands:
-#   tristeza|triste|aburrido|aburrimiento|fomingo|realidad
+# Notes:
+#   hear tristeza|triste|aburrido|aburrimiento|fomingo|realidad
 #
 # Author:
-#   jorgeepunan
+#   @jorgeepunan
 
 images = [
   'https://media.giphy.com/media/3oEdv1MUT7aVetT61i/giphy.gif'

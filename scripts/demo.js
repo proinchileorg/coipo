@@ -8,12 +8,12 @@
 //   None
 //
 // Commands:
-//   @hubot demo channellist
-//   @hubot demo usernames
-//   @hubot demo DM to <username|channel|group>
-//   @hubot demo new topic <topic>
-//   @hubot demo new purpose ≤purpose>
-//   @hubot demo API <method> '<params>'
+//   hubot demo channellist
+//   hubot demo usernames
+//   hubot demo DM to <username|channel|group>
+//   hubot demo new topic <topic>
+//   hubot demo new purpose ≤purpose>
+//   hubot demo API <method> '<params>'
 //
 // Author:
 //   @eseceve

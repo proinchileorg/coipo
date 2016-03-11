@@ -5,13 +5,13 @@
 #   None
 #
 # Configuration:
-#   none
+#   None
 #
 # Commands:
 #   hubot cachipun piedra|papel|tijera
 #
 # Author:
-#   jorgeepunan
+#   @jorgeepunan
 
 tipos =
   'piedra':

@@ -8,10 +8,10 @@
 #   None
 #
 # Commands:
-#   alegría|alégrame|felicidad|yay|feliz - Te alegra el día
+#   hubot alegría|alégrame|felicidad|yay|feliz - Te alegra el día
 #
 # Author:
-#   gmq
+#   @gmq
 
 images = [
   "http://i.imgur.com/1CVUXQE.jpg"
