@@ -23,5 +23,7 @@
   "hubot-youtube",
   "hubot-memegeneration",
   "hubot-binario",
-  "hubot-fmg"
+  "hubot-fmg",
+  "hubot-tweets",
+  "hubot-auth"
 ]

@@ -7,6 +7,7 @@
   "dependencies": {
     "cheerio": "^0.20.0",
     "hubot": "^2.18.0",
+    "hubot-auth": "^1.2.0",
     "hubot-binario": "0.0.1",
     "hubot-caniuse": "^1.0.3",
     "hubot-cne": "^1.0.2",
@@ -32,6 +33,7 @@
     "hubot-shipit": "^0.2.0",
     "hubot-slack": "^3.4.2",
     "hubot-soon": "^1.0.0",
+    "hubot-tweets": "devschile/hubot-tweets",
     "hubot-vimeo": "^1.0.1",
     "hubot-wikipedia-lang": "^0.1.2",
     "hubot-youtube": "^1.0.1",
