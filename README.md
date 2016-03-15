@@ -10,16 +10,7 @@ Para consultar cuáles son las cosas que trae, puedes hablarle públicamente as�
 
 ## Contribuir
 
-El repositorio queda abierto para todos los miembros de [DevsChile en GitHub](https://github.com/devschile), si quieres agregar alguna función sigue los pasos 👇👇👇
-
-### Pasos:
-
-- Forkea y clona este repo en tu local.
-- `$ cd path/to/huemul-bot`
-- `$ npm install` (probablemente sea mejor usar `sudo`).
-- Haz tu código JS (o CoffeeScript) y déjalo en `huemul-bot/scripts`. Para más info sobre *Hubot* consulta [Hubot Documentation > Scripting](https://hubot.github.com/docs/scripting/). **No olvides documentar tu código**.
-- Para probar tus cambios localmente: `$ bin/hubot` y activarás a huemul y podrás invocarlo junto con sus comandos y los que hayas escrito.
-- Para enviarlo a Heroku, haz un _pull request_, coméntalo en Slack canal *#meta* y será revisado, testeado, linteado y si pasa los rigurosos tests será activado.
+El repositorio queda abierto para todos los miembros de [DevsChile en GitHub](https://github.com/devschile), si quieres agregar alguna función sigue los pasos en [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ---
 
