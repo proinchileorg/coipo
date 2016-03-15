@@ -8,6 +8,7 @@
     "cheerio": "^0.20.0",
     "hubot": "^2.18.0",
     "hubot-auth": "^1.2.0",
+    "hubot-azar": "0.1.0",
     "hubot-binario": "0.0.1",
     "hubot-caniuse": "^1.0.3",
     "hubot-cne": "^1.0.2",
