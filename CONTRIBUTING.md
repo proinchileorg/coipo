@@ -7,9 +7,9 @@ En la medida que sea posible todo script "complejo" que se quiera agregar deber�
 ## Pasos:
 
 - Forkea y clona este repo en tu local.
-- `$ cd path/to/huemul-bot`
+- `$ cd path/to/huemul`
 - `$ npm install` (probablemente sea mejor usar `sudo` a menos que uses nodenv o nvm).
-- Si estás usando la carpeta de scripts deja tu código en en `huemul-bot/scripts`, sino:
+- Si estás usando la carpeta de scripts deja tu código en en `huemul/scripts`, sino:
 
 --
 
