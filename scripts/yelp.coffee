@@ -24,11 +24,11 @@ token = "ek4LtD0_QwbKSxs8go1MNgP_o1Kpne_g"
 token_secret = "731n3orAZfXl2iP1AK3TF2gxKPw"
 
 respuestas = [
-  ":pudu: ¡Ya sé!"
-  ":pudu: ¡Lo tengo!"
-  ":pudu: Intenta: "
-  ":pudu: Mira :point_down::skin-tone-3:"
-  ":pudu: ¿Te tinca?"
+  ":huemul: ¡Ya sé!"
+  ":huemul: ¡Lo tengo!"
+  ":huemul: Intenta: "
+  ":huemul: Mira :point_down::skin-tone-3:"
+  ":huemul: ¿Te tinca?"
 ]
 
 Yelp = require("yelp")
@@ -54,7 +54,7 @@ module.exports = (robot) ->
         msg.send msg.random respuestas
         msg.send template
       else
-        msg.send ":pudu: algo pasó y no sé qué fue. Intenta denuevo."
+        msg.send ":huemul: algo pasó y no sé qué fue. Intenta de nuevo."
     .catch (err) ->
       msg.emit "error", err
-      msg.send ":pudu: algo pasó y no sé qué fue. Intenta denuevo."
+      msg.send ":huemul: algo pasó y no sé qué fue. Intenta de nuevo."
