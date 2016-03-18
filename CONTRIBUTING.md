@@ -7,7 +7,7 @@ En la medida que sea posible todo script *complejo* que se quiera agregar deber�
 ## Pasos:
 
 - Fork a tu cuenta de GitHub y clone este repo en tu local.
-- `$ cd path/to/huemul`
+- `$ cd ruta/a/huemul`
 - `$ npm install` (probablemente sea mejor usar `sudo` a menos que uses nodenv o nvm).
 - Si estás usando la carpeta de scripts deja tu código en `huemul/scripts`, sino:
 
@@ -19,7 +19,7 @@ En la medida que sea posible todo script *complejo* que se quiera agregar deber�
 
 --
 
-- Para probar tus cambios localmente: `$ bin/hubot` y activarás a Huemul y podrás invocarlo junto con sus comandos y los que hayas escrito.
-- Para enviar tus cambios a Huemul, haz un _pull request_, coméntalo en [Slack DevsChile](http://www.devschile.cl) canal [*#meta*](http://devschile.slack.com/messages/meta) y será revisado, testeado, linteado y si pasa los rigurosos análisis será activado.
--  Para más info sobre *Hubot* consulta [Hubot Documentation > Scripting](https://hubot.github.com/docs/scripting/). 
+- Para probar tus cambios localmente: `$ bin/hubot` y activarás a Huemul. Ahora ya podrás invocarlo junto con sus comandos y los que hayas escrito.
+- Para enviar tus cambios a Huemul, haz un [_pull request_](https://github.com/devschile/huemul/pulls), coméntalo en [Slack DevsChile](http://www.devschile.cl) canal [*#huemul-devs*](http://devschile.slack.com/messages/huemul-devs) y será revisado, testeado, linteado y, si pasa los rigurosos análisis, será agregado.
+-  Para más información sobre *Hubot* consulta [Hubot Documentation > Scripting](https://hubot.github.com/docs/scripting/).
 -  **No olvides documentar tu código**.
