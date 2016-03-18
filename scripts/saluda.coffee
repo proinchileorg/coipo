@@ -1,5 +1,5 @@
 # Description:
-#   Saluda cuando hay gente nueva en #general
+#   Saluda cuando hay gente nueva
 #
 # Dependencies:
 #   None
@@ -16,7 +16,13 @@
 module.exports = (robot) ->
   robot.enter (msg) ->
   # robot.hear /hola/i, (msg) -> #test local
-    # if msg.message.room == 'Shell' #test local
-    if msg.message.room == 'anuncios'
-      msg.send "¡Hola, *@#{msg.message.user.name}*! Bienvenido a *#{msg.message.room}* :wave:"
-      msg.send "Soy @huemul :robot: y te doy la bienvenida a *DevsChile*. Esperamos puedas compartir y aportar en cualquiera de los canales creados para temas de variados intereses."
+  if msg.message.room == 'anuncios'
+    robot.emit 'slack.attachment', {channel: msg.message.user.name, text: """
+      ¡Hola, *<@#{msg.message.user.name}>*! :wave:
+
+      Soy <@#{robot.name}> :robot: y te doy la bienvenida a *DevsChile*, la comunidad Chilena de desarrolladores web.
+      Entre los canales que te pueden interesar están: <#C0R6E10LC|frontend>, <#C0R7P17AQ|backend>, <#C0R6AM4DP|pegas>, etc.
+      Si lo deseas te puedes presentar en <#C0R6E19QS|random> y te daremos la bienvenida como corresponde.
+      Recuerda leer nuestro <http://www.devschile.cl/coc/|Código de Conducta>. Cualquier duda o consulta sobre el CoC o el Slack puedes hacerla en #comunidad.
+
+      Esperamos tu participación, saludos!"""};
