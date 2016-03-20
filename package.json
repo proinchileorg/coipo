@@ -7,7 +7,7 @@
   "dependencies": {
     "cheerio": "^0.20.0",
     "hubot": "^2.18.0",
-    "hubot-anime-dl": "^1.0.0",
+    "hubot-anime-dl": "^1.0.1",
     "hubot-auth": "^1.2.0",
     "hubot-azar": "0.1.0",
     "hubot-beerjs": "0.0.1",
