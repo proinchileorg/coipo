@@ -1,5 +1,5 @@
 # Description
-#   Pudu votador
+#   Hubot votador
 #
 # Dependencies:
 #   None
@@ -59,11 +59,11 @@ module.exports = (robot) ->
 
   robot.respond /votador help/i, (msg) ->
     msg.send "*Comandos:*"
-    msg.send "Crear votación: `pudu inicio votador item1, item2, item3, ...`\n
-Votar: `pudu voto (por) N` ~ donde N es el índice de la opción\n
-Mostrar Opciones: `pudu opciones votador`\n
-Mostrar conteo de votos actual: `pudu conteo votador`\n
-Finalizar votación: `pudu fin votador`"
+    msg.send "Crear votación: `hubot inicio votador item1, item2, item3, ...`\n
+Votar: `hubot voto (por) N` ~ donde N es el índice de la opción\n
+Mostrar Opciones: `hubot opciones votador`\n
+Mostrar conteo de votos actual: `hubot conteo votador`\n
+Finalizar votación: `hubot fin votador`"
 
   robot.respond /conteo votador/i, (msg) ->
     results = tallyVotes()
@@ -86,7 +86,7 @@ Finalizar votación: `pudu fin votador`"
       robot.voting.votes[sender] = choice
       msg.send "#{sender} vota por #{robot.voting.choices[choice]}"
     else
-      msg.send "#{sender}: No es una opción válida"
+      msg.send "#{sender}: esa no es una opción válida"
 
   createChoices = (rawChoices) ->
     robot.voting.choices = rawChoices.split(/, /)
