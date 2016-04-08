@@ -16,7 +16,7 @@
 module.exports = (robot) ->
   robot.enter (msg) ->
   # robot.hear /hola/i, (msg) -> #test local
-    if msg.message.room == 'anuncios'
+    if msg.message.room == 'random'
       robot.emit 'slack.attachment', {channel: msg.message.user.name, text: """
         ¡Hola, *<@#{msg.message.user.name}>*! :wave:
 
