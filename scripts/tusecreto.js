@@ -22,7 +22,7 @@ module.exports = function(robot) {
 
 		for (var i = 0; i < words.length; i++) {
 			if (secreto.indexOf(words[i]) !== -1) {
-				return robot.messageRoom('#random', "El tonto de " + msg.message.user.name + " tratÃ³ de usarÂ| @");
+				return robot.messageRoom('#random', "El tonto de " + msg.message.user.name + " trató de usar @");
 			}
 		}
 		
