@@ -1,18 +1,18 @@
-# Description:
-#   Tu secreto queda entre tú y :huemul:
-#   Dile un secreto a @huemul por DM y éste lo anunciará en el canal #random sin mencionarte.
-#
-# Dependencies:
-#   None
-#
-# Configuration:
-#   None
-#
-# Commands:
-#   hubot mi secreto <secreto>
-#
-# Author:
-#   @jorgeepunan
+// Description:
+//   Tu secreto queda entre tú y :huemul:
+//   Dile un secreto a @huemul por DM y éste lo anunciará en el canal #random sin mencionarte.
+//
+// Dependencies:
+//   None
+//
+// Configuration:
+//   None
+//
+// Commands:
+//   hubot mi secreto <secreto>
+//
+// Author:
+//   @jorgeepunan
 
 module.exports = function(robot) {
 	return robot.respond(/mi secreto (.*)/i, function(msg) {
