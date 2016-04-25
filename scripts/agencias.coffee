@@ -26,6 +26,7 @@ images = [
   'http://www.gifbin.com/bin/022013/1361304798_dominoes_launch_fail.gif'
   'https://media.giphy.com/media/d71sJZ0RQAPOo/giphy.gif'
   'http://www.gif-king.com/files/uSers/gif-king-e60d7560ccdde09ca0bee3ec54807731.gif'
+  'https://i.uploadly.com/2x4tok3k.gif'
 ]
 
 module.exports = (robot) ->
