@@ -8,7 +8,7 @@
 #   None
 #
 # Commands:
-#   None
+#   hubot agencias add <url> -> Add new gif to agencias
 #
 # Author:
 #   @jorgeepunan
@@ -32,4 +32,17 @@ images = [
 module.exports = (robot) ->
   robot.hear /#agencia|#agencias (.*)/gi, (msg) ->
     msg.send 'agencias... :point_down::skin-tone-4:'
-    msg.send msg.random images
+    agencias = robot.brain.get("agencias")
+    agencias = "[]" if agencias is null
+    agencias = JSON.parse(agencias)
+    agencias = agencias.concat(images)
+    msg.send(msg.random(agencias))
+
+  robot.respond /agencias add ((https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?)/, (res) ->
+    uri = res.match[1]
+    agencias = robot.brain.get("agencias")
+    agencias = "[]" if agencias is null
+    agencias = JSON.parse(agencias)
+    agencias.push(uri)
+    robot.brain.set("agencias", JSON.stringify(agencias))
+    res.send("New image saved :ok_hand:")
