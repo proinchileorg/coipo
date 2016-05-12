@@ -25,7 +25,7 @@ module.exports = function(robot) {
 		var mensaje 	= msg.match[2];
 		var userName	= msg.message.user;
 		var userClean = userName.name.toLowerCase();
-		var room 			= '#huemul-devs';
+		var room 			= '#comunidad';
 
 		// textos
 		var inicio 		= '*¡Nuevo concurso en devsChile!* ​_Adivina Quién_​ y ganarás 1 HuemulCoin gentileza de tu grupo favorito de _Slack_';
@@ -44,7 +44,7 @@ module.exports = function(robot) {
 
 		for (var i = 0; i < words.length; i++) {
 			if (mensaje.indexOf(words[i]) !== -1) {
-				msg.send('No puedes usar! @');
+				msg.send('¡No puedes usar! @');
 			}
 		}
 
@@ -64,7 +64,7 @@ module.exports = function(robot) {
 			} else if ( opcion === 'reglas' ) {
 				return robot.messageRoom(room, '🎉 *¡CONCURSO!* 🎉 Reglas:\n' + reglas.join(''));
 			} else if ( opcion === 'ganador' ) {
-				return robot.messageRoom(room, '🎉 *¡CONCURSO!* 🎉 :parrot: ¡TENEMOS UN GANADOR! :parrot: \n :trophy: *' + mensaje + '* :trophy: \n ¡ F E L I C I D A D E S !');
+				return robot.messageRoom(room, '🎉 *¡CONCURSO!* 🎉 :parrot: ¡TENEMOS UN GANADOR! :parrot: \n\n :trophy: :trophy: :trophy: *' + mensaje + '* :trophy: :trophy: :trophy: \n\n ¡ F E L I C I D A D E S !');
 			} else if ( opcion === 'fin' ) {
 				return robot.messageRoom(room, '🎉 *¡CONCURSO!* 🎉 ' + fin);
 			}
