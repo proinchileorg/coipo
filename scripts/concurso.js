@@ -44,7 +44,7 @@ module.exports = function(robot) {
 
 		for (var i = 0; i < words.length; i++) {
 			if (mensaje.indexOf(words[i]) !== -1) {
-				msg.send('No puedes usar! @');
+				msg.send('¡No puedes usar! @');
 			}
 		}
 
