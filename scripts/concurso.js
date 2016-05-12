@@ -48,11 +48,9 @@ module.exports = function(robot) {
 			}
 		}
 
-		msg.send( 'userName: ' + userName + ' | userClean: ' + userClean );
-
 		// verifica si usuario es uno de los 3 admin. muy rústica la validación, lo sé. prestado de karma.coffee
 		//if( userClean !== 'shell' ) { // localhost test
-		if( userClean !== 'hector' || userClean !== 'jorgeepunan' || userClean !== 'gmq' ) {
+		if( userClean !== 'jorgeepunan' ) {
 
 			msg.send('Tienes que ser admin para usar este script.');
 
