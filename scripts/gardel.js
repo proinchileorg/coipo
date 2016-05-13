@@ -26,9 +26,9 @@ module.exports = function gardel(robot) {
   robot.respond(/(gardel)/, function(msg) {
     var message = '';
     if (dayCount === 0) {
-      message = ':tada: Hoy pagan :tada:';
+      message = `:tada: Hoy pagan :tada:`;
     } else {
-      message = 'Faltan ${dayCount} días para que paguen. Este mes pagan el ${lastBusinessDay}, que cae ${nameLastDay} :tired_face:';
+      message = `Faltan ${dayCount} días para que paguen. Este mes pagan el ${lastBusinessDay}, que cae ${nameLastDay} :tired_face:`;
     }
     return msg.send(message);
   });
