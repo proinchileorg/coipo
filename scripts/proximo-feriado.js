@@ -43,13 +43,12 @@ module.exports = function (robot) {
 
               if (dias == 0) {
                 msg.send('*HOY* es feriado!! Disfrutalo!');
-                msg.send(holiday.title + " [_" + holiday.extra + "_]");
               }
               else {
-                msg.send("El próximo feriado es *" + dias + "* en días.");
-                msg.send(holiday.title + " [_" + holiday.extra + "_]");
+                msg.send("El próximo feriado es en *" + dias + "* días.");
               }
 
+              msg.send(holiday.title + " [_" + holiday.extra + "_]");
             }
           });
 
