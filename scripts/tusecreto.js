@@ -1,6 +1,6 @@
 // Description:
-//   Tu secreto queda entre tú y :huemul:
-//   Dile un secreto a @huemul por DM y éste lo anunciará en el canal #random sin mencionarte.
+//   Tu secreto queda entre tú y :berrea:
+//   Dile un secreto a @berrea por DM y éste lo anunciará en el canal #random sin mencionarte.
 //
 // Dependencies:
 //   None

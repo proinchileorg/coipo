@@ -38,7 +38,7 @@ respuestas = (msg, userChoice) ->
 
   resultado = "¡Empate!" if not resultado
 
-  msg.send ":huemul: escoge #{choice}"
+  msg.send ":berrea: escoge #{choice}"
   msg.send resultado
 
 module.exports = (robot) ->

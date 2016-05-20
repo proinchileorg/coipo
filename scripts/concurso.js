@@ -1,5 +1,5 @@
 // Description:
-//   Emite por #random los textos respectivos para concursar y ganar HuemulCoins ℌℭ
+//   Emite por #random los textos respectivos para concursar y ganar berreaCoins ℌℭ
 //
 // Dependencies:
 //   None
@@ -28,15 +28,15 @@ module.exports = function(robot) {
 		var room 			= '#comunidad';
 
 		// textos
-		var inicio 		= '*¡Nuevo concurso en devsChile!* ​_Adivina Quién_​ y ganarás 1 HuemulCoin gentileza de tu grupo favorito de _Slack_';
+		var inicio 		= '*¡Nuevo concurso en devsChile!* ​_Adivina Quién_​ y ganarás 1 berreaCoin gentileza de tu grupo favorito de _Slack_';
 		var reglas  	= [
 		'Quienes quieran concursar tendrán que seguir las siguientes simples reglas:\n',
 '- Se darán hasta 3 pistas identificando a alguien que pertenezca a este grupo\n',
 '- Si crees saber quién es, debes etiquetar esta publicación (no en las pistas mismas) el ícono de quién crees que es la persona\n',
-'- El ganador no será el más rápido, sino por un sorteo a través de `huemul-azar` entre todos quienes etiquetaron correctamente\n',
-'- El ganador se llevará 1 HuemulCoin ℌℭ (`huemul finvox huemulcoin`) pagado mediante PayPal. (Si no tiene PayPal, se consigue uno o aprovecha de sacar una cuenta)\n',
+'- El ganador no será el más rápido, sino por un sorteo a través de `berrea-azar` entre todos quienes etiquetaron correctamente\n',
+'- El ganador se llevará 1 berreaCoin ℌℭ (`berrea finvox berreacoin`) pagado mediante PayPal. (Si no tiene PayPal, se consigue uno o aprovecha de sacar una cuenta)\n',
 '- Comienza ahora, *¡ya!*'];
-		var fin 			= 'Envíe ASAP un email a huemul@devschile.cl para reclamar su premio. :huemul: :mailbox_closed: :moneybag:';
+		var fin 			= 'Envíe ASAP un email a berrea@devschile.cl para reclamar su premio. :berrea: :mailbox_closed: :moneybag:';
 
 
 		// sanitiza output para evitar abuso de malulos. prestado de karma.coffee

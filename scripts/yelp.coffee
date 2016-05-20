@@ -1,6 +1,6 @@
 # Description:
 #   Busca por restaurantes en Chile usando Yelp API 2.0.
-#   Exclusivo para Huemul Bot de DevsChile.cl
+#   Exclusivo para berrea Bot de DevsChile.cl
 #
 # Dependencies:
 #   "yelp": "0.1.1"
@@ -24,11 +24,11 @@ token = "ek4LtD0_QwbKSxs8go1MNgP_o1Kpne_g"
 token_secret = "731n3orAZfXl2iP1AK3TF2gxKPw"
 
 respuestas = [
-  ":huemul: ¡Ya sé!"
-  ":huemul: ¡Lo tengo!"
-  ":huemul: Intenta: "
-  ":huemul: Mira :point_down::skin-tone-3:"
-  ":huemul: ¿Te tinca?"
+  ":berrea: ¡Ya sé!"
+  ":berrea: ¡Lo tengo!"
+  ":berrea: Intenta: "
+  ":berrea: Mira :point_down::skin-tone-3:"
+  ":berrea: ¿Te tinca?"
 ]
 
 Yelp = require("yelp")
@@ -54,7 +54,7 @@ module.exports = (robot) ->
         msg.send msg.random respuestas
         msg.send template
       else
-        msg.send ":huemul: algo pasó y no sé qué fue. Intenta de nuevo."
+        msg.send ":berrea: algo pasó y no sé qué fue. Intenta de nuevo."
     .catch (err) ->
       msg.emit "error", err
-      msg.send ":huemul: algo pasó y no sé qué fue. Intenta de nuevo."
+      msg.send ":berrea: algo pasó y no sé qué fue. Intenta de nuevo."

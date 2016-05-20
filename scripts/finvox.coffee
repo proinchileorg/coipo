@@ -15,7 +15,7 @@
 #   hubot finvox euro
 #   hubot finvox ipc
 #   hubot finvox utm
-#   hubot finvox huemulcoin
+#   hubot finvox berreacoin
 #
 # Author:
 #   @jorgeepunan
@@ -37,9 +37,9 @@ module.exports = (robot) ->
     indicador = msg.match[1].toLowerCase()
 
     if indicador == 'help' || !indicador
-      msg.send 'Mis comandos son:\n\n * `finvox dolar|usd`\n * `finvox euro|eur`\n * `finvox bitcoin|btc`\n * `finvox uf`\n * `finvox utm`\n * `finvox ipc`\n * `finvox getonbrd`\n * `finvox huemulcoin`\n'
+      msg.send 'Mis comandos son:\n\n * `finvox dolar|usd`\n * `finvox euro|eur`\n * `finvox bitcoin|btc`\n * `finvox uf`\n * `finvox utm`\n * `finvox ipc`\n * `finvox getonbrd`\n * `finvox berreacoin`\n'
       return false
-    if indicador == 'uf' or indicador == 'dolar' or indicador == 'usd' or indicador == 'euro' or indicador == 'eur' or indicador == 'ipc' or indicador == 'utm' or indicador == 'getonbrd' or indicador == 'huemulcoin'
+    if indicador == 'uf' or indicador == 'dolar' or indicador == 'usd' or indicador == 'euro' or indicador == 'eur' or indicador == 'ipc' or indicador == 'utm' or indicador == 'getonbrd' or indicador == 'berreacoin'
       url = process.env.API_URL
     else if indicador == 'bitcoin' or indicador == 'btc'
       url = process.env.BIT_API_URL
@@ -67,9 +67,9 @@ module.exports = (robot) ->
         date = ''
         flatNumber = data.CLP.last.toString().split('.')[0]
         data = '$' + numberWithCommas(flatNumber)
-      else if indicador == 'huemulcoin'
-        complexHuemulCoinCalculus = (1000 / parseInt(data.moneda.dolar.split('$')[1]))
-        data = '1ℌℭ = US$' + numberSplitDecimal(complexHuemulCoinCalculus)
+      else if indicador == 'berreacoin'
+        complexberreaCoinCalculus = (1000 / parseInt(data.moneda.dolar.split('$')[1]))
+        data = '1ℌℭ = US$' + numberSplitDecimal(complexberreaCoinCalculus)
       else
         data = '`finvox help` para ayuda.'
 

@@ -1,9 +1,9 @@
 {
-  "name": "Huemul",
-  "version": "2.0.0",
+  "name": "Berrea",
+  "version": "2.0.1",
   "private": true,
-  "author": "Huemul",
-  "description": "Animal salvaje nivel 20",
+  "author": "Berrea",
+  "description": "Animal salvaje nivel 21",
   "dependencies": {
     "cheerio": "^0.20.0",
     "hubot": "^2.18.0",

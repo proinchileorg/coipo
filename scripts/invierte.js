@@ -24,7 +24,7 @@ function flipString(aString){
   if (result !== '') {
     return result.join('');
   } else {
-    return ':huemul: :gun:';
+    return ':berrea: :gun:';
   }
 
 }
