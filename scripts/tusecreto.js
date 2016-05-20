@@ -1,5 +1,5 @@
 // Description:
-//   Tu secreto queda entre tú y :berrea:
+//   Tu secreto queda entre tú y :coipo:
 //   Dile un secreto a @berrea por DM y éste lo anunciará en el canal #random sin mencionarte.
 //
 // Dependencies:

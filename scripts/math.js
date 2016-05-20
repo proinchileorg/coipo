@@ -15,7 +15,7 @@
 //   + info: http://mathjs.org/examples/expressions.js.html
 //
 // Author:
-//   :berrea:
+//   :coipo:
 
 var mathjs = require("mathjs");
 
