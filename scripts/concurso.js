@@ -36,7 +36,7 @@ module.exports = function(robot) {
 '- El ganador no será el más rápido, sino por un sorteo a través de `berrea-azar` entre todos quienes etiquetaron correctamente\n',
 '- El ganador se llevará 1 berreaCoin ℌℭ (`berrea finvox berreacoin`) pagado mediante PayPal. (Si no tiene PayPal, se consigue uno o aprovecha de sacar una cuenta)\n',
 '- Comienza ahora, *¡ya!*'];
-		var fin 			= 'Envíe ASAP un email a berrea@devschile.cl para reclamar su premio. :berrea: :mailbox_closed: :moneybag:';
+		var fin 			= 'Envíe ASAP un email a berrea@devschile.cl para reclamar su premio. :coipo: :mailbox_closed: :moneybag:';
 
 
 		// sanitiza output para evitar abuso de malulos. prestado de karma.coffee

@@ -24,11 +24,11 @@ token = "ek4LtD0_QwbKSxs8go1MNgP_o1Kpne_g"
 token_secret = "731n3orAZfXl2iP1AK3TF2gxKPw"
 
 respuestas = [
-  ":berrea: ¡Ya sé!"
-  ":berrea: ¡Lo tengo!"
-  ":berrea: Intenta: "
-  ":berrea: Mira :point_down::skin-tone-3:"
-  ":berrea: ¿Te tinca?"
+  ":coipo: ¡Ya sé!"
+  ":coipo: ¡Lo tengo!"
+  ":coipo: Intenta: "
+  ":coipo: Mira :point_down::skin-tone-3:"
+  ":coipo: ¿Te tinca?"
 ]
 
 Yelp = require("yelp")
@@ -54,7 +54,7 @@ module.exports = (robot) ->
         msg.send msg.random respuestas
         msg.send template
       else
-        msg.send ":berrea: algo pasó y no sé qué fue. Intenta de nuevo."
+        msg.send ":coipo: algo pasó y no sé qué fue. Intenta de nuevo."
     .catch (err) ->
       msg.emit "error", err
-      msg.send ":berrea: algo pasó y no sé qué fue. Intenta de nuevo."
+      msg.send ":coipo: algo pasó y no sé qué fue. Intenta de nuevo."
