@@ -24,7 +24,7 @@ module.exports = (robot) ->
     return if not targetToken
     targetUser = userForToken targetToken, response
     return if not targetUser
-    return response.send "Oe no po, el karma es pa otros no pa ti!" if thisUser is targetUser
+    return response.send "Oe no po, los puntos de popularidad son pa otros no pa ti!" if thisUser is targetUser
     op = response.match[2]
     limit = canUpvote(thisUser, targetUser)
     if Number.isFinite(limit)
@@ -32,13 +32,13 @@ module.exports = (robot) ->
       return
     targetUser.karma += if op is "++" then 1 else -1
     robot.brain.save()
-    response.send "#{getCleanName(targetUser.name)} ahora tiene #{targetUser.karma} puntos de karma."
+    response.send "#{getCleanName(targetUser.name)} ahora tiene #{targetUser.karma} puntos de popularidad."
 
-  robot.hear /^karma(?:\s+@?(.*))?$/, (response) ->
+  robot.hear /^popularidad(?:\s+@?(.*))?$/, (response) ->
     targetToken = response.match[1]?.trim()
     return if not targetToken
     if targetToken.toLowerCase() in ["todos", "all"]
-      msg = "Karma de todos: #{hubotWebSite}/karma/todos"
+      msg = "Popularidad de todos: #{hubotWebSite}/popularidad/todos"
     else if targetToken.toLowerCase().split(' ')[0] == 'reset'
       thisUser = response.message.user
       if thisUser.name.toLowerCase() != "hector"
@@ -58,11 +58,11 @@ module.exports = (robot) ->
     else
       targetUser = userForToken targetToken, response
       return if not targetUser
-      msg = "#{getCleanName(targetUser.name)} tiene #{targetUser.karma} puntos de karma."
+      msg = "#{getCleanName(targetUser.name)} tiene #{targetUser.karma} puntos de popularidad."
     robot.brain.save()
     response.send msg
 
-  robot.router.get "/#{robot.name}/karma/todos", (req, res) ->
+  robot.router.get "/#{robot.name}/popularidad/todos", (req, res) ->
     users = robot.brain.users()
     list = Object.keys(users)
       .sort()
@@ -70,7 +70,7 @@ module.exports = (robot) ->
       .map((k) -> [users[k].karma or 0, "<strong>#{users[k].name}</strong>"])
       .sort((line1, line2) -> if line1[0] < line2[0] then 1 else if line1[0] > line2[0] then -1 else 0)
       .map((line) -> line.join " ")
-    msg = "Karma de todos:\n
+    msg = "Popularidad de todos:\n
           <ul>
           <li>#{list.join '</li><li>'}</li>
           </ul>"
