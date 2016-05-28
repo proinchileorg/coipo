@@ -65,12 +65,12 @@ module.exports = (robot) ->
       if resetCommand in ["todos", "all"]
         users = robot.brain.users()
         list = Object.keys(users)
-          .map((k) -> users[k].karma = targetToken.toLowerCase().split(' ')[1])
-        msg = "Todo el mundo ha quedado con #{targetToken.toLowerCase().split(' ')[1]}"
+          .map((k) -> users[k].karma = targetToken.toLowerCase().split(' ')[2])
+        msg = "Todo el mundo ha quedado con #{targetToken.toLowerCase().split(' ')[2]}"
       else
         targetUser = userForToken resetCommand, response
         targetUser.karma = targetToken.toLowerCase().split(' ')[1]
-        msg = "#{getCleanName(targetUser.name)} ha quedado con #{targetToken.toLowerCase().split(' ')[1]}."
+        msg = "#{getCleanName(targetUser.name)} ha quedado con #{targetToken.toLowerCase().split(' ')[2]}."
     else
       targetUser = userForToken targetToken, response
       return if not targetUser
