@@ -41,8 +41,8 @@ module.exports = (robot) ->
       msg = "Karma de todos: #{hubotWebSite}/karma/todos"
     else if targetToken.toLowerCase().split(' ')[0] == 'reset'
       thisUser = response.message.user
-      if thisUser.name.toLowerCase() != "hector"
-        response.send "Tienes que ser :hector: para realizar esta función"
+      if thisUser.name.toLowerCase() != "rampmaster"
+        response.send "Tienes que ser :rampmaster: para realizar esta función"
         return
       resetCommand = targetToken.toLowerCase().split(' ')[1]
       return if not resetCommand
@@ -55,6 +55,22 @@ module.exports = (robot) ->
         targetUser = userForToken resetCommand, response
         targetUser.karma = 0
         msg = "#{getCleanName(targetUser.name)} ha quedado libre de toda bendición o pecado."
+    else if targetToken.toLowerCase().split(' ')[0] == 'set'
+      thisUser = response.message.user
+      if thisUser.name.toLowerCase() != "rampmaster"
+        response.send "Tienes que ser :rampmaster: para realizar esta función"
+        return
+      resetCommand = targetToken.toLowerCase().split(' ')[1]
+      return if not resetCommand
+      if resetCommand in ["todos", "all"]
+        users = robot.brain.users()
+        list = Object.keys(users)
+          .map((k) -> users[k].karma = targetToken.toLowerCase().split(' ')[1])
+        msg = "Todo el mundo ha quedado con #{targetToken.toLowerCase().split(' ')[1]}"
+      else
+        targetUser = userForToken resetCommand, response
+        targetUser.karma = targetToken.toLowerCase().split(' ')[1]
+        msg = "#{getCleanName(targetUser.name)} ha quedado con #{targetToken.toLowerCase().split(' ')[1]}."
     else
       targetUser = userForToken targetToken, response
       return if not targetUser
