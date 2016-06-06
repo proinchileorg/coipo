@@ -1,4 +1,4 @@
-# Berrea
+# Coipo
 
 Este un bot basado en [Huemul](https://github.com/devschile/huemul/) de [devsChile](http://www.devschile.cl) ([canal en Slack](http://devschile.slack.com)) utilizado en de [proin](http://www.programadores.cl) ([canal en Slack](http://proinchile.slack.com)).
 
@@ -14,4 +14,4 @@ El repositorio queda abierto para todos los miembros de [proin en GitHub](https:
 
 ---
 
-![huemul-bot](http://www.revistalajunta.com/lajunta/wp-content/uploads/2015/01/4222Huemul_Perfil_Laid_700.jpg)
+![coipo-bot](http://www.fotonaturaleza.cl/data/media/2/IMG_9761COIPO-FN15.jpg)
