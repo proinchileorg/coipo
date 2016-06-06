@@ -6,7 +6,7 @@ Posee todas las funciones básicas de Hubot y varios aportes de esforzados desar
 
 ## ¿Qué comandos sabe?
 
-Para consultar cuáles son las cosas que trae, puedes hablarle públicamente así: `@berrea help`, si quieres preguntarle en privado, debes ir a *direct messages*, escribirle a **@berrea** y simplemente decir: `help`.  Normalmente es muy rápido, a menos que esté ocupado en otra cosa.
+Para consultar cuáles son las cosas que trae, puedes hablarle públicamente así: `@coipo help`, si quieres preguntarle en privado, debes ir a *direct messages*, escribirle a **@coipo** y simplemente decir: `help`.  Normalmente es muy rápido, a menos que esté ocupado en otra cosa.
 
 ## Contribuir
 
