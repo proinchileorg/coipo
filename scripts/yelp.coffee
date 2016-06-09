@@ -1,6 +1,6 @@
 # Description:
 #   Busca por restaurantes en Chile usando Yelp API 2.0.
-#   Exclusivo para berrea Bot de DevsChile.cl
+#   Exclusivo para coipo Bot de DevsChile.cl
 #
 # Dependencies:
 #   "yelp": "0.1.1"

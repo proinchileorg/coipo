@@ -1,8 +1,8 @@
 {
-  "name": "Berrea",
+  "name": "Coipo",
   "version": "2.0.1",
   "private": true,
-  "author": "Berrea",
+  "author": "Coipo",
   "description": "Animal salvaje nivel 21",
   "dependencies": {
     "cheerio": "^0.20.0",

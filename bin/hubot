@@ -9,4 +9,4 @@ then
   export $(cat ${PWD}/.env | xargs)
 fi
 
-exec node_modules/.bin/hubot --name "berrea" "$@"
+exec node_modules/.bin/hubot --name "coipo" "$@"
