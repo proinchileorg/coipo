@@ -42,10 +42,16 @@ module.exports = function meetups(robot) {
           if(json.results.length > 0){
             json.results.forEach(function(meetup) {
               if(meetup.hasOwnProperty('venue')){
-                return response += ':meetup: '+ meetup.name + ' ¿Cuándo? *' + moment.unix(meetup.time * 0.001).add(1, 'hour').format('H:mm DD/MM/YYYY') + '* ¿Dónde? '+ meetup.venue.name + ' *'+meetup.venue.address_1 + '* \n\n';
+                return response += ':meetup: '+ meetup.name + ' ¿Cuándo? *'
+                + moment.unix(meetup.time * 0.001).add(1, 'hour').format('H:mm DD/MM/YYYY')
+                + '* ¿Dónde? '+ meetup.venue.name + ' *'+ meetup.venue.address_1+'* Organiza: '
+                + meetup.group.name + '(' + meetup.event_url + ')\n\n';
               }
               else{
-                return response += ':meetup: '+ meetup.name + ' ¿Cuándo? *' + moment.unix(meetup.time * 0.001).add(1, 'hour').format('H:mm DD/MM/YYYY') + '* (No hay una ubicación definida) \n\n';
+                return response += ':meetup: '+ meetup.name + ' ¿Cuándo? *'
+                + moment.unix(meetup.time * 0.001).add(1, 'hour').format('H:mm DD/MM/YYYY')
+                + '* (No hay una ubicación definida) Organiza: '
+                + meetup.group.name + ' (' + meetup.event_url + ')\n\n';
               }
             });
           }
