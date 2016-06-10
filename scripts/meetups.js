@@ -31,7 +31,7 @@ module.exports = function meetups(robot) {
           city: 'Santiago',
           category: 34,
           lon: -70.673676,
-          page: 20,
+          page: 5,
           format: 'json'
         }
       });
@@ -42,15 +42,15 @@ module.exports = function meetups(robot) {
           if(json.results.length > 0){
             json.results.forEach(function(meetup) {
               if(meetup.hasOwnProperty('venue')){
-                return response += ':meetup: '+ meetup.name + ' ¿Cuándo? *'
+                return response += ':meetup: *'+ meetup.name + '*\n>¿Cuándo? *'
                 + moment.unix(meetup.time * 0.001).add(1, 'hour').format('H:mm DD/MM/YYYY')
-                + '* ¿Dónde? '+ meetup.venue.name + ' *'+ meetup.venue.address_1+'* Organiza: '
+                + '*\n>¿Dónde? '+ meetup.venue.name + ' *'+ meetup.venue.address_1+'*\n>Organiza: '
                 + meetup.group.name + '(' + meetup.event_url + ')\n\n';
               }
               else{
-                return response += ':meetup: '+ meetup.name + ' ¿Cuándo? *'
+                return response += ':meetup: *'+ meetup.name + '*\n>¿Cuándo? *'
                 + moment.unix(meetup.time * 0.001).add(1, 'hour').format('H:mm DD/MM/YYYY')
-                + '* (No hay una ubicación definida) Organiza: '
+                + '*\n>(No hay una ubicación definida)\n>Organiza: '
                 + meetup.group.name + ' (' + meetup.event_url + ')\n\n';
               }
             });
