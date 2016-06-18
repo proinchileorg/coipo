@@ -41,8 +41,8 @@ module.exports = (robot) ->
       msg = "Karma de todos: #{hubotWebSite}/karma/todos"
     else if targetToken.toLowerCase().split(' ')[0] == 'reset'
       thisUser = response.message.user
-      if thisUser.name.toLowerCase() != "rampmaster"
-        response.send "Tienes que ser :rampmaster: para realizar esta función"
+      if thisUser.name.toLowerCase() != "diruzcode"
+        response.send "Tienes que ser :diruzcode: para realizar esta función"
         return
       resetCommand = targetToken.toLowerCase().split(' ')[1]
       return if not resetCommand
@@ -57,8 +57,8 @@ module.exports = (robot) ->
         msg = "#{getCleanName(targetUser.name)} ha quedado libre de toda bendición o pecado."
     else if targetToken.toLowerCase().split(' ')[0] == 'set'
       thisUser = response.message.user
-      if thisUser.name.toLowerCase() != "rampmaster"
-        response.send "Tienes que ser :rampmaster: para realizar esta función"
+      if thisUser.name.toLowerCase() != "diruzcode"
+        response.send "Tienes que ser :diruzcode: para realizar esta función"
         return
       resetCommand = targetToken.toLowerCase().split(' ')[1]
       return if not resetCommand

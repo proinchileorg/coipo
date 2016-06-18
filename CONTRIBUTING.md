@@ -20,6 +20,6 @@ En la medida que sea posible todo script *complejo* que se quiera agregar deber�
 --
 
 - Para probar tus cambios localmente: `$ bin/hubot` y activarás a coipo. Ahora ya podrás invocarlo junto con sus comandos y los que hayas escrito.
-- Para enviar tus cambios a coipo, haz un [_pull request_](https://github.com/rampmasterspa/proinbot/pulls), coméntalo en [Slack devsChile](http://www.devschile.cl) canal [*#coipo-devs*](http://proinchile.slack.com/messages/bot-dev) y será revisado, testeado, linteado y, si pasa los rigurosos análisis, será agregado.
+  - Para enviar tus cambios a coipo, haz un [_pull request_](https://gitlab.com/proinchile/coipo), coméntalo en [Slack devsChile](http://www.devschile.cl) canal [*#coipo-devs*](http://proinchile.slack.com/messages/bot-dev) y será revisado, testeado, linteado y, si pasa los rigurosos análisis, será agregado.
 -  Para más información sobre *Hubot* consulta [Hubot Documentation > Scripting](https://hubot.github.com/docs/scripting/).
 -  **No olvides documentar tu código**.
