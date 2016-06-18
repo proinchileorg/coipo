@@ -12,10 +12,10 @@
 //
 // Author:
 //   @ernesto
+var url = require('url');
+var moment = require('moment');
 
 module.exports = function meetups(robot) {
-    var url = require('url');
-    var moment = require('moment');
 
     robot.respond(/(meetups)/, function(msg) {
       var meetupURL = url.format( {
