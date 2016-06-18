@@ -49,7 +49,7 @@ module.exports = function meetups(robot) {
               }
               else{
                 return response += ':meetup: *'+ meetup.name + '*\n>¿Cuándo? *'
-                + moment.unix(meetup.time * 0.001).add(1, 'hour').format('H:mm DD/MM/YYYY')
+                + moment.unix(meetup.time * 0.001).subtract(3, 'hour').format('H:mm DD/MM/YYYY')
                 + '*\n>(No hay una ubicación definida)\n>Organiza: '
                 + meetup.group.name + ' (' + meetup.event_url + ')\n\n';
               }
